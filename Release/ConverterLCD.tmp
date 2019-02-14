@@ -1,0 +1,5 @@
+-form=hexadecimal
+-output="LCD.hex"
+-byte_count=FF
+-nomessage
+-nologo

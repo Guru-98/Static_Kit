@@ -1,0 +1,5 @@
+-cpu=S3
+-c
+-dev="C:\Renesas\e2_studio\DebugComp\\RL78\RL78\Common\DR5F10BGG.DVF"
+-I "C:\Program Files (x86)\Renesas\RL78\1_8_0\inc","C:\Users\500022\Documents\Intern\RL78\workspace\LCD\generate"
+-lang=c
