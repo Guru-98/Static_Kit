@@ -47,13 +47,16 @@
 #define LCD_5x10DOTS 0x04
 #define LCD_5x8DOTS 0x00
 
-void printlcd(char *x);
+void printLcd(char *x);
 void scrollDisplayLeft(void);
 void scrollDisplayRight(void);
-void lcdinit(void);
+void lcdInit(void);
+void createChar(uint8_t location, uint8_t charmap[]);
+void setCursor(uint8_t col, uint8_t row);
+void clearLcd(void);
 
-void sendcmd(char x);
-void senddata(char x);
+void sendCmd(char x);
+void sendData(char x);
 void trigger(void);
 void delay(uint16_t msec);
 

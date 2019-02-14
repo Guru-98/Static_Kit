@@ -33,7 +33,7 @@ Includes
 #include "r_cg_cgc.h"
 #include "r_cg_port.h"
 /* Start user code for include. Do not edit comment generated here */
-#include "lcd.h"
+#include "display.h"
 /* End user code. Do not edit comment generated here */
 #include "r_cg_userdefine.h"
 
@@ -58,22 +58,11 @@ void R_MAIN_UserInit(void);
 ***********************************************************************************************************************/
 void main(void)
 {
-	int i=0;
     R_MAIN_UserInit();
     /* Start user code. Do not edit comment generated here */
-    delay(0xffff);
-    lcdinit();
-    delay(0xfff);
-    printlcd("        SMIT        ");
-    delay(0xfff);
-    sendcmd(LCD_SETDDRAMADDR | 0x40);
-    printlcd(" powered by passion ");
-    while(1){
-    	scrollDisplayRight();
-    	for(i=30;i>0;i--){
-    		delay(0xffff);
-    	}
-    }
+    displayInit();
+
+    while(1);
     /* End user code. Do not edit comment generated here */
 }
 

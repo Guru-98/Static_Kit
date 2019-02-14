@@ -8,8 +8,8 @@ RM := rm -rf *.sni *.dbg *.lst *.lis *.lpp *.map *.x *.lbp *.h *.bls *.libelf *.
 
 # All of the sources participating in the build are defined here
 -include sources.mk
--include src/subdir.mk
 -include generate/subdir.mk
+-include src/subdir.mk
 
 ifneq ($(MAKECMDGOALS),clean)
 ifneq ($(strip $(C_DEPS)),)
@@ -59,7 +59,7 @@ endif
 
 # Add inputs and outputs from these tool invocations to the build variables
 LINKER_OUTPUT_OUTPUTS += \
-LCD.abs
+Static_Kit.abs
 
 OBJS := \
 $(COMPILER_OBJS) \
@@ -68,27 +68,27 @@ $(ASSEMBLER_OBJS) \
 $(CUSTOM_OBJS)
 
 # All Target
-all: $(LINKER_OUTPUT_OUTPUTS) LCD.x
+all: $(LINKER_OUTPUT_OUTPUTS) Static_Kit.x
 	@echo 'Build complete.'
 
-LCD.abs: $(OBJS)  $(ALL_ASMS)
+Static_Kit.abs: $(OBJS)  $(ALL_ASMS)
 	@echo 'Invoking: Linker'
 	@echo 'Building target:'
-	@echo LinkerLCD.tmp=
-	@sed -e "s/^/    /" "LinkerLCD.tmp"
-	rlink -subcommand="LinkerLCD.tmp"
+	@echo LinkerStatic_Kit.tmp=
+	@sed -e "s/^/    /" "LinkerStatic_Kit.tmp"
+	rlink -subcommand="LinkerStatic_Kit.tmp"
 	@echo 'Finished building target:'
 	@echo.
 
 
-LCD.x: LCD.abs
-		-C:\Renesas\e2_studio\Utilities\\ccrl\renesas_cc_converter.exe LCD.abs LCD.x
+Static_Kit.x: Static_Kit.abs
+		-C:\Renesas\e2_studio\Utilities\\ccrl\renesas_cc_converter.exe Static_Kit.abs Static_Kit.x
 
 # Other Targets
 clean:
 	-$(RM) $(LINKER_OUTPUT_OUTPUTS)
-	-rm -rf src/*.obj src/*.d src/*.asm src/*.p src/*.src src/*.jmp src/*.lst src/*.prn src/*.i 
 	-rm -rf generate/*.obj generate/*.d generate/*.asm generate/*.p generate/*.src generate/*.jmp generate/*.lst generate/*.prn generate/*.i 
+	-rm -rf src/*.obj src/*.d src/*.asm src/*.p src/*.src src/*.jmp src/*.lst src/*.prn src/*.i 
 	@echo
 	@echo 'Clean complete.'
 
