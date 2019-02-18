@@ -38,7 +38,7 @@ void scrollDisplayRight(void) {
 	sendCmd(LCD_CURSORSHIFT | LCD_DISPLAYMOVE | LCD_MOVERIGHT);
 }
 
-void createChar(uint8_t location, uint8_t charmap[]) {
+void createChar(char location, char charmap[]) {
 	int i;
 	location &= 0x7;
 	sendCmd(LCD_SETCGRAMADDR | (location << 3));
@@ -90,7 +90,7 @@ void clearLcd(void){
 	sendCmd(LCD_SETDDRAMADDR);
 }
 
-void setCursor(uint8_t col, uint8_t row) {
+void setCursor(char col, char row) {
 	uint8_t row_offsets[] = {0x00,0x40,0x14,0x54};
 	sendCmd(LCD_SETDDRAMADDR | (col + row_offsets[row]));
 	delay(30);
@@ -98,6 +98,7 @@ void setCursor(uint8_t col, uint8_t row) {
 
 void delay(uint16_t msec) {
 //TODO: make a RT accurate delay routine
-	while (msec--)
-		;
+	while (msec==0){
+		msec--;
+	}
 }

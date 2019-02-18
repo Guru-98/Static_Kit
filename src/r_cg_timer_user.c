@@ -18,11 +18,11 @@
 ***********************************************************************************************************************/
 
 /***********************************************************************************************************************
-* File Name    : r_cg_cgc.c
+* File Name    : r_cg_timer_user.c
 * Version      : CodeGenerator for RL78/F13 V2.03.03.01 [28 Oct 2018]
 * Device(s)    : R5F10BGG
 * Tool-Chain   : CCRL
-* Description  : This file implements device driver for CGC module.
+* Description  : This file implements device driver for TAU module.
 * Creation Date: 18/2/2019
 ***********************************************************************************************************************/
 
@@ -30,7 +30,7 @@
 Includes
 ***********************************************************************************************************************/
 #include "r_cg_macrodriver.h"
-#include "r_cg_cgc.h"
+#include "r_cg_timer.h"
 /* Start user code for include. Do not edit comment generated here */
 /* End user code. Do not edit comment generated here */
 #include "r_cg_userdefine.h"
@@ -38,6 +38,8 @@ Includes
 /***********************************************************************************************************************
 Pragma directive
 ***********************************************************************************************************************/
+#pragma interrupt r_tau1_channel0_interrupt(vect=INTTM10)
+#pragma interrupt r_tau1_channel2_interrupt(vect=INTTM12)
 /* Start user code for pragma. Do not edit comment generated here */
 /* End user code. Do not edit comment generated here */
 
@@ -48,33 +50,27 @@ Global variables and functions
 /* End user code. Do not edit comment generated here */
 
 /***********************************************************************************************************************
-* Function Name: R_CGC_Create
-* Description  : This function initializes the clock generator.
+* Function Name: r_tau1_channel0_interrupt
+* Description  : This function is INTTM10 interrupt service routine.
 * Arguments    : None
 * Return Value : None
 ***********************************************************************************************************************/
-void R_CGC_Create(void)
+static void __near r_tau1_channel0_interrupt(void)
 {
-    /* Set fSL */
-    SELLOSC = 1U;
-    /* Set fMX */
-    CMC = _00_CGC_HISYS_PORT | _00_CGC_SUB_PORT | _00_CGC_SYSOSC_DEFAULT | _00_CGC_SUBMODE_DEFAULT;
-    MSTOP = 1U;
-    /* Set fMAIN */
-    MCM0 = 0U;
-    MDIV = _01_CGC_FMP_DIV_1;
-    /* Set fMP to clock through mode */
-    SELPLL = 0U;
-    /* Set fSUB */
-    XTSTOP = 1U;
-    /* Set fCLK */
-    CSS = 0U;
-    /* Set fIH */
-    HIOSTOP = 0U;
-    /* Set RTC clock source */
-    RTCCL = _80_CGC_RTC_FIH | _42_CGC_RTC_DIV122;
-    /* Set Timer RD clock source to fCLK, fMP */
-    TRD_CKSEL = 0U;
+    /* Start user code. Do not edit comment generated here */
+    /* End user code. Do not edit comment generated here */
+}
+
+/***********************************************************************************************************************
+* Function Name: r_tau1_channel2_interrupt
+* Description  : This function is INTTM12 interrupt service routine.
+* Arguments    : None
+* Return Value : None
+***********************************************************************************************************************/
+static void __near r_tau1_channel2_interrupt(void)
+{
+    /* Start user code. Do not edit comment generated here */
+    /* End user code. Do not edit comment generated here */
 }
 
 /* Start user code for adding. Do not edit comment generated here */

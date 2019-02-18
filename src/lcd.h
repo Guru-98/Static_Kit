@@ -51,8 +51,8 @@ void printLcd(char *x);
 void scrollDisplayLeft(void);
 void scrollDisplayRight(void);
 void lcdInit(void);
-void createChar(uint8_t location, uint8_t charmap[]);
-void setCursor(uint8_t col, uint8_t row);
+void createChar(char location, char charmap[]);
+void setCursor(char col, char row);
 void clearLcd(void);
 
 void sendCmd(char x);

@@ -18,11 +18,11 @@
 ***********************************************************************************************************************/
 
 /***********************************************************************************************************************
-* File Name    : r_cg_cgc.c
+* File Name    : r_cg_adc_user.c
 * Version      : CodeGenerator for RL78/F13 V2.03.03.01 [28 Oct 2018]
 * Device(s)    : R5F10BGG
 * Tool-Chain   : CCRL
-* Description  : This file implements device driver for CGC module.
+* Description  : This file implements device driver for ADC module.
 * Creation Date: 18/2/2019
 ***********************************************************************************************************************/
 
@@ -30,14 +30,19 @@
 Includes
 ***********************************************************************************************************************/
 #include "r_cg_macrodriver.h"
-#include "r_cg_cgc.h"
+#include "r_cg_adc.h"
 /* Start user code for include. Do not edit comment generated here */
+#include <stdio.h>
+#include <stdlib.h>
+
+#include "lcd.h"
 /* End user code. Do not edit comment generated here */
 #include "r_cg_userdefine.h"
 
 /***********************************************************************************************************************
 Pragma directive
 ***********************************************************************************************************************/
+#pragma interrupt r_adc_interrupt(vect=INTAD)
 /* Start user code for pragma. Do not edit comment generated here */
 /* End user code. Do not edit comment generated here */
 
@@ -45,37 +50,34 @@ Pragma directive
 Global variables and functions
 ***********************************************************************************************************************/
 /* Start user code for global. Do not edit comment generated here */
+uint16_t adcValue=0;
+char voltage[8];
+
+void printVoltage(void);
 /* End user code. Do not edit comment generated here */
 
 /***********************************************************************************************************************
-* Function Name: R_CGC_Create
-* Description  : This function initializes the clock generator.
+* Function Name: r_adc_interrupt
+* Description  : This function is INTAD interrupt service routine.
 * Arguments    : None
 * Return Value : None
 ***********************************************************************************************************************/
-void R_CGC_Create(void)
+static void __near r_adc_interrupt(void)
 {
-    /* Set fSL */
-    SELLOSC = 1U;
-    /* Set fMX */
-    CMC = _00_CGC_HISYS_PORT | _00_CGC_SUB_PORT | _00_CGC_SYSOSC_DEFAULT | _00_CGC_SUBMODE_DEFAULT;
-    MSTOP = 1U;
-    /* Set fMAIN */
-    MCM0 = 0U;
-    MDIV = _01_CGC_FMP_DIV_1;
-    /* Set fMP to clock through mode */
-    SELPLL = 0U;
-    /* Set fSUB */
-    XTSTOP = 1U;
-    /* Set fCLK */
-    CSS = 0U;
-    /* Set fIH */
-    HIOSTOP = 0U;
-    /* Set RTC clock source */
-    RTCCL = _80_CGC_RTC_FIH | _42_CGC_RTC_DIV122;
-    /* Set Timer RD clock source to fCLK, fMP */
-    TRD_CKSEL = 0U;
+    /* Start user code. Do not edit comment generated here */
+	DI();
+	R_ADC_Stop();
+	R_ADC_Get_Result(&adcValue);
+	printVoltage();
+	R_ADC_Start();
+	EI();
+    /* End user code. Do not edit comment generated here */
 }
 
 /* Start user code for adding. Do not edit comment generated here */
+void printVoltage(void){
+	sendCmd(LCD_RETURNHOME);
+	sprintf(voltage,"%04d",adcValue);
+	printLcd(voltage);
+}
 /* End user code. Do not edit comment generated here */

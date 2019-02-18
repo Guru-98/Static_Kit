@@ -70,8 +70,8 @@
         <ADC />
       </Effect>
     </VDDValue>
-    <AD_ADPC_USEDPIN Name="AD_ADPC_USEDPIN" Text="false" />
-    <AD_ADS_USEDPIN Name="AD_ADS_USEDPIN" Text="false" />
+    <AD_ADPC_USEDPIN Name="AD_ADPC_USEDPIN" Text="ANI0,ANI1,ANI2,ANI3,ANI4,ANI5,ANI6," />
+    <AD_ADS_USEDPIN Name="AD_ADS_USEDPIN" Text="ANI2," />
     <ADPCForPort3 Name="ADPCForPort3" Value="255" Comment="ADPCForPort3" />
     <ADPCForPort8 Name="ADPCForPort8" Value="255" Comment="ADPCForPort8" />
     <ADPCForPort9 Name="ADPCForPort9" Value="255" Comment="ADPCForPort9" />
@@ -213,8 +213,8 @@
       </Effect>
     </RTC1HZ>
     <RXD0 Name="RXD0" Text="disable" />
-    <ProjectName Name="PrjName" Text="LCD" />
-    <ProjectPath Name="PrjPath" Text="C:\Users\500022\Documents\Intern\RL78\workspace\LCD" />
+    <ProjectName Name="PrjName" Text="Static_Kit" />
+    <ProjectPath Name="PrjPath" Text="C:\Users\500022\Documents\Intern\RL78\workspace\Static_Kit" />
     <ProjectKind Name="PrjKind" Text="Project78K0R" />
     <DeviceName Name="DeviceName" Fixed="" Text="RL78F13" />
     <MCUName Name="MCUName" Text="RL78F13_48pin" />
@@ -255,6 +255,9 @@
     <ADPCForPort12 Name="ADPCForPort12" Value="255" />
     <ADPCForPort13 Name="ADPCForPort13" Value="255" />
     <ADPCForPort14 Name="ADPCForPort14" Value="255" />
+    <RTC1HZ_Used Name="RTC1HZ_Used" Value="0" />
+    <TRDCLKTag Name="TRDCLKTag" Value="-1" />
+    <TRDCLKUSE0 Name="TRDCLKUSE0" Value="0" />
     <GroupName Name="GroupName" Text="groupc2" />
     <CodePath Name="CodePath" Text=".\" />
     <ReportType Name="ReportType" Text="Html" />
@@ -272,7 +275,23 @@
     <HasHotRam Name="HasHotRam" Text="" />
     <PrjVersion Name="PrjVersion" Text="1.2.0.1" />
     <LinkFileName Name="LinkFileName" Text="" />
-    <RTC1HZ_Used Name="RTC1HZ_Used" Value="0" />
+    <INTP4Used Name="INTP4Used" Text="false" />
+    <INTP5Used Name="INTP5Used" Text="false" />
+    <INTP6Used Name="INTP6Used" Text="false" />
+    <INTP7Used Name="INTP7Used" Text="false" />
+    <INTP8Used Name="INTP8Used" Text="false" />
+    <INTP9Used Name="INTP9Used" Text="false" />
+    <TO02_PWM Name="TO02_PWM" Text="false" />
+    <TO03_PWM Name="TO03_PWM" Text="false" />
+    <Ch3UseTI03 Name="Ch3UseTI03" Text="false" />
+    <Ch4UseTI03 Name="Ch4UseTI03" Text="false" />
+    <Ch5UseTI03 Name="Ch5UseTI03" Text="false" />
+    <INPT0USE0 Name="INPT0USE0" Text="false" />
+    <TRDINTP0LINK0 Name="TRDINTP0LINK0" Text="false" />
+    <TRDIOC1_PWM Name="TRDIOC1_PWM" Text="false" />
+    <TRDIOD1_PWM Name="TRDIOD1_PWM" Text="false" />
+    <INPT0USE1 Name="INPT0USE1" Text="false" />
+    <TRDINTP0LINK1 Name="TRDINTP0LINK1" Text="false" />
   </VAR>
   <DIR>
     <PIN>
@@ -304,8 +323,8 @@
           <P30 Name="P30/TI01/TO01/TRDIOD1/_SSI00/INTP2/SNZOUT0" TTL="true" PITHL="true" Pullup="true" AltFunc="P30" Point="I/O" />
           <P31 Name="P31/TI14/TO14/STOPST/INTP2" Pullup="true" AltFunc="P31" Point="I/O" />
           <P32 Name="P32/TI16/TO16/INTP7" Pullup="true" AltFunc="" Point="I/O" />
-          <P33 Name="P33/AVREFP/ANI00" AltFunc="" Point="I/O" />
-          <P34 Name="P34/AVREFM/ANI01" AltFunc="" Point="I/O" />
+          <P33 Name="P33/AVREFP/ANI00" AltFunc="ANALOG_0" Point="I/O" />
+          <P34 Name="P34/AVREFM/ANI01" AltFunc="ANALOG_1" Point="I/O" />
         </Port3>
         <Port4 Chip="RL78F13_30pin,RL78F13_32pin,RL78F13_48pin" Pullup="true">
           <P40 Name="P40/TOOL0" AltFunc="" Point="I/O" />
@@ -324,11 +343,11 @@
           <P73 Name="P73/ANI29/KR3/CRXD0/_SSI11/SNZOUT7" Chip="R5F10AGF,R5F10AGG,R5F10BGC,R5F10BGD,R5F10BGE,R5F10BGF,R5F10BGG" TTL="true" PITHL="true" AltFunc="" Point="I/O" />
         </Port7>
         <Port8 Chip="RL78F13_30pin,RL78F13_48pin,RL78F13_64pin,RL78F13_80pin">
-          <P80 Name="P80/ANI02/ANO0" AltFunc="" Point="I/O" />
-          <P81 Name="P81/ANI03/IVCMP00" AltFunc="" Point="I/O" />
-          <P82 Name="P82/ANI04/IVCMP01" AltFunc="" Point="I/O" />
-          <P83 Name="P83/ANI05/IVCMP02" AltFunc="" Point="I/O" />
-          <P84 Name="P84/ANI06/IVCMP03" AltFunc="" Point="I/O" />
+          <P80 Name="P80/ANI02/ANO0" AltFunc="ANI2" Point="I/O" />
+          <P81 Name="P81/ANI03/IVCMP00" AltFunc="ANALOG_3" Point="I/O" />
+          <P82 Name="P82/ANI04/IVCMP01" AltFunc="ANALOG_4" Point="I/O" />
+          <P83 Name="P83/ANI05/IVCMP02" AltFunc="ANALOG_5" Point="I/O" />
+          <P84 Name="P84/ANI06/IVCMP03" AltFunc="ANALOG_6" Point="I/O" />
           <P85 Name="P85/ANI07/IVREF0" AltFunc="" Point="I/O" />
           <P86 Name="P86/ANI08" AltFunc="" Point="I/O" />
           <P87 Name="P87/ANI09" AltFunc="" Point="I/O" />
@@ -607,7 +626,7 @@
         </IICA0>
       </Serial>
       <ADC>
-        <INTAD InUse="0" ISR="r_adc_interrupt" IsDMATrigger="true" />
+        <INTAD InUse="1" ISR="r_adc_interrupt" IsDMATrigger="true" />
       </ADC>
       <TAU>
         <TAU0>
@@ -640,14 +659,14 @@
         </TAU0>
         <TAU1>
           <Channel0>
-            <INTTM10 InUse="0" ISR="r_tau1_channel0_interrupt" />
+            <INTTM10 InUse="1" ISR="r_tau1_channel0_interrupt" />
           </Channel0>
           <Channel1>
             <INTTM11 InUse="0" ISR="r_tau1_channel1_interrupt" />
             <INTTM11H InUse="0" ISR="r_tau1_channel1_higher8bits_interrupt" />
           </Channel1>
           <Channel2>
-            <INTTM12 InUse="0" ISR="r_tau1_channel2_interrupt" />
+            <INTTM12 InUse="1" ISR="r_tau1_channel2_interrupt" />
           </Channel2>
           <Channel3>
             <INTTM13 InUse="0" ISR="r_tau1_channel3_interrupt" />
@@ -772,49 +791,49 @@
         <r_cg_port.h UserName="r_cg_port.h" LibName=".h" InUse="1" />
       </PORT>
       <INTC>
-        <r_cg_intc.c UserName="" LibName=".c" InUse="">
+        <r_cg_intc.c UserName="" LibName=".c" InUse="0">
           <Type R_INTC_Create="void R_INTC_Create(void)" R_INTCn_Start="void R_INTCn_Start(void)" R_INTCn_Stop="void R_INTCn_Stop(void)" R_KEY_Create="void R_KEY_Create(void)" R_KEY_Start="void R_KEY_Start(void)" R_KEY_Stop="void R_KEY_Stop(void)" />
           <INTP>
-            <R_INTC_Create UserName="R_INTC_Create" LibName="R_INTC_Create" InUse="" Init="2" InitMode="" />
+            <R_INTC_Create UserName="R_INTC_Create" LibName="R_INTC_Create" InUse="0" Init="2" InitMode="" />
             <INTP0>
-              <R_INTC0_Start UserName="R_INTC0_Start" LibName="R_INTCn_Start" InUse="" />
-              <R_INTC0_Stop UserName="R_INTC0_Stop" LibName="R_INTCn_Stop" InUse="" />
+              <R_INTC0_Start UserName="R_INTC0_Start" LibName="R_INTCn_Start" InUse="0" />
+              <R_INTC0_Stop UserName="R_INTC0_Stop" LibName="R_INTCn_Stop" InUse="0" />
             </INTP0>
             <INTP1>
-              <R_INTC1_Start UserName="R_INTC1_Start" LibName="R_INTCn_Start" InUse="" />
-              <R_INTC1_Stop UserName="R_INTC1_Stop" LibName="R_INTCn_Stop" InUse="" />
+              <R_INTC1_Start UserName="R_INTC1_Start" LibName="R_INTCn_Start" InUse="0" />
+              <R_INTC1_Stop UserName="R_INTC1_Stop" LibName="R_INTCn_Stop" InUse="0" />
             </INTP1>
             <INTP2 Chip="RL78F13_48pin,RL78F13_64pin,RL78F13_80pin">
-              <R_INTC2_Start UserName="R_INTC2_Start" LibName="R_INTCn_Start" InUse="" />
-              <R_INTC2_Stop UserName="R_INTC2_Stop" LibName="R_INTCn_Stop" InUse="" />
+              <R_INTC2_Start UserName="R_INTC2_Start" LibName="R_INTCn_Start" InUse="0" />
+              <R_INTC2_Stop UserName="R_INTC2_Stop" LibName="R_INTCn_Stop" InUse="0" />
             </INTP2>
             <INTP3 Chip="RL78F13_48pin,RL78F13_30pin,RL78F13_32pin,RL78F13_20pin" PIOR53="0">
-              <R_INTC3_Start UserName="R_INTC3_Start" LibName="R_INTCn_Start" InUse="" />
-              <R_INTC3_Stop UserName="R_INTC3_Stop" LibName="R_INTCn_Stop" InUse="" />
+              <R_INTC3_Start UserName="R_INTC3_Start" LibName="R_INTCn_Start" InUse="0" />
+              <R_INTC3_Stop UserName="R_INTC3_Stop" LibName="R_INTCn_Stop" InUse="0" />
             </INTP3>
             <INTP4>
-              <R_INTC4_Start UserName="R_INTC4_Start" LibName="R_INTCn_Start" InUse="" />
-              <R_INTC4_Stop UserName="R_INTC4_Stop" LibName="R_INTCn_Stop" InUse="" />
+              <R_INTC4_Start UserName="R_INTC4_Start" LibName="R_INTCn_Start" InUse="0" />
+              <R_INTC4_Stop UserName="R_INTC4_Stop" LibName="R_INTCn_Stop" InUse="0" />
             </INTP4>
             <INTP5 Chip="RL78F13_30pin,RL78F13_32pin,RL78F13_48pin,RL78F13_64pin,RL78F13_80pin">
-              <R_INTC5_Start UserName="R_INTC5_Start" LibName="R_INTCn_Start" InUse="" />
-              <R_INTC5_Stop UserName="R_INTC5_Stop" LibName="R_INTCn_Stop" InUse="" />
+              <R_INTC5_Start UserName="R_INTC5_Start" LibName="R_INTCn_Start" InUse="0" />
+              <R_INTC5_Stop UserName="R_INTC5_Stop" LibName="R_INTCn_Stop" InUse="0" />
             </INTP5>
             <INTP6 Chip="RL78F13_48pin,RL78F13_64pin,RL78F13_80pin">
-              <R_INTC6_Start UserName="R_INTC6_Start" LibName="R_INTCn_Start" InUse="" />
-              <R_INTC6_Stop UserName="R_INTC6_Stop" LibName="R_INTCn_Stop" InUse="" />
+              <R_INTC6_Start UserName="R_INTC6_Start" LibName="R_INTCn_Start" InUse="0" />
+              <R_INTC6_Stop UserName="R_INTC6_Stop" LibName="R_INTCn_Stop" InUse="0" />
             </INTP6>
             <INTP7 Chip="RL78F13_48pin,RL78F13_64pin,RL78F13_80pin">
-              <R_INTC7_Start UserName="R_INTC7_Start" LibName="R_INTCn_Start" InUse="" />
-              <R_INTC7_Stop UserName="R_INTC7_Stop" LibName="R_INTCn_Stop" InUse="" />
+              <R_INTC7_Start UserName="R_INTC7_Start" LibName="R_INTCn_Start" InUse="0" />
+              <R_INTC7_Stop UserName="R_INTC7_Stop" LibName="R_INTCn_Stop" InUse="0" />
             </INTP7>
             <INTP8 Chip="R5F10BGC,R5F10BGD,R5F10BGE,R5F10BGF,R5F10BGG,R5F10BLC,R5F10BLD,R5F10BLE,R5F10BLF,R5F10BLG,R5F10AGF,R5F10AGG,R5F10ALF,R5F10ALG,RL78F13_80pin">
-              <R_INTC8_Start UserName="R_INTC8_Start" LibName="R_INTCn_Start" InUse="" />
-              <R_INTC8_Stop UserName="R_INTC8_Stop" LibName="R_INTCn_Stop" InUse="" />
+              <R_INTC8_Start UserName="R_INTC8_Start" LibName="R_INTCn_Start" InUse="0" />
+              <R_INTC8_Stop UserName="R_INTC8_Stop" LibName="R_INTCn_Stop" InUse="0" />
             </INTP8>
             <INTP9 Chip="R5F10BGC,R5F10BGD,R5F10BGE,R5F10BGF,R5F10BGG,R5F10BLC,R5F10BLD,R5F10BLE,R5F10BLF,R5F10BLG,R5F10AGF,R5F10AGG,R5F10ALF,R5F10ALG,RL78F13_80pin">
-              <R_INTC9_Start UserName="R_INTC9_Start" LibName="R_INTCn_Start" InUse="" />
-              <R_INTC9_Stop UserName="R_INTC9_Stop" LibName="R_INTCn_Stop" InUse="" />
+              <R_INTC9_Start UserName="R_INTC9_Start" LibName="R_INTCn_Start" InUse="0" />
+              <R_INTC9_Stop UserName="R_INTC9_Stop" LibName="R_INTCn_Stop" InUse="0" />
             </INTP9>
           </INTP>
           <KEY Chip="RL78F13_48pin,RL78F13_64pin">
@@ -823,27 +842,27 @@
             <R_KEY_Stop UserName="R_KEY_Stop" LibName="R_KEY_Stop" InUse="" />
           </KEY>
         </r_cg_intc.c>
-        <r_cg_intc_user.c UserName="" LibName="_user.c" InUse="">
+        <r_cg_intc_user.c UserName="" LibName="_user.c" InUse="0">
           <Type R_INTC_Create_UserInit="void R_INTC_Create_UserInit(void)" r_intc0_interrupt="__interrupt static void r_intc0_interrupt(void)" r_intc1_interrupt="__interrupt static void r_intc1_interrupt(void)" r_intc2_interrupt="__interrupt static void r_intc2_interrupt(void)" r_intc3_interrupt="__interrupt static void r_intc3_interrupt(void)" r_intc4_interrupt="__interrupt static void r_intc4_interrupt(void)" r_intc5_interrupt="__interrupt static void r_intc5_interrupt(void)" r_intc6_interrupt="__interrupt static void r_intc6_interrupt(void)" r_intc7_interrupt="__interrupt static void r_intc7_interrupt(void)" r_intc8_interrupt="__interrupt static void r_intc8_interrupt(void)" r_intc9_interrupt="__interrupt static void r_intc9_interrupt(void)" r_intc10_interrupt="__interrupt static void r_intc10_interrupt(void)" r_intc11_interrupt="__interrupt static void r_intc11_interrupt(void)" R_KEY_Create_UserInit="void R_KEY_Create_UserInit(void)" r_key_interrupt="__interrupt static void r_key_interrupt(void)" />
           <INTP>
-            <R_INTC_Create_UserInit UserName="R_INTC_Create_UserInit" LibName="R_INTC_Create_UserInit" InUse="" />
-            <r_intc0_interrupt UserName="r_intc0_interrupt" LibName="r_intc0_interrupt" INTHandle="" InUse="" />
-            <r_intc1_interrupt UserName="r_intc1_interrupt" LibName="r_intc1_interrupt" INTHandle="" InUse="" />
-            <r_intc2_interrupt Chip="RL78F13_48pin,RL78F13_64pin,RL78F13_80pin" UserName="r_intc2_interrupt" LibName="r_intc2_interrupt" INTHandle="" InUse="" />
-            <r_intc3_interrupt Chip="RL78F13_48pin,RL78F13_30pin,RL78F13_32pin,RL78F13_20pin" PIOR53="0" UserName="r_intc3_interrupt" LibName="r_intc3_interrupt" INTHandle="" InUse="" />
-            <r_intc4_interrupt UserName="r_intc4_interrupt" LibName="r_intc4_interrupt" INTHandle="" InUse="" />
-            <r_intc5_interrupt Chip="RL78F13_30pin,RL78F13_32pin,RL78F13_48pin,RL78F13_64pin,RL78F13_80pin" UserName="r_intc5_interrupt" LibName="r_intc5_interrupt" INTHandle="" InUse="" />
-            <r_intc6_interrupt Chip="RL78F13_48pin,RL78F13_64pin,RL78F13_80pin" UserName="r_intc6_interrupt" LibName="r_intc6_interrupt" INTHandle="" InUse="" />
-            <r_intc7_interrupt Chip="RL78F13_48pin,RL78F13_64pin,RL78F13_80pin" UserName="r_intc7_interrupt" LibName="r_intc7_interrupt" INTHandle="" InUse="" />
-            <r_intc8_interrupt Chip="R5F10BGC,R5F10BGD,R5F10BGE,R5F10BGF,R5F10BGG,R5F10BLC,R5F10BLD,R5F10BLE,R5F10BLF,R5F10BLG,R5F10AGF,R5F10AGG,R5F10ALF,R5F10ALG,RL78F13_80pin" UserName="r_intc8_interrupt" LibName="r_intc8_interrupt" INTHandle="" InUse="" />
-            <r_intc9_interrupt Chip="R5F10BGC,R5F10BGD,R5F10BGE,R5F10BGF,R5F10BGG,R5F10BLC,R5F10BLD,R5F10BLE,R5F10BLF,R5F10BLG,R5F10AGF,R5F10AGG,R5F10ALF,R5F10ALG,RL78F13_80pin" UserName="r_intc9_interrupt" LibName="r_intc9_interrupt" INTHandle="" InUse="" />
+            <R_INTC_Create_UserInit UserName="R_INTC_Create_UserInit" LibName="R_INTC_Create_UserInit" InUse="0" />
+            <r_intc0_interrupt UserName="r_intc0_interrupt" LibName="r_intc0_interrupt" INTHandle="" InUse="0" />
+            <r_intc1_interrupt UserName="r_intc1_interrupt" LibName="r_intc1_interrupt" INTHandle="" InUse="0" />
+            <r_intc2_interrupt Chip="RL78F13_48pin,RL78F13_64pin,RL78F13_80pin" UserName="r_intc2_interrupt" LibName="r_intc2_interrupt" INTHandle="" InUse="0" />
+            <r_intc3_interrupt Chip="RL78F13_48pin,RL78F13_30pin,RL78F13_32pin,RL78F13_20pin" PIOR53="0" UserName="r_intc3_interrupt" LibName="r_intc3_interrupt" INTHandle="" InUse="0" />
+            <r_intc4_interrupt UserName="r_intc4_interrupt" LibName="r_intc4_interrupt" INTHandle="" InUse="0" />
+            <r_intc5_interrupt Chip="RL78F13_30pin,RL78F13_32pin,RL78F13_48pin,RL78F13_64pin,RL78F13_80pin" UserName="r_intc5_interrupt" LibName="r_intc5_interrupt" INTHandle="" InUse="0" />
+            <r_intc6_interrupt Chip="RL78F13_48pin,RL78F13_64pin,RL78F13_80pin" UserName="r_intc6_interrupt" LibName="r_intc6_interrupt" INTHandle="" InUse="0" />
+            <r_intc7_interrupt Chip="RL78F13_48pin,RL78F13_64pin,RL78F13_80pin" UserName="r_intc7_interrupt" LibName="r_intc7_interrupt" INTHandle="" InUse="0" />
+            <r_intc8_interrupt Chip="R5F10BGC,R5F10BGD,R5F10BGE,R5F10BGF,R5F10BGG,R5F10BLC,R5F10BLD,R5F10BLE,R5F10BLF,R5F10BLG,R5F10AGF,R5F10AGG,R5F10ALF,R5F10ALG,RL78F13_80pin" UserName="r_intc8_interrupt" LibName="r_intc8_interrupt" INTHandle="" InUse="0" />
+            <r_intc9_interrupt Chip="R5F10BGC,R5F10BGD,R5F10BGE,R5F10BGF,R5F10BGG,R5F10BLC,R5F10BLD,R5F10BLE,R5F10BLF,R5F10BLG,R5F10AGF,R5F10AGG,R5F10ALF,R5F10ALG,RL78F13_80pin" UserName="r_intc9_interrupt" LibName="r_intc9_interrupt" INTHandle="" InUse="0" />
           </INTP>
           <KEY Chip="RL78F13_48pin,RL78F13_64pin">
             <R_KEY_Create_UserInit UserName="R_KEY_Create_UserInit" LibName="R_KEY_Create_UserInit" InUse="" />
             <r_key_interrupt UserName="r_key_interrupt" LibName="r_key_interrupt" INTHandle="" InUse="" />
           </KEY>
         </r_cg_intc_user.c>
-        <r_cg_intc.h UserName="" LibName=".h" InUse="" />
+        <r_cg_intc.h UserName="" LibName=".h" InUse="0" />
       </INTC>
       <Serial>
         <r_cg_serial.c UserName="r_cg_serial.c" LibName=".c" InUse="">
@@ -1036,209 +1055,209 @@
         <r_cg_serial.h UserName="r_cg_serial.h" LibName=".h" InUse="" />
       </Serial>
       <ADC>
-        <r_cg_adc.c UserName="r_cg_adc.c" LibName=".c" InUse="">
+        <r_cg_adc.c UserName="r_cg_adc.c" LibName=".c" InUse="1">
           <Type R_ADC_Create="void R_ADC_Create(void)" R_ADC_Start="void R_ADC_Start(void)" R_ADC_Stop="void R_ADC_Stop(void)" R_ADC_Set_OperationOn="void R_ADC_Set_OperationOn(void)" R_ADC_Set_OperationOff="void R_ADC_Set_OperationOff(void)" R_ADC_Get_Result="void R_ADC_Get_Result(uint16_t * const buffer)" R_ADC_Get_Result_8bit="void R_ADC_Get_Result_8bit(uint8_t * const buffer)" R_ADC_Set_ADChannel="MD_STATUS R_ADC_Set_ADChannel(ad_channel_t channel)" R_ADC_Set_SnoozeOn="void R_ADC_Set_SnoozeOn(void)" R_ADC_Set_SnoozeOff="void R_ADC_Set_SnoozeOff(void)" R_ADC_Set_TestChannel="MD_STATUS R_ADC_Set_TestChannel(test_channel_t channel)" R_ADC_Set_PowerOff="void R_ADC_Set_PowerOff(void)" />
-          <R_ADC_Create UserName="" LibName="R_ADC_Create" InUse="" Init="1" InitMode="" />
-          <R_ADC_Start UserName="" LibName="R_ADC_Start" InUse="" />
-          <R_ADC_Stop UserName="" LibName="R_ADC_Stop" InUse="" />
-          <R_ADC_Set_OperationOn UserName="" LibName="R_ADC_Set_OperationOn" InUse="" />
-          <R_ADC_Set_OperationOff UserName="" LibName="R_ADC_Set_OperationOff" InUse="" />
-          <R_ADC_Get_Result UserName="" LibName="R_ADC_Get_Result" InUse="" />
-          <R_ADC_Get_Result_8bit UserName="" LibName="R_ADC_Get_Result_8bit" InUse="" />
-          <R_ADC_Set_ADChannel UserName="" LibName="R_ADC_Set_ADChannel" InUse="" />
-          <R_ADC_Set_SnoozeOn UserName="" LibName="R_ADC_Set_SnoozeOn" InUse="" />
-          <R_ADC_Set_SnoozeOff UserName="" LibName="R_ADC_Set_SnoozeOff" InUse="" />
-          <R_ADC_Set_TestChannel UserName="" LibName="R_ADC_Set_TestChannel" InUse="" />
-          <R_ADC_Set_PowerOff UserName="" LibName="R_ADC_Set_PowerOff" InUse="" />
+          <R_ADC_Create UserName="" LibName="R_ADC_Create" InUse="1" Init="1" InitMode="" />
+          <R_ADC_Start UserName="" LibName="R_ADC_Start" InUse="1" />
+          <R_ADC_Stop UserName="" LibName="R_ADC_Stop" InUse="1" />
+          <R_ADC_Set_OperationOn UserName="" LibName="R_ADC_Set_OperationOn" InUse="1" />
+          <R_ADC_Set_OperationOff UserName="" LibName="R_ADC_Set_OperationOff" InUse="1" />
+          <R_ADC_Get_Result UserName="" LibName="R_ADC_Get_Result" InUse="1" />
+          <R_ADC_Get_Result_8bit UserName="" LibName="R_ADC_Get_Result_8bit" InUse="0" />
+          <R_ADC_Set_ADChannel UserName="" LibName="R_ADC_Set_ADChannel" InUse="0" />
+          <R_ADC_Set_SnoozeOn UserName="" LibName="R_ADC_Set_SnoozeOn" InUse="0" />
+          <R_ADC_Set_SnoozeOff UserName="" LibName="R_ADC_Set_SnoozeOff" InUse="0" />
+          <R_ADC_Set_TestChannel UserName="" LibName="R_ADC_Set_TestChannel" InUse="0" />
+          <R_ADC_Set_PowerOff UserName="" LibName="R_ADC_Set_PowerOff" InUse="0" />
         </r_cg_adc.c>
-        <r_cg_adc_user.c UserName="" LibName="_user.c" InUse="">
+        <r_cg_adc_user.c UserName="" LibName="_user.c" InUse="1">
           <Type R_ADC_Create_UserInit="void R_ADC_Create_UserInit(void)" r_adc_interrupt="__interrupt static void r_adc_interrupt(void)" />
-          <R_ADC_Create_UserInit UserName="" LibName="R_ADC_Create_UserInit" InUse="" />
-          <r_adc_interrupt UserName="" INTHandle="" LibName="r_adc_interrupt" InUse="" />
+          <R_ADC_Create_UserInit UserName="" LibName="R_ADC_Create_UserInit" InUse="0" />
+          <r_adc_interrupt UserName="" INTHandle="" LibName="r_adc_interrupt" InUse="1" />
         </r_cg_adc_user.c>
-        <r_cg_adc.h UserName="" LibName=".h" InUse="" />
+        <r_cg_adc.h UserName="" LibName=".h" InUse="1" />
       </ADC>
       <TAU>
-        <r_cg_timer.c UserName="" LibName=".c" InUse="">
+        <r_cg_timer.c UserName="r_cg_timer.c" LibName=".c" InUse="1">
           <Type R_TAU_Create="void R_TAU_Create(void)" R_TAU_Set_PowerOff="void R_TAU_Set_PowerOff(void)" R_TAU_Channeln_Start="void R_TAU_Channeln_Start(void)" R_TAU_Channeln_Higher8bits_Start="void R_TAU_Channeln_Higher8bits_Start(void)" R_TAU_Channeln_Lower8bits_Start="void R_TAU_Channeln_Lower8bits_Start(void)" R_TAU_Channeln_Stop="void R_TAU_Channeln_Stop(void)" R_TAU_Channeln_Higher8bits_Stop="void R_TAU_Channeln_Higher8bits_Stop(void)" R_TAU_Channeln_Lower8bits_Stop="void R_TAU_Channeln_Lower8bits_Stop(void)" R_TAU_Channeln_Get_PulseWidth="void R_TAU_Channeln_Get_PulseWidth(uint32_t * const width)" R_TAU_Channeln_Set_SoftwareTriggerOn="void R_TAU_Channeln_Set_SoftwareTriggerOn(void)" R_WUTM_Create="void R_WUTM_Create(void)" R_WUTM_Start="void R_WUTM_Start(void)" R_WUTM_Stop="void R_WUTM_Stop(void)" R_WUTM_Set_PowerOff="void R_WUTM_Set_PowerOff(void)" />
           <TAU0>
-            <R_TAU0_Create UserName="" LibName="R_TAU_Create" InUse="" Init="1" InitMode="" />
-            <R_TAU0_Set_PowerOff UserName="" LibName="R_TAU_Set_PowerOff" InUse="" />
+            <R_TAU0_Create UserName="" LibName="R_TAU_Create" InUse="0" Init="1" InitMode="" />
+            <R_TAU0_Set_PowerOff UserName="" LibName="R_TAU_Set_PowerOff" InUse="0" />
             <Channel0 InUse="">
-              <R_TAU0_Channel0_Start UserName="" LibName="R_TAU_Channeln_Start" InUse="" />
-              <R_TAU0_Channel0_Stop UserName="" LibName="R_TAU_Channeln_Stop" InUse="" />
-              <R_TAU0_Channel0_Get_PulseWidth Chip="RL78F13_48pin,RL78F13_64pin" PIOR00="0" UserName="" LibName="R_TAU_Channeln_Get_PulseWidth" InUse="" />
-              <R_TAU0_Channel0_Set_SoftwareTriggerOn UserName="" LibName="R_TAU_Channeln_Set_SoftwareTriggerOn" InUse="" />
+              <R_TAU0_Channel0_Start UserName="" LibName="R_TAU_Channeln_Start" InUse="0" />
+              <R_TAU0_Channel0_Stop UserName="" LibName="R_TAU_Channeln_Stop" InUse="0" />
+              <R_TAU0_Channel0_Get_PulseWidth Chip="RL78F13_48pin,RL78F13_64pin" PIOR00="0" UserName="" LibName="R_TAU_Channeln_Get_PulseWidth" InUse="0" />
+              <R_TAU0_Channel0_Set_SoftwareTriggerOn UserName="" LibName="R_TAU_Channeln_Set_SoftwareTriggerOn" InUse="0" />
             </Channel0>
             <Channel1 InUse="">
-              <R_TAU0_Channel1_Start UserName="" LibName="R_TAU_Channeln_Start" InUse="" />
-              <R_TAU0_Channel1_Higher8bits_Start UserName="" LibName="R_TAU_Channeln_Higher8bits_Start" InUse="" />
-              <R_TAU0_Channel1_Lower8bits_Start UserName="" LibName="R_TAU_Channeln_Lower8bits_Start" InUse="" />
-              <R_TAU0_Channel1_Stop UserName="" LibName="R_TAU_Channeln_Stop" InUse="" />
-              <R_TAU0_Channel1_Higher8bits_Stop UserName="" LibName="R_TAU_Channeln_Higher8bits_Stop" InUse="" />
-              <R_TAU0_Channel1_Lower8bits_Stop UserName="" LibName="R_TAU_Channeln_Lower8bits_Stop" InUse="" />
-              <R_TAU0_Channel1_Get_PulseWidth UserName="" LibName="R_TAU_Channeln_Get_PulseWidth" InUse="" />
+              <R_TAU0_Channel1_Start UserName="" LibName="R_TAU_Channeln_Start" InUse="0" />
+              <R_TAU0_Channel1_Higher8bits_Start UserName="" LibName="R_TAU_Channeln_Higher8bits_Start" InUse="0" />
+              <R_TAU0_Channel1_Lower8bits_Start UserName="" LibName="R_TAU_Channeln_Lower8bits_Start" InUse="0" />
+              <R_TAU0_Channel1_Stop UserName="" LibName="R_TAU_Channeln_Stop" InUse="0" />
+              <R_TAU0_Channel1_Higher8bits_Stop UserName="" LibName="R_TAU_Channeln_Higher8bits_Stop" InUse="0" />
+              <R_TAU0_Channel1_Lower8bits_Stop UserName="" LibName="R_TAU_Channeln_Lower8bits_Stop" InUse="0" />
+              <R_TAU0_Channel1_Get_PulseWidth UserName="" LibName="R_TAU_Channeln_Get_PulseWidth" InUse="0" />
             </Channel1>
             <Channel2 InUse="">
-              <R_TAU0_Channel2_Start UserName="" LibName="R_TAU_Channeln_Start" InUse="" />
-              <R_TAU0_Channel2_Stop UserName="" LibName="R_TAU_Channeln_Stop" InUse="" />
-              <R_TAU0_Channel2_Get_PulseWidth Chip="RL78F13_48pin,RL78F13_64pin" PIOR02="0" UserName="" LibName="R_TAU_Channeln_Get_PulseWidth" InUse="" />
-              <R_TAU0_Channel2_Set_SoftwareTriggerOn UserName="" LibName="R_TAU_Channeln_Set_SoftwareTriggerOn" InUse="" />
+              <R_TAU0_Channel2_Start UserName="" LibName="R_TAU_Channeln_Start" InUse="0" />
+              <R_TAU0_Channel2_Stop UserName="" LibName="R_TAU_Channeln_Stop" InUse="0" />
+              <R_TAU0_Channel2_Get_PulseWidth Chip="RL78F13_48pin,RL78F13_64pin" PIOR02="0" UserName="" LibName="R_TAU_Channeln_Get_PulseWidth" InUse="0" />
+              <R_TAU0_Channel2_Set_SoftwareTriggerOn UserName="" LibName="R_TAU_Channeln_Set_SoftwareTriggerOn" InUse="0" />
             </Channel2>
             <Channel3 InUse="">
-              <R_TAU0_Channel3_Start UserName="" LibName="R_TAU_Channeln_Start" InUse="" />
-              <R_TAU0_Channel3_Higher8bits_Start UserName="" LibName="R_TAU_Channeln_Higher8bits_Start" InUse="" />
-              <R_TAU0_Channel3_Lower8bits_Start UserName="" LibName="R_TAU_Channeln_Lower8bits_Start" InUse="" />
-              <R_TAU0_Channel3_Stop UserName="" LibName="R_TAU_Channeln_Stop" InUse="" />
-              <R_TAU0_Channel3_Higher8bits_Stop UserName="" LibName="R_TAU_Channeln_Higher8bits_Stop" InUse="" />
-              <R_TAU0_Channel3_Lower8bits_Stop UserName="" LibName="R_TAU_Channeln_Lower8bits_Stop" InUse="" />
-              <R_TAU0_Channel3_Get_PulseWidth Chip="RL78F13_48pin,RL78F13_64pin,RL78F13_80pin" PIOR03="0" UserName="" LibName="R_TAU_Channeln_Get_PulseWidth" InUse="" />
+              <R_TAU0_Channel3_Start UserName="" LibName="R_TAU_Channeln_Start" InUse="0" />
+              <R_TAU0_Channel3_Higher8bits_Start UserName="" LibName="R_TAU_Channeln_Higher8bits_Start" InUse="0" />
+              <R_TAU0_Channel3_Lower8bits_Start UserName="" LibName="R_TAU_Channeln_Lower8bits_Start" InUse="0" />
+              <R_TAU0_Channel3_Stop UserName="" LibName="R_TAU_Channeln_Stop" InUse="0" />
+              <R_TAU0_Channel3_Higher8bits_Stop UserName="" LibName="R_TAU_Channeln_Higher8bits_Stop" InUse="0" />
+              <R_TAU0_Channel3_Lower8bits_Stop UserName="" LibName="R_TAU_Channeln_Lower8bits_Stop" InUse="0" />
+              <R_TAU0_Channel3_Get_PulseWidth Chip="RL78F13_48pin,RL78F13_64pin,RL78F13_80pin" PIOR03="0" UserName="" LibName="R_TAU_Channeln_Get_PulseWidth" InUse="0" />
             </Channel3>
             <Channel4 InUse="">
-              <R_TAU0_Channel4_Start UserName="" LibName="R_TAU_Channeln_Start" InUse="" />
-              <R_TAU0_Channel4_Stop UserName="" LibName="R_TAU_Channeln_Stop" InUse="" />
-              <R_TAU0_Channel4_Get_PulseWidth Chip="RL78F13_48pin,RL78F13_64pin" UserName="" LibName="R_TAU_Channeln_Get_PulseWidth" InUse="" />
-              <R_TAU0_Channel4_Set_SoftwareTriggerOn UserName="" LibName="R_TAU_Channeln_Set_SoftwareTriggerOn" InUse="" />
+              <R_TAU0_Channel4_Start UserName="" LibName="R_TAU_Channeln_Start" InUse="0" />
+              <R_TAU0_Channel4_Stop UserName="" LibName="R_TAU_Channeln_Stop" InUse="0" />
+              <R_TAU0_Channel4_Get_PulseWidth Chip="RL78F13_48pin,RL78F13_64pin" UserName="" LibName="R_TAU_Channeln_Get_PulseWidth" InUse="0" />
+              <R_TAU0_Channel4_Set_SoftwareTriggerOn UserName="" LibName="R_TAU_Channeln_Set_SoftwareTriggerOn" InUse="0" />
             </Channel4>
             <Channel5 InUse="">
-              <R_TAU0_Channel5_Start UserName="" LibName="R_TAU_Channeln_Start" InUse="" />
-              <R_TAU0_Channel5_Stop UserName="" LibName="R_TAU_Channeln_Stop" InUse="" />
-              <R_TAU0_Channel5_Get_PulseWidth Chip="RL78F13_48pin,RL78F13_64pin,RL78F13_80pin" UserName="" LibName="R_TAU_Channeln_Get_PulseWidth" InUse="" />
+              <R_TAU0_Channel5_Start UserName="" LibName="R_TAU_Channeln_Start" InUse="0" />
+              <R_TAU0_Channel5_Stop UserName="" LibName="R_TAU_Channeln_Stop" InUse="0" />
+              <R_TAU0_Channel5_Get_PulseWidth Chip="RL78F13_48pin,RL78F13_64pin,RL78F13_80pin" UserName="" LibName="R_TAU_Channeln_Get_PulseWidth" InUse="0" />
             </Channel5>
             <Channel6 InUse="">
-              <R_TAU0_Channel6_Start UserName="" LibName="R_TAU_Channeln_Start" InUse="" />
-              <R_TAU0_Channel6_Stop UserName="" LibName="R_TAU_Channeln_Stop" InUse="" />
-              <R_TAU0_Channel6_Get_PulseWidth UserName="" LibName="R_TAU_Channeln_Get_PulseWidth" InUse="" />
-              <R_TAU0_Channel6_Set_SoftwareTriggerOn Chip="RL78F13_48pin,RL78F13_64pin" PIOR17="0" UserName="" LibName="R_TAU_Channeln_Set_SoftwareTriggerOn" InUse="" />
+              <R_TAU0_Channel6_Start UserName="" LibName="R_TAU_Channeln_Start" InUse="0" />
+              <R_TAU0_Channel6_Stop UserName="" LibName="R_TAU_Channeln_Stop" InUse="0" />
+              <R_TAU0_Channel6_Get_PulseWidth UserName="" LibName="R_TAU_Channeln_Get_PulseWidth" InUse="0" />
+              <R_TAU0_Channel6_Set_SoftwareTriggerOn Chip="RL78F13_48pin,RL78F13_64pin" PIOR17="0" UserName="" LibName="R_TAU_Channeln_Set_SoftwareTriggerOn" InUse="0" />
             </Channel6>
             <Channel7 InUse="">
-              <R_TAU0_Channel7_Start UserName="" LibName="R_TAU_Channeln_Start" InUse="" />
-              <R_TAU0_Channel7_Stop UserName="" LibName="R_TAU_Channeln_Stop" InUse="" />
-              <R_TAU0_Channel7_Get_PulseWidth UserName="" LibName="R_TAU_Channeln_Get_PulseWidth" InUse="" />
+              <R_TAU0_Channel7_Start UserName="" LibName="R_TAU_Channeln_Start" InUse="0" />
+              <R_TAU0_Channel7_Stop UserName="" LibName="R_TAU_Channeln_Stop" InUse="0" />
+              <R_TAU0_Channel7_Get_PulseWidth UserName="" LibName="R_TAU_Channeln_Get_PulseWidth" InUse="0" />
             </Channel7>
           </TAU0>
           <TAU1 Chip="groupb,groupc1,groupc2">
-            <R_TAU1_Create UserName="" LibName="R_TAU_Create" InUse="" Init="1" InitMode="" />
-            <R_TAU1_Set_PowerOff UserName="" LibName="R_TAU_Set_PowerOff" InUse="" />
+            <R_TAU1_Create UserName="" LibName="R_TAU_Create" InUse="1" Init="1" InitMode="" />
+            <R_TAU1_Set_PowerOff UserName="" LibName="R_TAU_Set_PowerOff" InUse="0" />
             <Channel0 InUse="">
-              <R_TAU1_Channel0_Start UserName="" LibName="R_TAU_Channeln_Start" InUse="" />
-              <R_TAU1_Channel0_Stop UserName="" LibName="R_TAU_Channeln_Stop" InUse="" />
-              <R_TAU1_Channel0_Get_PulseWidth Chip="R5F10ALF,R5F10ALG,R5F10AGF,R5F10AGG,R5F10BLC,R5F10BLD,R5F10BLE,R5F10BLF,R5F10BLG,R5F10BGC,R5F10BGD,R5F10BGE,R5F10BGF,R5F10BGG,R5F10BBC,R5F10BBD,R5F10BBE,R5F10BBF,R5F10BBG,R5F10BAC,R5F10BAD,R5F10BAE,R5F10BAF,R5F10BAG" UserName="" LibName="R_TAU_Channeln_Get_PulseWidth" InUse="" />
-              <R_TAU1_Channel0_Set_SoftwareTriggerOn UserName="" LibName="R_TAU_Channeln_Set_SoftwareTriggerOn" InUse="" />
+              <R_TAU1_Channel0_Start UserName="" LibName="R_TAU_Channeln_Start" InUse="1" />
+              <R_TAU1_Channel0_Stop UserName="" LibName="R_TAU_Channeln_Stop" InUse="1" />
+              <R_TAU1_Channel0_Get_PulseWidth Chip="R5F10ALF,R5F10ALG,R5F10AGF,R5F10AGG,R5F10BLC,R5F10BLD,R5F10BLE,R5F10BLF,R5F10BLG,R5F10BGC,R5F10BGD,R5F10BGE,R5F10BGF,R5F10BGG,R5F10BBC,R5F10BBD,R5F10BBE,R5F10BBF,R5F10BBG,R5F10BAC,R5F10BAD,R5F10BAE,R5F10BAF,R5F10BAG" UserName="" LibName="R_TAU_Channeln_Get_PulseWidth" InUse="0" />
+              <R_TAU1_Channel0_Set_SoftwareTriggerOn UserName="" LibName="R_TAU_Channeln_Set_SoftwareTriggerOn" InUse="0" />
             </Channel0>
             <Channel1 InUse="">
-              <R_TAU1_Channel1_Start UserName="" LibName="R_TAU_Channeln_Start" InUse="" />
-              <R_TAU1_Channel1_Higher8bits_Start UserName="" LibName="R_TAU_Channeln_Higher8bits_Start" InUse="" />
-              <R_TAU1_Channel1_Lower8bits_Start UserName="" LibName="R_TAU_Channeln_Lower8bits_Start" InUse="" />
-              <R_TAU1_Channel1_Stop UserName="" LibName="R_TAU_Channeln_Stop" InUse="" />
-              <R_TAU1_Channel1_Higher8bits_Stop UserName="" LibName="R_TAU_Channeln_Higher8bits_Stop" InUse="" />
-              <R_TAU1_Channel1_Lower8bits_Stop UserName="" LibName="R_TAU_Channeln_Lower8bits_Stop" InUse="" />
-              <R_TAU1_Channel1_Get_PulseWidth Chip="R5F10ALF,R5F10ALG,R5F10AGF,R5F10AGG,R5F10BLC,R5F10BLD,R5F10BLE,R5F10BLF,R5F10BLG,R5F10BGC,R5F10BGD,R5F10BGE,R5F10BGF,R5F10BGG,R5F10BBC,R5F10BBD,R5F10BBE,R5F10BBF,R5F10BBG,R5F10BAC,R5F10BAD,R5F10BAE,R5F10BAF,R5F10BAG" UserName="" LibName="R_TAU_Channeln_Get_PulseWidth" InUse="" />
+              <R_TAU1_Channel1_Start UserName="" LibName="R_TAU_Channeln_Start" InUse="0" />
+              <R_TAU1_Channel1_Higher8bits_Start UserName="" LibName="R_TAU_Channeln_Higher8bits_Start" InUse="0" />
+              <R_TAU1_Channel1_Lower8bits_Start UserName="" LibName="R_TAU_Channeln_Lower8bits_Start" InUse="0" />
+              <R_TAU1_Channel1_Stop UserName="" LibName="R_TAU_Channeln_Stop" InUse="0" />
+              <R_TAU1_Channel1_Higher8bits_Stop UserName="" LibName="R_TAU_Channeln_Higher8bits_Stop" InUse="0" />
+              <R_TAU1_Channel1_Lower8bits_Stop UserName="" LibName="R_TAU_Channeln_Lower8bits_Stop" InUse="0" />
+              <R_TAU1_Channel1_Get_PulseWidth Chip="R5F10ALF,R5F10ALG,R5F10AGF,R5F10AGG,R5F10BLC,R5F10BLD,R5F10BLE,R5F10BLF,R5F10BLG,R5F10BGC,R5F10BGD,R5F10BGE,R5F10BGF,R5F10BGG,R5F10BBC,R5F10BBD,R5F10BBE,R5F10BBF,R5F10BBG,R5F10BAC,R5F10BAD,R5F10BAE,R5F10BAF,R5F10BAG" UserName="" LibName="R_TAU_Channeln_Get_PulseWidth" InUse="0" />
             </Channel1>
             <Channel2 InUse="">
-              <R_TAU1_Channel2_Start UserName="" LibName="R_TAU_Channeln_Start" InUse="" />
-              <R_TAU1_Channel2_Stop UserName="" LibName="R_TAU_Channeln_Stop" InUse="" />
-              <R_TAU1_Channel2_Get_PulseWidth Chip="R5F10ALF,R5F10ALG,R5F10AGF,R5F10AGG,R5F10BLC,R5F10BLD,R5F10BLE,R5F10BLF,R5F10BLG,R5F10BGC,R5F10BGD,R5F10BGE,R5F10BGF,R5F10BGG,R5F10BBC,R5F10BBD,R5F10BBE,R5F10BBF,R5F10BBG,R5F10BAC,R5F10BAD,R5F10BAE,R5F10BAF,R5F10BAG" UserName="" LibName="R_TAU_Channeln_Get_PulseWidth" InUse="" />
-              <R_TAU1_Channel2_Set_SoftwareTriggerOn UserName="" LibName="R_TAU_Channeln_Set_SoftwareTriggerOn" InUse="" />
+              <R_TAU1_Channel2_Start UserName="" LibName="R_TAU_Channeln_Start" InUse="1" />
+              <R_TAU1_Channel2_Stop UserName="" LibName="R_TAU_Channeln_Stop" InUse="1" />
+              <R_TAU1_Channel2_Get_PulseWidth Chip="R5F10ALF,R5F10ALG,R5F10AGF,R5F10AGG,R5F10BLC,R5F10BLD,R5F10BLE,R5F10BLF,R5F10BLG,R5F10BGC,R5F10BGD,R5F10BGE,R5F10BGF,R5F10BGG,R5F10BBC,R5F10BBD,R5F10BBE,R5F10BBF,R5F10BBG,R5F10BAC,R5F10BAD,R5F10BAE,R5F10BAF,R5F10BAG" UserName="" LibName="R_TAU_Channeln_Get_PulseWidth" InUse="0" />
+              <R_TAU1_Channel2_Set_SoftwareTriggerOn UserName="" LibName="R_TAU_Channeln_Set_SoftwareTriggerOn" InUse="0" />
             </Channel2>
             <Channel3 InUse="">
-              <R_TAU1_Channel3_Start UserName="" LibName="R_TAU_Channeln_Start" InUse="" />
-              <R_TAU1_Channel3_Higher8bits_Start UserName="" LibName="R_TAU_Channeln_Higher8bits_Start" InUse="" />
-              <R_TAU1_Channel3_Lower8bits_Start UserName="" LibName="R_TAU_Channeln_Lower8bits_Start" InUse="" />
-              <R_TAU1_Channel3_Stop UserName="" LibName="R_TAU_Channeln_Stop" InUse="" />
-              <R_TAU1_Channel3_Higher8bits_Stop UserName="" LibName="R_TAU_Channeln_Higher8bits_Stop" InUse="" />
-              <R_TAU1_Channel3_Lower8bits_Stop UserName="" LibName="R_TAU_Channeln_Lower8bits_Stop" InUse="" />
-              <R_TAU1_Channel3_Get_PulseWidth Chip="R5F10ALF,R5F10ALG,R5F10AGF,R5F10AGG,R5F10BLC,R5F10BLD,R5F10BLE,R5F10BLF,R5F10BLG,R5F10BGC,R5F10BGD,R5F10BGE,R5F10BGF,R5F10BGG,R5F10BBC,R5F10BBD,R5F10BBE,R5F10BBF,R5F10BBG,R5F10BAC,R5F10BAD,R5F10BAE,R5F10BAF,R5F10BAG" UserName="" LibName="R_TAU_Channeln_Get_PulseWidth" InUse="" />
+              <R_TAU1_Channel3_Start UserName="" LibName="R_TAU_Channeln_Start" InUse="0" />
+              <R_TAU1_Channel3_Higher8bits_Start UserName="" LibName="R_TAU_Channeln_Higher8bits_Start" InUse="0" />
+              <R_TAU1_Channel3_Lower8bits_Start UserName="" LibName="R_TAU_Channeln_Lower8bits_Start" InUse="0" />
+              <R_TAU1_Channel3_Stop UserName="" LibName="R_TAU_Channeln_Stop" InUse="0" />
+              <R_TAU1_Channel3_Higher8bits_Stop UserName="" LibName="R_TAU_Channeln_Higher8bits_Stop" InUse="0" />
+              <R_TAU1_Channel3_Lower8bits_Stop UserName="" LibName="R_TAU_Channeln_Lower8bits_Stop" InUse="0" />
+              <R_TAU1_Channel3_Get_PulseWidth Chip="R5F10ALF,R5F10ALG,R5F10AGF,R5F10AGG,R5F10BLC,R5F10BLD,R5F10BLE,R5F10BLF,R5F10BLG,R5F10BGC,R5F10BGD,R5F10BGE,R5F10BGF,R5F10BGG,R5F10BBC,R5F10BBD,R5F10BBE,R5F10BBF,R5F10BBG,R5F10BAC,R5F10BAD,R5F10BAE,R5F10BAF,R5F10BAG" UserName="" LibName="R_TAU_Channeln_Get_PulseWidth" InUse="0" />
             </Channel3>
           </TAU1>
           <TMRJ0 InUse="">
-            <R_TMR_RJ0_Create UserName="" LibName="R_TMR_RJn_Create" InUse="" Init="2" InitMode="" />
-            <R_TMR_RJ0_Start UserName="" LibName="R_TMR_RJn_Start" InUse="" />
-            <R_TMR_RJ0_Stop UserName="" LibName="R_TMR_RJn_Stop" InUse="" />
-            <R_TMR_RJ0_Get_PulseWidth Chip="RL78F13_80pin,RL78F13_64pin,RL78F13_48pin,RL78F13_32pin,RL78F13_30pin" UserName="" LibName="R_TMR_RJn_Get_PulseWidth" InUse="" />
-            <R_TMR_RJ0_Set_PowerOff UserName="" LibName="R_TMR_RJn_Set_PowerOff" InUse="" />
+            <R_TMR_RJ0_Create UserName="" LibName="R_TMR_RJn_Create" InUse="0" Init="2" InitMode="" />
+            <R_TMR_RJ0_Start UserName="" LibName="R_TMR_RJn_Start" InUse="0" />
+            <R_TMR_RJ0_Stop UserName="" LibName="R_TMR_RJn_Stop" InUse="0" />
+            <R_TMR_RJ0_Get_PulseWidth Chip="RL78F13_80pin,RL78F13_64pin,RL78F13_48pin,RL78F13_32pin,RL78F13_30pin" UserName="" LibName="R_TMR_RJn_Get_PulseWidth" InUse="0" />
+            <R_TMR_RJ0_Set_PowerOff UserName="" LibName="R_TMR_RJn_Set_PowerOff" InUse="0" />
           </TMRJ0>
           <TMRD0 InUse="">
-            <R_TMR_RD0_Create UserName="" LibName="R_TMR_RDn_Create" InUse="" Init="2" InitMode="" />
-            <R_TMR_RD0_Start UserName="" LibName="R_TMR_RDn_Start" InUse="" />
-            <R_TMR_RD0_Stop UserName="" LibName="R_TMR_RDn_Stop" InUse="" />
-            <R_TMR_RD0_Get_PulseWidth UserName="" LibName="R_TMR_RDn_Get_PulseWidth" InUse="" />
-            <R_TMR_RD0_Set_PowerOff UserName="" LibName="R_TMR_RDn_Set_PowerOff" InUse="" />
-            <R_TMR_RD0_ForcedOutput_Start UserName="" LibName="R_TMR_RDn_ForcedOutput_Start" InUse="" />
-            <R_TMR_RD0_ForcedOutput_Stop UserName="" LibName="R_TMR_RDn_ForcedOutput_Stop" InUse="" />
+            <R_TMR_RD0_Create UserName="" LibName="R_TMR_RDn_Create" InUse="0" Init="2" InitMode="" />
+            <R_TMR_RD0_Start UserName="" LibName="R_TMR_RDn_Start" InUse="0" />
+            <R_TMR_RD0_Stop UserName="" LibName="R_TMR_RDn_Stop" InUse="0" />
+            <R_TMR_RD0_Get_PulseWidth UserName="" LibName="R_TMR_RDn_Get_PulseWidth" InUse="0" />
+            <R_TMR_RD0_Set_PowerOff UserName="" LibName="R_TMR_RDn_Set_PowerOff" InUse="0" />
+            <R_TMR_RD0_ForcedOutput_Start UserName="" LibName="R_TMR_RDn_ForcedOutput_Start" InUse="0" />
+            <R_TMR_RD0_ForcedOutput_Stop UserName="" LibName="R_TMR_RDn_ForcedOutput_Stop" InUse="0" />
           </TMRD0>
           <TMRD1 InUse="">
-            <R_TMR_RD1_Create UserName="" LibName="R_TMR_RDn_Create" InUse="" Init="2" InitMode="" />
-            <R_TMR_RD1_Start UserName="" LibName="R_TMR_RDn_Start" InUse="" />
-            <R_TMR_RD1_Stop UserName="" LibName="R_TMR_RDn_Stop" InUse="" />
-            <R_TMR_RD1_Get_PulseWidth UserName="" LibName="R_TMR_RDn_Get_PulseWidth" InUse="" />
-            <R_TMR_RD1_Set_PowerOff UserName="" LibName="R_TMR_RDn_Set_PowerOff" InUse="" />
-            <R_TMR_RD1_ForcedOutput_Start UserName="" LibName="R_TMR_RDn_ForcedOutput_Start" InUse="" />
-            <R_TMR_RD1_ForcedOutput_Stop UserName="" LibName="R_TMR_RDn_ForcedOutput_Stop" InUse="" />
+            <R_TMR_RD1_Create UserName="" LibName="R_TMR_RDn_Create" InUse="0" Init="2" InitMode="" />
+            <R_TMR_RD1_Start UserName="" LibName="R_TMR_RDn_Start" InUse="0" />
+            <R_TMR_RD1_Stop UserName="" LibName="R_TMR_RDn_Stop" InUse="0" />
+            <R_TMR_RD1_Get_PulseWidth UserName="" LibName="R_TMR_RDn_Get_PulseWidth" InUse="0" />
+            <R_TMR_RD1_Set_PowerOff UserName="" LibName="R_TMR_RDn_Set_PowerOff" InUse="0" />
+            <R_TMR_RD1_ForcedOutput_Start UserName="" LibName="R_TMR_RDn_ForcedOutput_Start" InUse="0" />
+            <R_TMR_RD1_ForcedOutput_Stop UserName="" LibName="R_TMR_RDn_ForcedOutput_Stop" InUse="0" />
           </TMRD1>
         </r_cg_timer.c>
-        <r_cg_timer_user.c UserName="" LibName="_user.c" InUse="">
+        <r_cg_timer_user.c UserName="r_cg_timer_user.c" LibName="_user.c" InUse="1">
           <Type R_TAU_Create_UserInit="void R_TAUn_Create_UserInit(void)" r_tau_channeln_interrupt="__interrupt static void r_tau_channeln_interrupt(void)" r_tau_channeln_higher8bits_interrupt="__interrupt static void r_tau_channeln_higher8bits_interrupt(void)" R_WUTM_Create_UserInit="void R_WUTM_Create_UserInit(void)" r_wutm_interrupt="__interrupt static void r_wutm_interrupt(void)" />
           <TAU0>
-            <R_TAU0_Create_UserInit UserName="" LibName="R_TAU_Create_UserInit" InUse="" />
+            <R_TAU0_Create_UserInit UserName="" LibName="R_TAU_Create_UserInit" InUse="0" />
             <Channel0 InUse="">
-              <r_tau0_channel0_interrupt UserName="" INTHandle="" LibName="r_tau_channeln_interrupt" InUse="" />
+              <r_tau0_channel0_interrupt UserName="" INTHandle="" LibName="r_tau_channeln_interrupt" InUse="0" />
             </Channel0>
             <Channel1 InUse="">
-              <r_tau0_channel1_interrupt UserName="" INTHandle="" LibName="r_tau_channeln_interrupt" InUse="" />
-              <r_tau0_channel1_higher8bits_interrupt UserName="" INTHandle="" LibName="r_tau_channeln_higher8bits_interrupt" InUse="" />
+              <r_tau0_channel1_interrupt UserName="" INTHandle="" LibName="r_tau_channeln_interrupt" InUse="0" />
+              <r_tau0_channel1_higher8bits_interrupt UserName="" INTHandle="" LibName="r_tau_channeln_higher8bits_interrupt" InUse="0" />
             </Channel1>
             <Channel2 InUse="">
-              <r_tau0_channel2_interrupt UserName="" INTHandle="" LibName="r_tau_channeln_interrupt" InUse="" />
+              <r_tau0_channel2_interrupt UserName="" INTHandle="" LibName="r_tau_channeln_interrupt" InUse="0" />
             </Channel2>
             <Channel3 InUse="">
-              <r_tau0_channel3_interrupt UserName="" INTHandle="" LibName="r_tau_channeln_interrupt" InUse="" />
-              <r_tau0_channel3_higher8bits_interrupt UserName="" INTHandle="" LibName="r_tau_channeln_higher8bits_interrupt" InUse="" />
+              <r_tau0_channel3_interrupt UserName="" INTHandle="" LibName="r_tau_channeln_interrupt" InUse="0" />
+              <r_tau0_channel3_higher8bits_interrupt UserName="" INTHandle="" LibName="r_tau_channeln_higher8bits_interrupt" InUse="0" />
             </Channel3>
             <Channel4 InUse="">
-              <r_tau0_channel4_interrupt UserName="" INTHandle="" LibName="r_tau_channeln_interrupt" InUse="" />
+              <r_tau0_channel4_interrupt UserName="" INTHandle="" LibName="r_tau_channeln_interrupt" InUse="0" />
             </Channel4>
             <Channel5 InUse="">
-              <r_tau0_channel5_interrupt UserName="" INTHandle="" LibName="r_tau_channeln_interrupt" InUse="" />
+              <r_tau0_channel5_interrupt UserName="" INTHandle="" LibName="r_tau_channeln_interrupt" InUse="0" />
             </Channel5>
             <Channel6 InUse="">
-              <r_tau0_channel6_interrupt UserName="" INTHandle="" LibName="r_tau_channeln_interrupt" InUse="" />
+              <r_tau0_channel6_interrupt UserName="" INTHandle="" LibName="r_tau_channeln_interrupt" InUse="0" />
             </Channel6>
             <Channel7 InUse="">
-              <r_tau0_channel7_interrupt UserName="" INTHandle="" LibName="r_tau_channeln_interrupt" InUse="" />
+              <r_tau0_channel7_interrupt UserName="" INTHandle="" LibName="r_tau_channeln_interrupt" InUse="0" />
             </Channel7>
           </TAU0>
           <TAU1 Chip="groupb,groupc1,groupc2">
-            <R_TAU1_Create_UserInit UserName="" LibName="R_TAU_Create_UserInit" InUse="" />
+            <R_TAU1_Create_UserInit UserName="" LibName="R_TAU_Create_UserInit" InUse="0" />
             <Channel0 InUse="">
-              <r_tau1_channel0_interrupt UserName="" INTHandle="" LibName="r_tau_channeln_interrupt" InUse="" />
+              <r_tau1_channel0_interrupt UserName="r_tau1_channel0_interrupt" INTHandle="" LibName="r_tau_channeln_interrupt" InUse="1" />
             </Channel0>
             <Channel1 InUse="">
-              <r_tau1_channel1_interrupt UserName="" INTHandle="" LibName="r_tau_channeln_interrupt" InUse="" />
-              <r_tau1_channel1_higher8bits_interrupt UserName="" INTHandle="" LibName="r_tau_channeln_higher8bits_interrupt" InUse="" />
+              <r_tau1_channel1_interrupt UserName="" INTHandle="" LibName="r_tau_channeln_interrupt" InUse="0" />
+              <r_tau1_channel1_higher8bits_interrupt UserName="" INTHandle="" LibName="r_tau_channeln_higher8bits_interrupt" InUse="0" />
             </Channel1>
             <Channel2 InUse="">
-              <r_tau1_channel2_interrupt UserName="" INTHandle="" LibName="r_tau_channeln_interrupt" InUse="" />
+              <r_tau1_channel2_interrupt UserName="r_tau1_channel2_interrupt" INTHandle="" LibName="r_tau_channeln_interrupt" InUse="1" />
             </Channel2>
             <Channel3 InUse="">
-              <r_tau1_channel3_interrupt UserName="" INTHandle="" LibName="r_tau_channeln_interrupt" InUse="" />
-              <r_tau1_channel3_higher8bits_interrupt UserName="" INTHandle="" LibName="r_tau_channeln_higher8bits_interrupt" InUse="" />
+              <r_tau1_channel3_interrupt UserName="" INTHandle="" LibName="r_tau_channeln_interrupt" InUse="0" />
+              <r_tau1_channel3_higher8bits_interrupt UserName="" INTHandle="" LibName="r_tau_channeln_higher8bits_interrupt" InUse="0" />
             </Channel3>
           </TAU1>
           <TMRJ0 InUse="">
-            <R_TMR_RJ0_Create_UserInit UserName="" LibName="R_TMR_RJn_Create_UserInit" InUse="" />
-            <r_tmr_rj0_interrupt UserName="" LibName="r_tmr_rjn_interrupt" INTHandle="" InUse="" />
+            <R_TMR_RJ0_Create_UserInit UserName="" LibName="R_TMR_RJn_Create_UserInit" InUse="0" />
+            <r_tmr_rj0_interrupt UserName="" LibName="r_tmr_rjn_interrupt" INTHandle="" InUse="0" />
           </TMRJ0>
           <TMRD0 InUse="">
-            <R_TMR_RD0_Create_UserInit UserName="" LibName="R_TMR_RDn_Create_UserInit" InUse="" />
-            <r_tmr_rd0_interrupt UserName="" LibName="r_tmr_rdn_interrupt" INTHandle="" InUse="" />
+            <R_TMR_RD0_Create_UserInit UserName="" LibName="R_TMR_RDn_Create_UserInit" InUse="0" />
+            <r_tmr_rd0_interrupt UserName="" LibName="r_tmr_rdn_interrupt" INTHandle="" InUse="0" />
           </TMRD0>
           <TMRD1 InUse="">
-            <R_TMR_RD1_Create_UserInit UserName="" LibName="R_TMR_RDn_Create_UserInit" InUse="" />
-            <r_tmr_rd1_interrupt UserName="" LibName="r_tmr_rdn_interrupt" INTHandle="" InUse="" />
+            <R_TMR_RD1_Create_UserInit UserName="" LibName="R_TMR_RDn_Create_UserInit" InUse="0" />
+            <r_tmr_rd1_interrupt UserName="" LibName="r_tmr_rdn_interrupt" INTHandle="" InUse="0" />
           </TMRD1>
         </r_cg_timer_user.c>
-        <r_cg_timer.h UserName="" LibName=".h" InUse="" />
+        <r_cg_timer.h UserName="r_cg_timer.h" LibName=".h" InUse="1" />
       </TAU>
       <WDT>
         <r_cg_wdt.c UserName="r_cg_wdt.c" LibName=".c" InUse="0">
@@ -1462,9 +1481,9 @@
     <PORT HelpID="port" Prepared="true" SetFlag="True" NeedRefresh="False">
       <PORT SetFlag="True" MacroName="PORT" />
     </PORT>
-    <INTC SetFlag="" HelpID="int" NeedRefresh="False">
-      <INTP Accelerate="No" MacroName="INTP" />
-      <KEY Chip="RL78F13_48pin,RL78F13_64pin" MacroName="KEY" />
+    <INTC SetFlag="False" HelpID="int" NeedRefresh="False">
+      <INTP Accelerate="No" MacroName="INTP" SetFlag="False" TabEnable="True" />
+      <KEY Chip="RL78F13_48pin,RL78F13_64pin" MacroName="KEY" TabEnable="True" />
     </INTC>
     <Serial SetFlag="" HelpID="serial" NeedRefresh="False">
       <SAU0 Accelerate="No" MacroName="SAU" Channel="0">
@@ -1477,15 +1496,15 @@
       </SAU1>
       <IICA0 Accelerate="No" Chip="groupb,R5F10BBC,R5F10BBD,R5F10BBE,R5F10BBF,R5F10BBG,R5F10BGC,R5F10BGD,R5F10BGE,R5F10BGF,R5F10BGG,R5F10BLC,R5F10BLD,R5F10BLE,R5F10BLF,R5F10BLG,R5F10BME,R5F10BMF,R5F10BMG" MacroName="IICA" Channel="0" />
     </Serial>
-    <ADC SetFlag="" HelpID="adc" NeedRefresh="False">
-      <ADC SetFlag="" MacroName="ADC" />
+    <ADC SetFlag="True" HelpID="adc" NeedRefresh="False">
+      <ADC SetFlag="True" MacroName="ADC" />
     </ADC>
-    <TAU SetFlag="false" HelpID="timer" NeedRefresh="False">
-      <TAU0 Accelerate="No" MacroName="TAU" Channel="0" ChannelNum="0,1,2,3,4,5,6,7" />
-      <TAU1 Accelerate="No" Chip="groupb,groupc1,groupc2" MacroName="TAU" Channel="1" ChannelNum="0,1,2,3" />
-      <TMRJ0 SetFlag="" MacroName="TMRJ" Channel="0" />
-      <TMRD0 SetFlag="" MacroName="TMRD" Channel="0" />
-      <TMRD1 SetFlag="" MacroName="TMRD" Channel="1" />
+    <TAU SetFlag="True" HelpID="timer" NeedRefresh="False">
+      <TAU0 Accelerate="No" MacroName="TAU" Channel="0" ChannelNum="0,1,2,3,4,5,6,7" SetFlag="False" TabEnable="True" />
+      <TAU1 Accelerate="No" Chip="groupb,groupc1,groupc2" MacroName="TAU" Channel="1" ChannelNum="0,1,2,3" SetFlag="True" TabEnable="True" />
+      <TMRJ0 SetFlag="False" MacroName="TMRJ" Channel="0" TabEnable="True" />
+      <TMRD0 SetFlag="False" MacroName="TMRD" Channel="0" TabEnable="True" />
+      <TMRD1 SetFlag="False" MacroName="TMRD" Channel="1" TabEnable="True" />
     </TAU>
     <WDT Prepared="true" SetFlag="False" HelpID="watchdogtimer" NeedRefresh="False">
       <WDT SetFlag="False" MacroName="WDT" />
@@ -2065,5 +2084,272 @@
       <setting name="RTC1HZ_OUTPUT_USED" value="false" />
       <setting name="RTC1HZ_OUTPUTPIN_SEL" value="-1" />
     </RTC>
+    <INTP>
+      <INTP0>
+        <setting name="Valid_edge" value="falling" />
+        <setting name="Operation" value="unused" />
+        <setting name="ValidEdge" value="0" />
+        <setting name="Interrupt_priority" value="3" />
+        <setting name="pinsel" value="-1" />
+        <setting name="Interrupt request enable" value="false" />
+      </INTP0>
+      <INTP1>
+        <setting name="Valid_edge" value="falling" />
+        <setting name="Operation" value="unused" />
+        <setting name="ValidEdge" value="0" />
+        <setting name="Interrupt_priority" value="3" />
+        <setting name="pinsel" value="-1" />
+        <setting name="Interrupt request enable" value="false" />
+      </INTP1>
+      <INTP2>
+        <setting name="Valid_edge" value="falling" />
+        <setting name="Operation" value="unused" />
+        <setting name="ValidEdge" value="0" />
+        <setting name="Interrupt_priority" value="3" />
+        <setting name="pinsel" value="-1" />
+        <setting name="Interrupt request enable" value="false" />
+      </INTP2>
+      <INTP3>
+        <setting name="Valid_edge" value="falling" />
+        <setting name="Operation" value="unused" />
+        <setting name="ValidEdge" value="0" />
+        <setting name="Interrupt_priority" value="3" />
+        <setting name="pinsel" value="-1" />
+        <setting name="Interrupt request enable" value="false" />
+      </INTP3>
+      <INTP4>
+        <setting name="Valid_edge" value="falling" />
+        <setting name="Operation" value="unused" />
+        <setting name="ValidEdge" value="0" />
+        <setting name="Interrupt_priority" value="3" />
+        <setting name="pinsel" value="-1" />
+        <setting name="Interrupt request enable" value="false" />
+      </INTP4>
+      <INTP5>
+        <setting name="Valid_edge" value="falling" />
+        <setting name="Operation" value="unused" />
+        <setting name="ValidEdge" value="0" />
+        <setting name="Interrupt_priority" value="3" />
+        <setting name="pinsel" value="-1" />
+        <setting name="Interrupt request enable" value="false" />
+      </INTP5>
+      <INTP6>
+        <setting name="Valid_edge" value="falling" />
+        <setting name="Operation" value="unused" />
+        <setting name="ValidEdge" value="0" />
+        <setting name="Interrupt_priority" value="3" />
+        <setting name="pinsel" value="-1" />
+        <setting name="Interrupt request enable" value="false" />
+      </INTP6>
+      <INTP7>
+        <setting name="Valid_edge" value="falling" />
+        <setting name="Operation" value="unused" />
+        <setting name="ValidEdge" value="0" />
+        <setting name="Interrupt_priority" value="3" />
+        <setting name="pinsel" value="-1" />
+        <setting name="Interrupt request enable" value="false" />
+      </INTP7>
+      <INTP8>
+        <setting name="Valid_edge" value="falling" />
+        <setting name="Operation" value="unused" />
+        <setting name="ValidEdge" value="0" />
+        <setting name="Interrupt_priority" value="3" />
+        <setting name="pinsel" value="-1" />
+        <setting name="Interrupt request enable" value="false" />
+      </INTP8>
+      <INTP9>
+        <setting name="Valid_edge" value="falling" />
+        <setting name="Operation" value="unused" />
+        <setting name="ValidEdge" value="0" />
+        <setting name="Interrupt_priority" value="3" />
+        <setting name="pinsel" value="-1" />
+        <setting name="Interrupt request enable" value="false" />
+      </INTP9>
+    </INTP>
+    <KEY>
+      <setting name="Interrupt_priority" value="3" />
+      <setting name="KR0" value="unused" />
+      <setting name="KR1" value="unused" />
+      <setting name="KR2" value="unused" />
+      <setting name="KR3" value="unused" />
+      <setting name="KR4" value="unused" />
+      <setting name="KR5" value="unused" />
+      <setting name="KR6" value="unused" />
+      <setting name="KR7" value="unused" />
+    </KEY>
+    <TAU0>
+      <Channel0>
+        <setting name="ChannelFunction" value="0" />
+        <setting name="Pinselection" value="-1" />
+      </Channel0>
+      <Channel1>
+        <setting name="ChannelFunction" value="0" />
+        <setting name="Pinselection" value="-1" />
+      </Channel1>
+      <Channel2>
+        <setting name="ChannelFunction" value="0" />
+        <setting name="Pinselection" value="-1" />
+      </Channel2>
+      <Channel3>
+        <setting name="ChannelFunction" value="0" />
+        <setting name="Pinselection" value="-1" />
+      </Channel3>
+      <Channel4>
+        <setting name="ChannelFunction" value="0" />
+        <setting name="Pinselection" value="-1" />
+      </Channel4>
+      <Channel5>
+        <setting name="ChannelFunction" value="0" />
+        <setting name="Pinselection" value="-1" />
+      </Channel5>
+      <Channel6>
+        <setting name="ChannelFunction" value="0" />
+        <setting name="Pinselection" value="-1" />
+      </Channel6>
+      <Channel7>
+        <setting name="ChannelFunction" value="0" />
+        <setting name="Pinselection" value="-1" />
+      </Channel7>
+    </TAU0>
+    <TAU1>
+      <Channel0>
+        <setting name="ChannelFunction" value="1" />
+        <setting name="Pinselection" value="-1" />
+        <TAUDelay0>
+          <setting name="Mode" value="16bits" />
+          <setting name="Noise_filter" value="unused" />
+          <setting name="Pinselection" value="-1" />
+          <setting name="External_event_edge" value="1" />
+          <setting name="Delay_value" value="100" />
+          <setting name="Value_scale" value="1" />
+          <setting name="Generate_interrupt_when_counting_started" value="no" />
+          <setting name="Interrupt_priority" value="3" />
+          <setting name="Interrupt" value="used" />
+        </TAUDelay0>
+        <TAUInterval0>
+          <setting name="OperationMode" value="16bits" />
+          <setting name="Count_clock" value="MCK clock" />
+          <setting name="Sub_clock_mode" value="-1" />
+          <setting name="Interval_value" value="1" />
+          <setting name="Value_scale" value="1" />
+          <setting name="Intervalvalue_High8bits" value="100" />
+          <setting name="Intervalvalue_High8bits_scale" value="-1" />
+          <setting name="Intervalvalue_Low8bits" value="100" />
+          <setting name="Intervalvalue_Low8bits_Scale" value="-1" />
+          <setting name="Generate_interrupt_when_couting_started" value="no" />
+          <setting name="Interrupt" value="used" />
+          <setting name="Interrupt_priority" value="1" />
+          <setting name="InterruptH_priority" value="3" />
+          <setting name="InterruptH8" value="unused" />
+        </TAUInterval0>
+      </Channel0>
+      <Channel1>
+        <setting name="ChannelFunction" value="0" />
+        <setting name="Pinselection" value="-1" />
+        <TAUInterval1>
+          <setting name="OperationMode" value="16bits" />
+          <setting name="Count_clock" value="MCK clock" />
+          <setting name="Sub_clock_mode" value="-1" />
+          <setting name="Interval_value" value="100" />
+          <setting name="Value_scale" value="1" />
+          <setting name="Intervalvalue_High8bits" value="100" />
+          <setting name="Intervalvalue_High8bits_scale" value="1" />
+          <setting name="Intervalvalue_Low8bits" value="100" />
+          <setting name="Intervalvalue_Low8bits_Scale" value="1" />
+          <setting name="Generate_interrupt_when_couting_started" value="no" />
+          <setting name="Interrupt" value="unused" />
+          <setting name="Interrupt_priority" value="1" />
+          <setting name="InterruptH_priority" value="3" />
+          <setting name="InterruptH8" value="used" />
+        </TAUInterval1>
+      </Channel1>
+      <Channel2>
+        <setting name="ChannelFunction" value="1" />
+        <setting name="Pinselection" value="-1" />
+        <TAUInterval2>
+          <setting name="OperationMode" value="16bits" />
+          <setting name="Count_clock" value="MCK clock" />
+          <setting name="Sub_clock_mode" value="-1" />
+          <setting name="Interval_value" value="1" />
+          <setting name="Value_scale" value="0" />
+          <setting name="Intervalvalue_High8bits" value="100" />
+          <setting name="Intervalvalue_High8bits_scale" value="-1" />
+          <setting name="Intervalvalue_Low8bits" value="100" />
+          <setting name="Intervalvalue_Low8bits_Scale" value="-1" />
+          <setting name="Generate_interrupt_when_couting_started" value="no" />
+          <setting name="Interrupt" value="used" />
+          <setting name="Interrupt_priority" value="1" />
+          <setting name="InterruptH_priority" value="3" />
+          <setting name="InterruptH8" value="unused" />
+        </TAUInterval2>
+      </Channel2>
+      <Channel3>
+        <setting name="ChannelFunction" value="0" />
+        <setting name="Pinselection" value="-1" />
+        <TAUInterval3>
+          <setting name="OperationMode" value="16bits" />
+          <setting name="Count_clock" value="MCK clock" />
+          <setting name="Sub_clock_mode" value="-1" />
+          <setting name="Interval_value" value="100" />
+          <setting name="Value_scale" value="1" />
+          <setting name="Intervalvalue_High8bits" value="100" />
+          <setting name="Intervalvalue_High8bits_scale" value="1" />
+          <setting name="Intervalvalue_Low8bits" value="100" />
+          <setting name="Intervalvalue_Low8bits_Scale" value="1" />
+          <setting name="Generate_interrupt_when_couting_started" value="no" />
+          <setting name="Interrupt" value="used" />
+          <setting name="Interrupt_priority" value="3" />
+          <setting name="InterruptH_priority" value="3" />
+          <setting name="InterruptH8" value="used" />
+        </TAUInterval3>
+      </Channel3>
+    </TAU1>
+    <TMRJ0>
+      <setting name="Function" value="Unused" />
+    </TMRJ0>
+    <TMRD0>
+      <setting name="Function" value="Unused" />
+    </TMRD0>
+    <TMRD1>
+      <setting name="Function" value="Unused" />
+    </TMRD1>
+    <ADC>
+      <setting name="ADC_USED" value="true" />
+      <setting name="ADC_UNUSED" value="false" />
+      <setting name="ADC_COMPARATOR_ENABLE" value="false" />
+      <setting name="ADC_COMPARATOR_DISABLE" value="true" />
+      <setting name="ADC_RESOLUTION_10BIT" value="true" />
+      <setting name="ADC_RESOLUTION_8BIT" value="false" />
+      <setting name="ADC_POSITIVE_VDD" value="true" />
+      <setting name="ADC_POSITIVE_AVREFP" value="false" />
+      <setting name="ADC_POSITIVE_BGR" value="false" />
+      <setting name="ADC_NEGATIVE_VSS" value="true" />
+      <setting name="ADC_NEGATIVE_AVREFM" value="false" />
+      <setting name="ADC_TRIGGER_SOFTWARE" value="true" />
+      <setting name="ADC_TRIGGER_HARDWARE_NOWAIT" value="false" />
+      <setting name="ADC_TRIGGER_HARDWARE_WAIT" value="false" />
+      <setting name="ADC_TRIGGER_SOURCE_UPDATE" value="0" />
+      <setting name="ADC_CONTINUOUS_SELECT_MODE" value="true" />
+      <setting name="ADC_ONESHOT_SELECT_MODE" value="false" />
+      <setting name="ADC_CONTINUOUS_SCAN_MODE" value="false" />
+      <setting name="ADC_ONESHOT_SCAN_MODE" value="false" />
+      <setting name="ADC_ANALOG_INPUT_SELECTION" value="6" />
+      <setting name="ANALOG_INPUT_24" value="false" />
+      <setting name="ANALOG_INPUT_25" value="false" />
+      <setting name="ANALOG_INPUT_26" value="true" />
+      <setting name="ADC_CONVERSION_MODE" value="0" />
+      <setting name="ADC_CONVERSION_TIME" value="0" />
+      <setting name="ADC_INTERRUPT_GENERATE_CONDITION_1" value="true" />
+      <setting name="ADC_INTERRUPT_GENERATE_CONDITION_2" value="false" />
+      <setting name="ADC_UPPER_BOUND_VALUE" value="255" />
+      <setting name="ADC_LOWER_BOUND_VALUE" value="0" />
+      <setting name="ADC_INTERRUPT_PRIORITY" value="1" />
+      <setting name="ADC_INTERRUPT_USED" value="true" />
+      <setting name="ANALOG_INPUT_30" value="true" />
+      <setting name="ANALOG_INPUT_29" value="true" />
+      <setting name="ANALOG_INPUT_28" value="true" />
+      <setting name="ANALOG_INPUT_27" value="true" />
+      <setting name="ADC_CHANNEL_SELECTION" value="2" />
+    </ADC>
   </SETTING>
 </RL78F13>

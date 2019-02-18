@@ -4,3 +4,5 @@
 -I "C:\Program Files (x86)\Renesas\RL78\1_8_0\inc","C:\Users\500022\Documents\Intern\RL78\workspace\Static_Kit\generate"
 -lang=c
 -g
+-asmopt=-prn_path="src"
+-asm_path="src/"

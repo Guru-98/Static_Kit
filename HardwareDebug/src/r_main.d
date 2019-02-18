@@ -7,7 +7,13 @@ src/r_main.obj\ src/r_main.d: ../src/r_cg_cgc.h
 ../src/r_cg_cgc.h:
 src/r_main.obj\ src/r_main.d: ../src/r_cg_port.h
 ../src/r_cg_port.h:
+src/r_main.obj\ src/r_main.d: ../src/r_cg_adc.h
+../src/r_cg_adc.h:
+src/r_main.obj\ src/r_main.d: ../src/r_cg_timer.h
+../src/r_cg_timer.h:
 src/r_main.obj\ src/r_main.d: ../src/display.h
 ../src/display.h:
+src/r_main.obj\ src/r_main.d: ../src/lcd.h
+../src/lcd.h:
 src/r_main.obj\ src/r_main.d: ../src/r_cg_userdefine.h
 ../src/r_cg_userdefine.h:

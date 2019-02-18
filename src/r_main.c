@@ -23,7 +23,7 @@
 * Device(s)    : R5F10BGG
 * Tool-Chain   : CCRL
 * Description  : This file implements main function.
-* Creation Date: 13/2/2019
+* Creation Date: 18/2/2019
 ***********************************************************************************************************************/
 
 /***********************************************************************************************************************
@@ -32,8 +32,16 @@ Includes
 #include "r_cg_macrodriver.h"
 #include "r_cg_cgc.h"
 #include "r_cg_port.h"
+#include "r_cg_adc.h"
+#include "r_cg_timer.h"
 /* Start user code for include. Do not edit comment generated here */
+#include <stdio.h>
+#include <stdlib.h>
+
 #include "display.h"
+#include "r_cg_adc.h"
+
+#include "lcd.h"
 /* End user code. Do not edit comment generated here */
 #include "r_cg_userdefine.h"
 
@@ -47,6 +55,9 @@ Pragma directive
 Global variables and functions
 ***********************************************************************************************************************/
 /* Start user code for global. Do not edit comment generated here */
+//char *voltage;
+
+//void printVoltage(void);
 /* End user code. Do not edit comment generated here */
 void R_MAIN_UserInit(void);
 
@@ -58,9 +69,10 @@ void R_MAIN_UserInit(void);
 ***********************************************************************************************************************/
 void main(void)
 {
+//	voltage = (char*)malloc(sizeof(char)*8);
     R_MAIN_UserInit();
     /* Start user code. Do not edit comment generated here */
-    displayInit();
+
 
     while(1);
     /* End user code. Do not edit comment generated here */
@@ -76,6 +88,11 @@ void R_MAIN_UserInit(void)
 {
     /* Start user code. Do not edit comment generated here */
     EI();
+    displayInit();
+//    lcdInit();
+//    R_ADC_Create();
+//    R_ADC_Set_OperationOn();
+//    R_ADC_Start();
     /* End user code. Do not edit comment generated here */
 }
 

@@ -2,3 +2,4 @@
 -c
 -dev="C:\Renesas\e2_studio\DebugComp\\RL78\RL78\Common\DR5F10BGG.DVF"
 -g
+-asmopt=-prn_path="generate/"
