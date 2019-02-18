@@ -35,11 +35,7 @@ Includes
 #include "r_cg_adc.h"
 #include "r_cg_timer.h"
 /* Start user code for include. Do not edit comment generated here */
-#include <stdio.h>
-#include <stdlib.h>
-
 #include "display.h"
-#include "r_cg_adc.h"
 
 #include "lcd.h"
 /* End user code. Do not edit comment generated here */
@@ -55,9 +51,7 @@ Pragma directive
 Global variables and functions
 ***********************************************************************************************************************/
 /* Start user code for global. Do not edit comment generated here */
-char voltage[8];
-
-void printVoltage(void);
+float DUT_O_V;
 /* End user code. Do not edit comment generated here */
 void R_MAIN_UserInit(void);
 
@@ -69,16 +63,16 @@ void R_MAIN_UserInit(void);
 ***********************************************************************************************************************/
 void main(void)
 {
-	int j;
     R_MAIN_UserInit();
     /* Start user code. Do not edit comment generated here */
 
 
     while(1){
-    	printVoltage();
-    	for (j = 0; j < 30; j++) {
-			delay(0xffff);
-		}
+//    	DUT_O_V = adcValue * 1024 / 5;
+    	EN = 1;
+    	_delay_1ms();
+    	EN=0;
+    	_delay_1ms();
     }
     /* End user code. Do not edit comment generated here */
 }
@@ -94,17 +88,10 @@ void R_MAIN_UserInit(void)
     /* Start user code. Do not edit comment generated here */
     EI();
 //    displayInit();
-    lcdInit();
-    R_ADC_Create();
-    R_ADC_Set_OperationOn();
-    R_ADC_Start();
+//    R_ADC_Set_OperationOn();
+//    R_ADC_Start();
     /* End user code. Do not edit comment generated here */
 }
 
 /* Start user code for adding. Do not edit comment generated here */
-void printVoltage(void){
-	lcdInit();
-	sprintf(voltage,"%04d",adcValue);
-	printLcd(voltage);
-}
 /* End user code. Do not edit comment generated here */

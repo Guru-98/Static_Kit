@@ -5,6 +5,7 @@
  *      Author: 500022
  */
 #include "display.h"
+#include "r_cg_timer.h"
 #include "lcd.h"
 
 char LLS[] = { 0b00001, 0b00001, 0b00001, 0b00001, 0b00001, 0b00001, 0b00001,

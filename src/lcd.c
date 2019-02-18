@@ -1,6 +1,8 @@
-#include "r_cg_userdefine.h"
 #include "lcd.h"
+
+#include "r_cg_userdefine.h"
 #include "r_cg_macrodriver.h"
+#include "r_cg_timer.h"
 
 void lcdInit(void) {
 	delay(0xffff);
@@ -94,9 +96,4 @@ void setCursor(char col, char row) {
 	uint8_t row_offsets[] = {0x00,0x40,0x14,0x54};
 	sendCmd(LCD_SETDDRAMADDR | (col + row_offsets[row]));
 	delay(30);
-}
-
-void delay(uint16_t msec) {
-//TODO: make a RT accurate delay routine
-	while (msec--);
 }

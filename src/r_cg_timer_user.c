@@ -47,6 +47,8 @@ Pragma directive
 Global variables and functions
 ***********************************************************************************************************************/
 /* Start user code for global. Do not edit comment generated here */
+volatile char _usdelay_f = 0;
+volatile char _msdelay_f = 0;
 /* End user code. Do not edit comment generated here */
 
 /***********************************************************************************************************************
@@ -58,7 +60,9 @@ Global variables and functions
 static void __near r_tau1_channel0_interrupt(void)
 {
     /* Start user code. Do not edit comment generated here */
-    /* End user code. Do not edit comment generated here */
+	R_TAU1_Channel0_Stop();
+	_msdelay_f = 1;
+	/* End user code. Do not edit comment generated here */
 }
 
 /***********************************************************************************************************************
@@ -70,8 +74,37 @@ static void __near r_tau1_channel0_interrupt(void)
 static void __near r_tau1_channel2_interrupt(void)
 {
     /* Start user code. Do not edit comment generated here */
-    /* End user code. Do not edit comment generated here */
+	R_TAU1_Channel2_Stop();
+	_usdelay_f = 1;
+	/* End user code. Do not edit comment generated here */
 }
 
 /* Start user code for adding. Do not edit comment generated here */
+void delay_us(uint16_t usec) {
+	while (usec){
+		_delay_1us();
+		usec--;
+	}
+}
+
+void delay(uint16_t msec){
+	while (msec){
+		_delay_1ms();
+		msec--;
+	}
+}
+
+void _delay_1us(void) {
+	_usdelay_f = 0;
+	R_TAU1_Channel2_Start();
+	while(_usdelay_f == 1);
+}
+
+void _delay_1ms(void) {
+	_msdelay_f = 0;
+	R_TAU1_Channel0_Start();
+	while(_msdelay_f == 1);
+}
+
+
 /* End user code. Do not edit comment generated here */

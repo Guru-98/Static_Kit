@@ -34,6 +34,7 @@ User definitions
 ***********************************************************************************************************************/
 
 /* Start user code for function. Do not edit comment generated here */
+#include "r_cg_macrodriver.h"
 
 #define DB P1
 

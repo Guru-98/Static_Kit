@@ -58,6 +58,5 @@ void clearLcd(void);
 void sendCmd(char x);
 void sendData(char x);
 void trigger(void);
-void delay(uint16_t msec);
 
 #endif /* LCD_H_ */

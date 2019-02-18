@@ -1007,9 +1007,9 @@ Macro definitions (Register bit)
 Macro definitions
 ***********************************************************************************************************************/
 /* 16-bit timer data register 10 (TDR10) */
-#define _001F_TAU_TDR10_VALUE                   (0x001FU)
+#define _F423_TAU_TDR10_VALUE                   (0xF423U)
 /* Clock divisor for TAU1 channel 0 */
-#define _0001_TAU1_CHANNEL0_DIVISOR             (0x0001U)
+#define _0200_TAU1_CHANNEL0_DIVISOR             (0x0200U)
 /* 16-bit timer data register 12 (TDR12) */
 #define _7CFF_TAU_TDR12_VALUE                   (0x7CFFU)
 /* Clock divisor for TAU1 channel 2 */
@@ -1037,5 +1037,11 @@ void R_TAU1_Channel2_Start(void);
 void R_TAU1_Channel2_Stop(void);
 
 /* Start user code for function. Do not edit comment generated here */
+#include "r_cg_macrodriver.h"
+
+void delay(uint16_t msec);
+void delay_us(uint16_t usec);
+void _delay_1us(void);
+void _delay_1ms(void);
 /* End user code. Do not edit comment generated here */
 #endif
