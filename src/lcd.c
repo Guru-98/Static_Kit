@@ -98,7 +98,5 @@ void setCursor(char col, char row) {
 
 void delay(uint16_t msec) {
 //TODO: make a RT accurate delay routine
-	while (msec==0){
-		msec--;
-	}
+	while (msec--);
 }

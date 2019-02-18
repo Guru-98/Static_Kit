@@ -51,9 +51,6 @@ Global variables and functions
 ***********************************************************************************************************************/
 /* Start user code for global. Do not edit comment generated here */
 uint16_t adcValue=0;
-char voltage[8];
-
-void printVoltage(void);
 /* End user code. Do not edit comment generated here */
 
 /***********************************************************************************************************************
@@ -68,16 +65,11 @@ static void __near r_adc_interrupt(void)
 	DI();
 	R_ADC_Stop();
 	R_ADC_Get_Result(&adcValue);
-	printVoltage();
 	R_ADC_Start();
 	EI();
     /* End user code. Do not edit comment generated here */
 }
 
 /* Start user code for adding. Do not edit comment generated here */
-void printVoltage(void){
-	sendCmd(LCD_RETURNHOME);
-	sprintf(voltage,"%04d",adcValue);
-	printLcd(voltage);
-}
+
 /* End user code. Do not edit comment generated here */
