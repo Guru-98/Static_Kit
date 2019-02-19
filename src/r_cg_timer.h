@@ -23,7 +23,7 @@
 * Device(s)    : R5F10BGG
 * Tool-Chain   : CCRL
 * Description  : This file implements device driver for TAU module.
-* Creation Date: 18/2/2019
+* Creation Date: 19/2/2019
 ***********************************************************************************************************************/
 
 #ifndef TAU_H
@@ -1007,9 +1007,9 @@ Macro definitions (Register bit)
 Macro definitions
 ***********************************************************************************************************************/
 /* 16-bit timer data register 10 (TDR10) */
-#define _F423_TAU_TDR10_VALUE                   (0xF423U)
+#define _001F_TAU_TDR10_VALUE                   (0x001FU)
 /* Clock divisor for TAU1 channel 0 */
-#define _0200_TAU1_CHANNEL0_DIVISOR             (0x0200U)
+#define _0001_TAU1_CHANNEL0_DIVISOR             (0x0001U)
 /* 16-bit timer data register 12 (TDR12) */
 #define _7CFF_TAU_TDR12_VALUE                   (0x7CFFU)
 /* Clock divisor for TAU1 channel 2 */

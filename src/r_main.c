@@ -23,7 +23,7 @@
 * Device(s)    : R5F10BGG
 * Tool-Chain   : CCRL
 * Description  : This file implements main function.
-* Creation Date: 18/2/2019
+* Creation Date: 19/2/2019
 ***********************************************************************************************************************/
 
 /***********************************************************************************************************************
@@ -36,7 +36,7 @@ Includes
 #include "r_cg_timer.h"
 /* Start user code for include. Do not edit comment generated here */
 #include "display.h"
-
+#include "test.h"
 #include "lcd.h"
 /* End user code. Do not edit comment generated here */
 #include "r_cg_userdefine.h"
@@ -51,7 +51,6 @@ Pragma directive
 Global variables and functions
 ***********************************************************************************************************************/
 /* Start user code for global. Do not edit comment generated here */
-float DUT_O_V;
 /* End user code. Do not edit comment generated here */
 void R_MAIN_UserInit(void);
 
@@ -65,16 +64,29 @@ void main(void)
 {
     R_MAIN_UserInit();
     /* Start user code. Do not edit comment generated here */
+    int i;
+//	noTests = 2;
+	for (i = 0; i < noTests; i++) {
+		//TODO: Make test() and anim() async.
+		if(! test(i)){
+			animTest(i);
+			break;
+		}
+		animTest(i);
+	}
 
+	for (i = 0; i < 100; i++) {
+		delay(0xffff);
+	}
 
-    while(1){
-//    	DUT_O_V = adcValue * 1024 / 5;
-    	EN = 1;
-    	_delay_1ms();
-    	EN=0;
-    	_delay_1ms();
-    }
-    /* End user code. Do not edit comment generated here */
+	if (failedTest != -1) {
+		resultScreen(0);
+	} else {
+		resultScreen(1);
+	}
+
+	while(1U);
+	/* End user code. Do not edit comment generated here */
 }
 
 /***********************************************************************************************************************
@@ -86,11 +98,10 @@ void main(void)
 void R_MAIN_UserInit(void)
 {
     /* Start user code. Do not edit comment generated here */
-    EI();
-//    displayInit();
-//    R_ADC_Set_OperationOn();
-//    R_ADC_Start();
-    /* End user code. Do not edit comment generated here */
+	EI();
+//	while(1){trigger();}
+	displayInit();
+	/* End user code. Do not edit comment generated here */
 }
 
 /* Start user code for adding. Do not edit comment generated here */

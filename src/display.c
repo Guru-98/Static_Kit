@@ -4,9 +4,12 @@
  *  Created on: Feb 14, 2019
  *      Author: 500022
  */
-#include "display.h"
 #include "r_cg_timer.h"
+#include "r_cg_adc.h"
+
+#include "display.h"
 #include "lcd.h"
+#include "test.h"
 
 char LLS[] = { 0b00001, 0b00001, 0b00001, 0b00001, 0b00001, 0b00001, 0b00001,
 		0b00001 };
@@ -42,25 +45,17 @@ char OK[] = "-OK  ";
 char Fail[] = "-Fail";
 char Empty[] = "-    ";
 
-char Tests[][5] = { "N.L.", "R.P.", "S.C.", "O.L.", "O.V.", "16V ", "24V ",
-		"32V " };
-int noTests = sizeof(Tests) / sizeof(Tests[0]);
-int failedTest = 1;
-
 void displayInit(void) {
 	int i;
 	lcdInit();
 	splashScreen();
-	testScreen();
-	for (i = 0; i < noTests; i++) {
-		runTests(i);
+	for (i = 0; i < 100; i++) {
+		delay(0xffff);
 	}
-	resultScreen(1);
-	resultScreen(0);
+	testScreen();
 }
 
-void runTests(int testNo) {
-//	TODO: replace Dummy function
+void animTest(int testNo) {
 	int i = testNo, j;
 	if (i < 4) {
 		setCursor(5, i);
@@ -82,9 +77,9 @@ void runTests(int testNo) {
 		setCursor(15, i - 4);
 	}
 
-	if (i % 2 == 0) {
+	if (resTests[i]==1) {
 		printLcd(OK);
-	} else {
+	} else if(resTests[i]==0) {
 		printLcd(Fail);
 	}
 }
@@ -114,7 +109,7 @@ void testScreen(void) {
 void splashScreen(void) {
 	lcdInit();
 	loadDoubleLines();
-	//drawBorders();
+//drawBorders();
 	setCursor(1, 1);
 	printLcd(" D135  STATIC KIT ");
 	setCursor(1, 3);
@@ -131,8 +126,8 @@ void resultScreen(char result) {
 		printLcd("       PASS       ");
 	} else {
 		printLcd("       FAIL       ");
-		setCursor(8,2);
-		printLcd(Tests[failedTest]);
+		setCursor(1, 2);
+		printLcd(TestsFull[failedTest]);
 	}
 }
 

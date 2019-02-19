@@ -12,6 +12,7 @@
 -input=".\src\r_cg_timer_user.obj"
 -input=".\src\r_main.obj"
 -input=".\src\r_systeminit.obj"
+-input=".\src\test.obj"
 -library="C:\Program Files (x86)\Renesas\RL78\1_8_0\lib\rl78em4s99.lib"
 -library="C:\Program Files (x86)\Renesas\RL78\1_8_0\lib\rl78em4r.lib"
 -library="C:\Program Files (x86)\Renesas\RL78\1_8_0\lib\malloc_n.lib"

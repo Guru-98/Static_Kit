@@ -61,6 +61,9 @@ endif
 LINKER_OUTPUT_OUTPUTS += \
 Static_Kit.abs
 
+CONVERTOR_OUTPUT_OUTPUTS += \
+Static_Kit.hex
+
 OBJS := \
 $(COMPILER_OBJS) \
 $(INDIVIDUAL_COMPILER_OBJS) \
@@ -68,16 +71,25 @@ $(ASSEMBLER_OBJS) \
 $(CUSTOM_OBJS)
 
 # All Target
-all: $(LINKER_OUTPUT_OUTPUTS) Static_Kit.x
+all: $(CONVERTOR_OUTPUT_OUTPUTS) Static_Kit.x
 	@echo 'Build complete.'
+
+Static_Kit.hex: $(LINKER_OUTPUT_OUTPUTS) 
+	@echo 'Invoking: Converter'
+	@echo 'Building target:'
+	@echo ConverterStatic_Kit.tmp=
+	@sed -e "s/^/    /" "ConverterStatic_Kit.tmp"
+	rlink   "Static_Kit.abs" -subcommand="ConverterStatic_Kit.tmp"
+	@echo 'Finished building target:'
+	@echo.
+
 
 Static_Kit.abs: $(OBJS)  $(ALL_ASMS)
 	@echo 'Invoking: Linker'
-	@echo 'Building target:'
 	@echo LinkerStatic_Kit.tmp=
 	@sed -e "s/^/    /" "LinkerStatic_Kit.tmp"
 	rlink -subcommand="LinkerStatic_Kit.tmp"
-	@echo 'Finished building target:'
+	@echo 'Finished building:'
 	@echo.
 
 
@@ -86,7 +98,7 @@ Static_Kit.x: Static_Kit.abs
 
 # Other Targets
 clean:
-	-$(RM) $(LINKER_OUTPUT_OUTPUTS)
+	-$(RM) $(LINKER_OUTPUT_OUTPUTS) $(CONVERTOR_OUTPUT_OUTPUTS)
 	-rm -rf generate/*.obj generate/*.d generate/*.asm generate/*.p generate/*.src generate/*.jmp generate/*.lst generate/*.prn generate/*.i 
 	-rm -rf src/*.obj src/*.d src/*.asm src/*.p src/*.src src/*.jmp src/*.lst src/*.prn src/*.i 
 	@echo

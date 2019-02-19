@@ -8,12 +8,17 @@
 #ifndef DISPLAY_H_
 #define DISPLAY_H_
 
+extern char Tests[][5];
+extern int noTests;
+extern int failedTest;
+extern char OK[];
+extern char Fail[];
+
 void displayInit(void);
 void testScreen(void);
 void splashScreen(void);
 void resultScreen(char result);
 void loadDoubleLines(void);
 void drawBorders(void);
-void runTests(int testNo);
-
+void animTest(int testNo);
 #endif /* DISPLAY_H_ */

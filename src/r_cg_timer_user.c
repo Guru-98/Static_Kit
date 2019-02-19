@@ -23,7 +23,7 @@
 * Device(s)    : R5F10BGG
 * Tool-Chain   : CCRL
 * Description  : This file implements device driver for TAU module.
-* Creation Date: 18/2/2019
+* Creation Date: 19/2/2019
 ***********************************************************************************************************************/
 
 /***********************************************************************************************************************
@@ -87,12 +87,18 @@ void delay_us(uint16_t usec) {
 	}
 }
 
+#if 0
 void delay(uint16_t msec){
 	while (msec){
 		_delay_1ms();
 		msec--;
 	}
 }
+#else
+void delay(uint16_t msec){
+	while (msec--);
+}
+#endif
 
 void _delay_1us(void) {
 	_usdelay_f = 0;

@@ -13,6 +13,8 @@ src/r_main.obj\ src/r_main.d: ../src/r_cg_timer.h
 ../src/r_cg_timer.h:
 src/r_main.obj\ src/r_main.d: ../src/display.h
 ../src/display.h:
+src/r_main.obj\ src/r_main.d: ../src/test.h
+../src/test.h:
 src/r_main.obj\ src/r_main.d: ../src/lcd.h
 ../src/lcd.h:
 src/r_main.obj\ src/r_main.d: ../src/r_cg_userdefine.h

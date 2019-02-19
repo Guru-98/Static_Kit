@@ -23,7 +23,7 @@
 * Device(s)    : R5F10BGG
 * Tool-Chain   : CCRL
 * Description  : This file implements device driver for TAU module.
-* Creation Date: 18/2/2019
+* Creation Date: 19/2/2019
 ***********************************************************************************************************************/
 
 /***********************************************************************************************************************
@@ -56,7 +56,7 @@ Global variables and functions
 void R_TAU1_Create(void)
 {
     TAU1EN = 1U;    /* supplies input clock */
-    TPS1 = _0000_TAU_CKM0_FCLK_0 | _0090_TAU_CKM1_FCLK_9 | _0000_TAU_CKM2_FCLK_1 | _0000_TAU_CKM3_FCLK_8;
+    TPS1 = _0000_TAU_CKM0_FCLK_0 | _0000_TAU_CKM1_FCLK_0 | _0000_TAU_CKM2_FCLK_1 | _0000_TAU_CKM3_FCLK_8;
     /* Stop all channels */
     TT1 = _0001_TAU_CH0_STOP_TRG_ON | _0002_TAU_CH1_STOP_TRG_ON | _0004_TAU_CH2_STOP_TRG_ON |
           _0008_TAU_CH3_STOP_TRG_ON | _0200_TAU_CH1_H8_STOP_TRG_ON | _0800_TAU_CH3_H8_STOP_TRG_ON;
@@ -86,9 +86,9 @@ void R_TAU1_Create(void)
     TMPR112 = 0U;
     TMPR012 = 1U;
     /* Channel 0 used as interval timer */
-    TMR10 = _8000_TAU_CLOCK_SELECT_CKM1 | _0000_TAU_CLOCK_MODE_CKS | _0000_TAU_COMBINATION_SLAVE |
+    TMR10 = _0000_TAU_CLOCK_SELECT_CKM0 | _0000_TAU_CLOCK_MODE_CKS | _0000_TAU_COMBINATION_SLAVE |
             _0000_TAU_TRIGGER_SOFTWARE | _0000_TAU_MODE_INTERVAL_TIMER | _0000_TAU_START_INT_UNUSED;
-    TDR10 = _F423_TAU_TDR10_VALUE;
+    TDR10 = _001F_TAU_TDR10_VALUE;
     TO1 &= ~_0001_TAU_CH0_OUTPUT_VALUE_1;
     TOE1 &= ~_0001_TAU_CH0_OUTPUT_ENABLE;
     /* Channel 2 used as interval timer */

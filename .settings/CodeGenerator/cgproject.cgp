@@ -1453,14 +1453,14 @@
         <cg_ocd_trace_size Name="cg_ocd_trace_size" Value="512" />
         <cg_security8 Name="cg_security8" Value="00" />
         <cg_security4 Name="cg_security4" Value="00" />
-        <cg_iawctl_value Name="cg_iawctl_value" Value="00" />
+        <wdt_option Name="wdt_option" Value="E9" />
         <cg_crc_area Name="cg_crc_area" Value="00" />
         <cg_security3 Name="cg_security3" Value="00" />
+        <cg_iawctl_value Name="cg_iawctl_value" Value="00" />
         <cg_security0 Name="cg_security0" Value="00" />
         <cg_security9 Name="cg_security9" Value="00" />
         <cg_option Name="cg_option" Value="84" />
         <cg_security5 Name="cg_security5" Value="00" />
-        <wdt_option Name="wdt_option" Value="E9" />
         <lvi_option Name="lvi_option" Value="FF" />
         <cg_ocd_ram_size Name="cg_ocd_ram_size" Value="512" />
         <pior_value4 Name="pior_value4" Value="00" />
@@ -2225,7 +2225,7 @@
           <setting name="Count_clock" value="MCK clock" />
           <setting name="Sub_clock_mode" value="-1" />
           <setting name="Interval_value" value="1000" />
-          <setting name="Value_scale" value="0" />
+          <setting name="Value_scale" value="2" />
           <setting name="Intervalvalue_High8bits" value="100" />
           <setting name="Intervalvalue_High8bits_scale" value="-1" />
           <setting name="Intervalvalue_Low8bits" value="100" />
@@ -2334,8 +2334,8 @@
       <setting name="ADC_TRIGGER_HARDWARE_NOWAIT" value="false" />
       <setting name="ADC_TRIGGER_HARDWARE_WAIT" value="false" />
       <setting name="ADC_TRIGGER_SOURCE_UPDATE" value="0" />
-      <setting name="ADC_CONTINUOUS_SELECT_MODE" value="true" />
-      <setting name="ADC_ONESHOT_SELECT_MODE" value="false" />
+      <setting name="ADC_CONTINUOUS_SELECT_MODE" value="false" />
+      <setting name="ADC_ONESHOT_SELECT_MODE" value="true" />
       <setting name="ADC_CONTINUOUS_SCAN_MODE" value="false" />
       <setting name="ADC_ONESHOT_SCAN_MODE" value="false" />
       <setting name="ADC_ANALOG_INPUT_SELECTION" value="6" />

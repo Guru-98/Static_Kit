@@ -15,7 +15,8 @@ C_SRCS += \
 ../src/r_cg_timer.c \
 ../src/r_cg_timer_user.c \
 ../src/r_main.c \
-../src/r_systeminit.c 
+../src/r_systeminit.c \
+../src/test.c 
 
 COMPILER_OBJS += \
 src/display.obj \
@@ -29,7 +30,8 @@ src/r_cg_port_user.obj \
 src/r_cg_timer.obj \
 src/r_cg_timer_user.obj \
 src/r_main.obj \
-src/r_systeminit.obj 
+src/r_systeminit.obj \
+src/test.obj 
 
 C_DEPS += \
 src/display.d \
@@ -43,7 +45,8 @@ src/r_cg_port_user.d \
 src/r_cg_timer.d \
 src/r_cg_timer_user.d \
 src/r_main.d \
-src/r_systeminit.d 
+src/r_systeminit.d \
+src/test.d 
 
 # Each subdirectory must supply rules for building sources it contributes
 src/%.obj: ../src/%.c 

@@ -23,7 +23,7 @@
 * Device(s)    : R5F10BGG
 * Tool-Chain   : CCRL
 * Description  : This file implements device driver for ADC module.
-* Creation Date: 18/2/2019
+* Creation Date: 19/2/2019
 ***********************************************************************************************************************/
 
 /***********************************************************************************************************************
@@ -51,6 +51,7 @@ Global variables and functions
 ***********************************************************************************************************************/
 /* Start user code for global. Do not edit comment generated here */
 uint16_t adcValue=0;
+volatile char _adc_f=1;
 /* End user code. Do not edit comment generated here */
 
 /***********************************************************************************************************************
@@ -65,11 +66,18 @@ static void __near r_adc_interrupt(void)
 	DI();
 	R_ADC_Stop();
 	R_ADC_Get_Result(&adcValue);
-	R_ADC_Start();
+	_adc_f=0;
 	EI();
     /* End user code. Do not edit comment generated here */
 }
 
 /* Start user code for adding. Do not edit comment generated here */
-
+uint16_t analogRead(int pin){
+	//TODO: Make this pin variant.
+	_adc_f=1;
+	R_ADC_Set_OperationOn();
+	R_ADC_Start();
+	while(_adc_f);
+	return adcValue;
+}
 /* End user code. Do not edit comment generated here */
