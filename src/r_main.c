@@ -23,7 +23,7 @@
 * Device(s)    : R5F10BGG
 * Tool-Chain   : CCRL
 * Description  : This file implements main function.
-* Creation Date: 19/2/2019
+* Creation Date: 4/3/2019
 ***********************************************************************************************************************/
 
 /***********************************************************************************************************************
@@ -32,6 +32,7 @@ Includes
 #include "r_cg_macrodriver.h"
 #include "r_cg_cgc.h"
 #include "r_cg_port.h"
+#include "r_cg_intc.h"
 #include "r_cg_adc.h"
 #include "r_cg_timer.h"
 /* Start user code for include. Do not edit comment generated here */
@@ -64,28 +65,12 @@ void main(void)
 {
     R_MAIN_UserInit();
     /* Start user code. Do not edit comment generated here */
-    int i;
-//	noTests = 2;
-	for (i = 0; i < noTests; i++) {
-		//TODO: Make test() and anim() async.
-		if(! test(i)){
-			animTest(i);
-			break;
+	while (1U) {
+		while(_mem_key_f == 1) {
+			memoryScreen();
 		}
-		animTest(i);
+		runTests();
 	}
-
-	for (i = 0; i < 100; i++) {
-		delay(0xffff);
-	}
-
-	if (failedTest != -1) {
-		resultScreen(0);
-	} else {
-		resultScreen(1);
-	}
-
-	while(1U);
 	/* End user code. Do not edit comment generated here */
 }
 
@@ -99,8 +84,39 @@ void R_MAIN_UserInit(void)
 {
     /* Start user code. Do not edit comment generated here */
 	EI();
+
+	/*
+	 DUT_IP_REV = 1;
+
+	 SMPS_16V = 1;
+	 SMPS_24V = 1;
+	 SMPS_32V = 1;
+
+	 LOAD = 1;
+	 EXTRA_LOAD = 1;
+	 SHORT = 1;
+
+	 DUT_IP_REV = 0;
+
+	 SMPS_16V = 0;
+	 SMPS_24V = 0;
+	 SMPS_32V = 0;
+
+	 LOAD = 0;
+	 EXTRA_LOAD = 0;
+	 SHORT = 0;
+
+	 GRN_LED = 1;
+	 RED_LED = 1;
+
+	 GRN_LED = 0;
+	 RED_LED = 0;
+	 */
+
 //	while(1){trigger();}
+	R_KEY_Start();
 	displayInit();
+
 	/* End user code. Do not edit comment generated here */
 }
 

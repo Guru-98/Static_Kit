@@ -15,5 +15,6 @@ extern char resTests[8];
 extern int failedTest;
 
 int test(int testNo);
+void runTests(void);
 
 #endif /* TEST_H_ */

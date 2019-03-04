@@ -10,6 +10,8 @@ C_SRCS += \
 ../src/r_cg_adc_user.c \
 ../src/r_cg_cgc.c \
 ../src/r_cg_cgc_user.c \
+../src/r_cg_intc.c \
+../src/r_cg_intc_user.c \
 ../src/r_cg_port.c \
 ../src/r_cg_port_user.c \
 ../src/r_cg_timer.c \
@@ -25,6 +27,8 @@ src/r_cg_adc.obj \
 src/r_cg_adc_user.obj \
 src/r_cg_cgc.obj \
 src/r_cg_cgc_user.obj \
+src/r_cg_intc.obj \
+src/r_cg_intc_user.obj \
 src/r_cg_port.obj \
 src/r_cg_port_user.obj \
 src/r_cg_timer.obj \
@@ -40,6 +44,8 @@ src/r_cg_adc.d \
 src/r_cg_adc_user.d \
 src/r_cg_cgc.d \
 src/r_cg_cgc_user.d \
+src/r_cg_intc.d \
+src/r_cg_intc_user.d \
 src/r_cg_port.d \
 src/r_cg_port_user.d \
 src/r_cg_timer.d \

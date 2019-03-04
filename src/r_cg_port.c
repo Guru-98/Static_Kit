@@ -23,7 +23,7 @@
 * Device(s)    : R5F10BGG
 * Tool-Chain   : CCRL
 * Description  : This file implements device driver for PORT module.
-* Creation Date: 19/2/2019
+* Creation Date: 4/3/2019
 ***********************************************************************************************************************/
 
 /***********************************************************************************************************************
@@ -57,12 +57,29 @@ void R_PORT_Create(void)
 {
     P1 = _01_Pn0_OUTPUT_1 | _02_Pn1_OUTPUT_1 | _04_Pn2_OUTPUT_1 | _08_Pn3_OUTPUT_1 | _10_Pn4_OUTPUT_1 |
          _20_Pn5_OUTPUT_1 | _40_Pn6_OUTPUT_1 | _80_Pn7_OUTPUT_1;
-    P3 = _00_Pn0_OUTPUT_0 | _00_Pn1_OUTPUT_0;
-    PSRSEL = _00_PSR14_NORMAL | _00_PSR30_NORMAL | _00_PSR12_NORMAL | _00_PSR10_NORMAL;
+    P3 = _00_Pn0_OUTPUT_0 | _00_Pn1_OUTPUT_0 | _00_Pn2_OUTPUT_0;
+    P7 = _00_Pn0_OUTPUT_0 | _00_Pn1_OUTPUT_0;
+    P8 = _00_Pn5_OUTPUT_0 | _00_Pn6_OUTPUT_0 | _00_Pn7_OUTPUT_0;
+    P9 = _00_Pn0_OUTPUT_0 | _00_Pn1_OUTPUT_0 | _00_Pn2_OUTPUT_0;
+    P12 = _00_Pn5_OUTPUT_0;
+    PU4 = _00_PUn0_PULLUP_OFF;
+    PU7 = _08_PUn3_PULLUP_ON;
+    PMC12 = _00_PMCn0_DI_ON | _00_PMCn5_DI_ON | _DE_PMC12_DEFAULT;
+    PSRSEL = _00_PSR140_NORMAL | _00_PSR14_NORMAL | _00_PSR120_NORMAL | _00_PSR30_NORMAL | _00_PSR12_NORMAL |
+             _00_PSR10_NORMAL;
+    ADPC = _08_ADPC_DI_ON;
     PM1 = _00_PMn0_MODE_OUTPUT | _00_PMn1_MODE_OUTPUT | _00_PMn2_MODE_OUTPUT | _00_PMn3_MODE_OUTPUT |
           _00_PMn4_MODE_OUTPUT | _00_PMn5_MODE_OUTPUT | _00_PMn6_MODE_OUTPUT | _00_PMn7_MODE_OUTPUT;
-    PM3 = _00_PMn0_MODE_OUTPUT | _00_PMn1_MODE_OUTPUT | _04_PMn2_NOT_USE | _08_PMn3_NOT_USE | _10_PMn4_NOT_USE |
+    PM3 = _00_PMn0_MODE_OUTPUT | _00_PMn1_MODE_OUTPUT | _00_PMn2_MODE_OUTPUT | _08_PMn3_NOT_USE | _10_PMn4_NOT_USE |
           _E0_PM3_DEFAULT;
+    PM4 = _01_PMn0_NOT_USE | _02_PMn1_MODE_INPUT | _FC_PM4_DEFAULT;
+    PM6 = _01_PMn0_MODE_INPUT | _02_PMn1_NOT_USE | _04_PMn2_NOT_USE | _08_PMn3_MODE_INPUT | _F0_PM6_DEFAULT;
+    PM7 = _00_PMn0_MODE_OUTPUT | _00_PMn1_MODE_OUTPUT | _04_PMn2_MODE_INPUT | _08_PMn3_NOT_USE | _F0_PM7_DEFAULT;
+    PM8 = _01_PMn0_NOT_USE | _02_PMn1_NOT_USE | _04_PMn2_NOT_USE | _08_PMn3_NOT_USE | _10_PMn4_NOT_USE |
+          _00_PMn5_MODE_OUTPUT | _00_PMn6_MODE_OUTPUT | _00_PMn7_MODE_OUTPUT;
+    PM9 = _00_PMn0_MODE_OUTPUT | _00_PMn1_MODE_OUTPUT | _00_PMn2_MODE_OUTPUT | _F8_PM9_DEFAULT;
+    PM12 = _01_PMn0_MODE_INPUT | _00_PMn5_MODE_OUTPUT | _DE_PM12_DEFAULT;
+    PM14 = _01_PMn0_MODE_INPUT | _FE_PM14_DEFAULT;
 }
 
 /* Start user code for adding. Do not edit comment generated here */

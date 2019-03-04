@@ -7,6 +7,8 @@ src/r_main.obj\ src/r_main.d: ../src/r_cg_cgc.h
 ../src/r_cg_cgc.h:
 src/r_main.obj\ src/r_main.d: ../src/r_cg_port.h
 ../src/r_cg_port.h:
+src/r_main.obj\ src/r_main.d: ../src/r_cg_intc.h
+../src/r_cg_intc.h:
 src/r_main.obj\ src/r_main.d: ../src/r_cg_adc.h
 ../src/r_cg_adc.h:
 src/r_main.obj\ src/r_main.d: ../src/r_cg_timer.h

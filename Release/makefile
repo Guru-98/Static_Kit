@@ -2,107 +2,222 @@
 # Automatically-generated file. Do not edit!
 ################################################################################
 
+-include ../makefile.init
+
 -include makefile.init
 
-RM := rm -rf *.sni *.dbg *.lst *.lis *.lpp *.map *.x *.lbp *.h *.bls *.libelf *.rel *.lbk *.abs *.prn *.mi  *.obj *.jmp *.d *.i *.asm 1st/*.obj 1st/*.d 1st/*.asm 1st/*.abs 1st/*.i
+RM := del
 
 # All of the sources participating in the build are defined here
 -include sources.mk
--include generate/subdir.mk
 -include src/subdir.mk
+-include generate/subdir.mk
+-include subdir.mk
+-include objects.mk
 
 ifneq ($(MAKECMDGOALS),clean)
-ifneq ($(strip $(C_DEPS)),)
--include $(C_DEPS)
-endif 
-ifneq ($(strip $(S_UPPER_DEPS)),)
--include $(S_UPPER_DEPS)
-endif 
-ifneq ($(strip $(ASM_DEPS)),)
--include $(ASM_DEPS)
-endif 
-ifneq ($(strip $(SX_DEPS)),)
--include $(SX_DEPS)
-endif 
 ifneq ($(strip $(JMP_DEPS)),)
 -include $(JMP_DEPS)
-endif 
-ifneq ($(strip $(SRC_DEPS)),)
--include $(SRC_DEPS)
-endif 
-ifneq ($(strip $(PP_DEPS)),)
--include $(PP_DEPS)
-endif 
-ifneq ($(strip $(P_DEPS)),)
--include $(P_DEPS)
-endif 
+endif
 ifneq ($(strip $(FSY_DEPS)),)
 -include $(FSY_DEPS)
-endif 
 endif
-
-ifneq ($(strip $(SRC_UPPER_SRCS)),)
-ALL_ASMS += $(SRC_UPPER_SRCS) 
+ifneq ($(strip $(C_UPPER_DEPS)),)
+-include $(C_UPPER_DEPS)
 endif
-ifneq ($(strip $(SRC_SRCS)),)
-ALL_ASMS += $(SRC_SRCS) 
+ifneq ($(strip $(SRC_UPPER_DEPS)),)
+-include $(SRC_UPPER_DEPS)
 endif
-ifneq ($(strip $(S_UPPER_SRCS)),)
-ALL_ASMS += $(S_UPPER_SRCS) 
+ifneq ($(strip $(P_UPPER_DEPS)),)
+-include $(P_UPPER_DEPS)
 endif
-ifneq ($(strip $(S_SRCS)),)
-ALL_ASMS += $(S_SRCS) 
+ifneq ($(strip $(S_DEPS)),)
+-include $(S_DEPS)
 endif
-
+ifneq ($(strip $(PP_UPPER_DEPS)),)
+-include $(PP_UPPER_DEPS)
+endif
+ifneq ($(strip $(P_DEPS)),)
+-include $(P_DEPS)
+endif
+ifneq ($(strip $(FSY_UPPER_DEPS)),)
+-include $(FSY_UPPER_DEPS)
+endif
+ifneq ($(strip $(C_DEPS)),)
+-include $(C_DEPS)
+endif
+ifneq ($(strip $(SRC_DEPS)),)
+-include $(SRC_DEPS)
+endif
+ifneq ($(strip $(JMP_UPPER_DEPS)),)
+-include $(JMP_UPPER_DEPS)
+endif
+ifneq ($(strip $(PP_DEPS)),)
+-include $(PP_DEPS)
+endif
+ifneq ($(strip $(ASM_UPPER_DEPS)),)
+-include $(ASM_UPPER_DEPS)
+endif
+ifneq ($(strip $(SX_DEPS)),)
+-include $(SX_DEPS)
+endif
+ifneq ($(strip $(SX_UPPER_DEPS)),)
+-include $(SX_UPPER_DEPS)
+endif
+ifneq ($(strip $(ASM_DEPS)),)
+-include $(ASM_DEPS)
+endif
+ifneq ($(strip $(S_UPPER_DEPS)),)
+-include $(S_UPPER_DEPS)
+endif
+endif
 
 -include ../makefile.defs
 
-# Add inputs and outputs from these tool invocations to the build variables
-LINKER_OUTPUT_OUTPUTS += \
-Static_Kit.abs
+# Add inputs and outputs from these tool invocations to the build variables 
+LIBRARY_GENERATOR_OUTPUTTYPE_OUTPUTS += \
+libStatic_Kit.a \
 
-CONVERTOR_OUTPUT_OUTPUTS += \
-Static_Kit.hex
+OBJCOPY += \
+Static_Kit.mot \
 
-OBJS := \
-$(COMPILER_OBJS) \
-$(INDIVIDUAL_COMPILER_OBJS) \
-$(ASSEMBLER_OBJS) \
-$(CUSTOM_OBJS)
 
 # All Target
-all: $(CONVERTOR_OUTPUT_OUTPUTS) Static_Kit.x
-	@echo 'Build complete.'
+all: Static_Kit.hex secondary-outputs
 
-Static_Kit.hex: $(LINKER_OUTPUT_OUTPUTS) 
-	@echo 'Invoking: Converter'
-	@echo 'Building target:'
-	@echo ConverterStatic_Kit.tmp=
-	@sed -e "s/^/    /" "ConverterStatic_Kit.tmp"
-	rlink   "Static_Kit.abs" -subcommand="ConverterStatic_Kit.tmp"
-	@echo 'Finished building target:'
-	@echo.
+# Tool invocations
+Static_Kit.hex: $(OBJS) $(USER_OBJS) $(LIBRARY_GENERATOR_OUTPUTTYPE_OUTPUTS) $(LINKER_SCRIPT)
+	@echo 'Building target: $@'
+	@echo 'Invoking Linker'
+	$(file > Static_Kit.hex.in,-O0 -fdata-sections -g2 -o "Static_Kit.hex" $(OBJS) $(USER_OBJS) $(LIBS) -T "C:/Users/500022/Documents/Intern/RL78/workspace/Static_Kit/generate/linker_script.ld" -L"C:\\Users\\500022\\Documents\\Intern\\RL78\\workspace\\Static_Kit\\Release" -L"C:\\Program Files (x86)\\Renesas\\RL78\\1_8_0\\/lib/gcc/rl78-elf/v1.08.00-GNURL78" -Wl,-M=Static_Kit.map -Wl,--start-group -lStatic_Kit -lgcc -Wl,--end-group -nostartfiles -Wl,-e_PowerON_Reset)
+	rl78-elf-gcc @"Static_Kit.hex.in"
+	@echo 'Finished building target: $@'
+	@echo ' '
 
+libStatic_Kit.a: 
+	@echo 'Invoking: Library Generator'
+	rl78-elf-libgen  --header-files=all --select-lib=optlib --compiler-options=-O0,-fdata-sections -o "libStatic_Kit.a"
+	@echo 'Finished building: $@'
+	@echo ' '
 
-Static_Kit.abs: $(OBJS)  $(ALL_ASMS)
-	@echo 'Invoking: Linker'
-	@echo LinkerStatic_Kit.tmp=
-	@sed -e "s/^/    /" "LinkerStatic_Kit.tmp"
-	rlink -subcommand="LinkerStatic_Kit.tmp"
-	@echo 'Finished building:'
-	@echo.
-
-
-Static_Kit.x: Static_Kit.abs
-		-C:\Renesas\e2_studio\Utilities\\ccrl\renesas_cc_converter.exe Static_Kit.abs Static_Kit.x
+Static_Kit.mot: Static_Kit.hex
+	@echo 'Invoking Object Copy'
+	rl78-elf-objcopy "Static_Kit.hex" -O srec  "Static_Kit.mot"
+	@echo 'Finished building: $@'
+	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) $(LINKER_OUTPUT_OUTPUTS) $(CONVERTOR_OUTPUT_OUTPUTS)
-	-rm -rf generate/*.obj generate/*.d generate/*.asm generate/*.p generate/*.src generate/*.jmp generate/*.lst generate/*.prn generate/*.i 
-	-rm -rf src/*.obj src/*.d src/*.asm src/*.p src/*.src src/*.jmp src/*.lst src/*.prn src/*.i 
-	@echo
-	@echo 'Clean complete.'
+ifneq ($(strip $(JMP_DEPS)),)
+	-$(file > clean_JMP_DEPS.tmp, $(JMP_DEPS))
+	-@ xargs -s 6000 -t -a clean_JMP_DEPS.tmp $(RM)
+	-@$(RM) clean_JMP_DEPS.tmp
+endif
+ifneq ($(strip $(FSY_DEPS)),)
+	-$(file > clean_FSY_DEPS.tmp, $(FSY_DEPS))
+	-@ xargs -s 6000 -t -a clean_FSY_DEPS.tmp $(RM)
+	-@$(RM) clean_FSY_DEPS.tmp
+endif
+ifneq ($(strip $(C_UPPER_DEPS)),)
+	-$(file > clean_C_UPPER_DEPS.tmp, $(C_UPPER_DEPS))
+	-@ xargs -s 6000 -t -a clean_C_UPPER_DEPS.tmp $(RM)
+	-@$(RM) clean_C_UPPER_DEPS.tmp
+endif
+ifneq ($(strip $(SRC_UPPER_DEPS)),)
+	-$(file > clean_SRC_UPPER_DEPS.tmp, $(SRC_UPPER_DEPS))
+	-@ xargs -s 6000 -t -a clean_SRC_UPPER_DEPS.tmp $(RM)
+	-@$(RM) clean_SRC_UPPER_DEPS.tmp
+endif
+ifneq ($(strip $(P_UPPER_DEPS)),)
+	-$(file > clean_P_UPPER_DEPS.tmp, $(P_UPPER_DEPS))
+	-@ xargs -s 6000 -t -a clean_P_UPPER_DEPS.tmp $(RM)
+	-@$(RM) clean_P_UPPER_DEPS.tmp
+endif
+ifneq ($(strip $(S_DEPS)),)
+	-$(file > clean_S_DEPS.tmp, $(S_DEPS))
+	-@ xargs -s 6000 -t -a clean_S_DEPS.tmp $(RM)
+	-@$(RM) clean_S_DEPS.tmp
+endif
+ifneq ($(strip $(PP_UPPER_DEPS)),)
+	-$(file > clean_PP_UPPER_DEPS.tmp, $(PP_UPPER_DEPS))
+	-@ xargs -s 6000 -t -a clean_PP_UPPER_DEPS.tmp $(RM)
+	-@$(RM) clean_PP_UPPER_DEPS.tmp
+endif
+ifneq ($(strip $(P_DEPS)),)
+	-$(file > clean_P_DEPS.tmp, $(P_DEPS))
+	-@ xargs -s 6000 -t -a clean_P_DEPS.tmp $(RM)
+	-@$(RM) clean_P_DEPS.tmp
+endif
+ifneq ($(strip $(FSY_UPPER_DEPS)),)
+	-$(file > clean_FSY_UPPER_DEPS.tmp, $(FSY_UPPER_DEPS))
+	-@ xargs -s 6000 -t -a clean_FSY_UPPER_DEPS.tmp $(RM)
+	-@$(RM) clean_FSY_UPPER_DEPS.tmp
+endif
+ifneq ($(strip $(C_DEPS)),)
+	-$(file > clean_C_DEPS.tmp, $(C_DEPS))
+	-@ xargs -s 6000 -t -a clean_C_DEPS.tmp $(RM)
+	-@$(RM) clean_C_DEPS.tmp
+endif
+ifneq ($(strip $(SRC_DEPS)),)
+	-$(file > clean_SRC_DEPS.tmp, $(SRC_DEPS))
+	-@ xargs -s 6000 -t -a clean_SRC_DEPS.tmp $(RM)
+	-@$(RM) clean_SRC_DEPS.tmp
+endif
+ifneq ($(strip $(OBJCOPY)),)
+	-$(file > clean_OBJCOPY.tmp, $(OBJCOPY))
+	-@ xargs -s 6000 -t -a clean_OBJCOPY.tmp $(RM)
+	-@$(RM) clean_OBJCOPY.tmp
+endif
+ifneq ($(strip $(JMP_UPPER_DEPS)),)
+	-$(file > clean_JMP_UPPER_DEPS.tmp, $(JMP_UPPER_DEPS))
+	-@ xargs -s 6000 -t -a clean_JMP_UPPER_DEPS.tmp $(RM)
+	-@$(RM) clean_JMP_UPPER_DEPS.tmp
+endif
+ifneq ($(strip $(PP_DEPS)),)
+	-$(file > clean_PP_DEPS.tmp, $(PP_DEPS))
+	-@ xargs -s 6000 -t -a clean_PP_DEPS.tmp $(RM)
+	-@$(RM) clean_PP_DEPS.tmp
+endif
+ifneq ($(strip $(ASM_UPPER_DEPS)),)
+	-$(file > clean_ASM_UPPER_DEPS.tmp, $(ASM_UPPER_DEPS))
+	-@ xargs -s 6000 -t -a clean_ASM_UPPER_DEPS.tmp $(RM)
+	-@$(RM) clean_ASM_UPPER_DEPS.tmp
+endif
+ifneq ($(strip $(SX_DEPS)),)
+	-$(file > clean_SX_DEPS.tmp, $(SX_DEPS))
+	-@ xargs -s 6000 -t -a clean_SX_DEPS.tmp $(RM)
+	-@$(RM) clean_SX_DEPS.tmp
+endif
+ifneq ($(strip $(OBJS)),)
+	-$(file > clean_OBJS.tmp, $(OBJS))
+	-@ xargs -s 6000 -t -a clean_OBJS.tmp $(RM)
+	-@$(RM) clean_OBJS.tmp
+endif
+ifneq ($(strip $(SX_UPPER_DEPS)),)
+	-$(file > clean_SX_UPPER_DEPS.tmp, $(SX_UPPER_DEPS))
+	-@ xargs -s 6000 -t -a clean_SX_UPPER_DEPS.tmp $(RM)
+	-@$(RM) clean_SX_UPPER_DEPS.tmp
+endif
+ifneq ($(strip $(ASM_DEPS)),)
+	-$(file > clean_ASM_DEPS.tmp, $(ASM_DEPS))
+	-@ xargs -s 6000 -t -a clean_ASM_DEPS.tmp $(RM)
+	-@$(RM) clean_ASM_DEPS.tmp
+endif
+ifneq ($(strip $(LIBRARY_GENERATOR_OUTPUTTYPE_OUTPUTS)),)
+	-$(file > clean_LIBRARY_GENERATOR_OUTPUTTYPE_OUTPUTS.tmp, $(LIBRARY_GENERATOR_OUTPUTTYPE_OUTPUTS))
+	-@ xargs -s 6000 -t -a clean_LIBRARY_GENERATOR_OUTPUTTYPE_OUTPUTS.tmp $(RM)
+	-@$(RM) clean_LIBRARY_GENERATOR_OUTPUTTYPE_OUTPUTS.tmp
+endif
+ifneq ($(strip $(S_UPPER_DEPS)),)
+	-$(file > clean_S_UPPER_DEPS.tmp, $(S_UPPER_DEPS))
+	-@ xargs -s 6000 -t -a clean_S_UPPER_DEPS.tmp $(RM)
+	-@$(RM) clean_S_UPPER_DEPS.tmp
+endif
+	-$(RM)  Static_Kit.hex
+	-@echo ' '
 
-.PHONY: all clean 
+secondary-outputs: $(OBJCOPY)
+
+.PHONY: all clean dependents 
+
 -include ../makefile.targets

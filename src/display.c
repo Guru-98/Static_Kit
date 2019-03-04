@@ -6,6 +6,7 @@
  */
 #include "r_cg_timer.h"
 #include "r_cg_adc.h"
+#include "r_cg_userdefine.h"
 
 #include "display.h"
 #include "lcd.h"
@@ -46,13 +47,9 @@ char Fail[] = "-Fail";
 char Empty[] = "-    ";
 
 void displayInit(void) {
-	int i;
 	lcdInit();
 	splashScreen();
-	for (i = 0; i < 100; i++) {
-		delay(0xffff);
-	}
-	testScreen();
+//	testScreen();
 }
 
 void animTest(int testNo) {
@@ -77,9 +74,9 @@ void animTest(int testNo) {
 		setCursor(15, i - 4);
 	}
 
-	if (resTests[i]==1) {
+	if (resTests[i] == 1) {
 		printLcd(OK);
-	} else if(resTests[i]==0) {
+	} else if (resTests[i] == 0) {
 		printLcd(Fail);
 	}
 }
@@ -108,27 +105,44 @@ void testScreen(void) {
 
 void splashScreen(void) {
 	lcdInit();
-	loadDoubleLines();
-//drawBorders();
+//	loadDoubleLines();
+//  drawBorders();
 	setCursor(1, 1);
 	printLcd(" D135  STATIC KIT ");
 	setCursor(1, 3);
 	printLcd(" Press Start Btn. ");
-
+	while (START_BTN == 0);
 }
 
 void resultScreen(char result) {
 	lcdInit();
-	loadDoubleLines();
-	drawBorders();
-	setCursor(1, 1);
+//	loadDoubleLines();
+//	drawBorders();
 	if (result == 1) {
+		setCursor(1, 1);
 		printLcd("       PASS       ");
+		setCursor(1, 3);
+		printLcd(" Press Start Btn. ");
+		while (START_BTN == 0);
 	} else {
+		setCursor(1, 0);
 		printLcd("       FAIL       ");
 		setCursor(1, 2);
 		printLcd(TestsFull[failedTest]);
+		setCursor(1, 3);
+		printLcd(" Press Reset Btn. ");
+		while (RESET_BTN == 0);
 	}
+}
+
+void memoryScreen(void){
+	lcdInit();
+	setCursor(0,0);
+	printLcd("Total DUTs tested: ");
+	setCursor(0,1);
+	printLcd("DUTs passed: ");
+	setCursor(0,2);
+	printLcd("DUTs failed: ");
 }
 
 void drawBorders(void) {

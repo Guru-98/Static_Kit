@@ -2,29 +2,27 @@
 # Automatically-generated file. Do not edit!
 ################################################################################
 
-# Add inputs and outputs from these tool invocations to the build variables
+# Add inputs and outputs from these tool invocations to the build variables 
 ASM_SRCS += \
 ../generate/cstart.asm \
 ../generate/stkinit.asm 
 
-ASSEMBLER_OBJS += \
-generate/cstart.obj \
-generate/stkinit.obj 
+OBJS += \
+./generate/cstart.o \
+./generate/stkinit.o 
 
 ASM_DEPS += \
-generate/cstart.d \
-generate/stkinit.d 
+./generate/cstart.d \
+./generate/stkinit.d 
+
 
 # Each subdirectory must supply rules for building sources it contributes
-generate/%.obj: ../generate/%.asm 
-	@echo 'Scanning and building file: $<'
-	@echo 'Invoking: Scanner and Assembler'
-	@echo generate\asmDepSubCommand.tmp=
-	@sed -e "s/^/ /" "generate\asmDepSubCommand.tmp"
-	ccrl -subcommand="generate\asmDepSubCommand.tmp" -asmopt=-MF="$(@:%.obj=%.d)" -asmopt=-MT="$(@:%.obj=%.obj)" -asmopt=-MT="$(@:%.obj=%.d)" -msg_lang=english "$<"
-	@echo generate\asmSubCommand.tmp=
-	@sed -e "s/^/ /" "generate\asmSubCommand.tmp"
-	ccrl -subcommand="generate\asmSubCommand.tmp" -msg_lang=english -o "$(@:%.d=%.obj)" "$<"
-	@echo 'Finished Scanning and building: $<'
-	@echo.
+generate/%.o: ../generate/%.asm
+	@echo 'Building file: $<'
+	@echo 'Invoking Assembler'
+	$(file > $@.in,-O0 -fdata-sections -g2 -x assembler-with-cpp -Wa,--gdwarf2 -I"C:/Users/500022/Documents/Intern/RL78/workspace/Static_Kit/src" -Wa,-adlhn="$(basename $(notdir $<)).lst" -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@)" -c "$<" -o "$@")
+	rl78-elf-gcc @"$@.in"
+	@echo 'Finished building: $<'
+	@echo ' '
+
 

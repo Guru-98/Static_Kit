@@ -18,11 +18,11 @@
 ***********************************************************************************************************************/
 
 /***********************************************************************************************************************
-* File Name    : r_cg_adc_user.c
+* File Name    : r_cg_intc.c
 * Version      : CodeGenerator for RL78/F13 V2.03.03.01 [28 Oct 2018]
 * Device(s)    : R5F10BGG
 * Tool-Chain   : CCRL
-* Description  : This file implements device driver for ADC module.
+* Description  : This file implements device driver for INTC module.
 * Creation Date: 4/3/2019
 ***********************************************************************************************************************/
 
@@ -30,19 +30,14 @@
 Includes
 ***********************************************************************************************************************/
 #include "r_cg_macrodriver.h"
-#include "r_cg_adc.h"
+#include "r_cg_intc.h"
 /* Start user code for include. Do not edit comment generated here */
-#include <stdio.h>
-#include <stdlib.h>
-
-#include "lcd.h"
 /* End user code. Do not edit comment generated here */
 #include "r_cg_userdefine.h"
 
 /***********************************************************************************************************************
 Pragma directive
 ***********************************************************************************************************************/
-#pragma interrupt r_adc_interrupt(vect=INTAD)
 /* Start user code for pragma. Do not edit comment generated here */
 /* End user code. Do not edit comment generated here */
 
@@ -50,34 +45,58 @@ Pragma directive
 Global variables and functions
 ***********************************************************************************************************************/
 /* Start user code for global. Do not edit comment generated here */
-uint16_t adcValue=0;
-volatile char _adc_f=1;
 /* End user code. Do not edit comment generated here */
 
 /***********************************************************************************************************************
-* Function Name: r_adc_interrupt
-* Description  : This function is INTAD interrupt service routine.
+* Function Name: R_KEY_Create
+* Description  : This function initializes the key return module.
 * Arguments    : None
 * Return Value : None
 ***********************************************************************************************************************/
-static void __near r_adc_interrupt(void)
+void R_KEY_Create(void)
 {
-    /* Start user code. Do not edit comment generated here */
-	DI();
-	R_ADC_Stop();
-	R_ADC_Get_Result(&adcValue);
-	_adc_f=0;
-	EI();
-    /* End user code. Do not edit comment generated here */
+    volatile uint8_t  w_count;
+
+    KRMK = 1U;  /* disable INTKR operation */
+    KRIF = 0U;  /* clear INTKR interrupt flag */
+    /* Set INTKR high priority */
+    KRPR1 = 0U;
+    KRPR0 = 0U;
+    KRM = _00_KR0_SIGNAL_DETECT_OFF | _00_KR1_SIGNAL_DETECT_OFF | _00_KR2_SIGNAL_DETECT_OFF | _08_KR3_SIGNAL_DETECT_ON;
+    /* Set KR3 pin */
+    PIM7 &= 0xF7U;
+    PM7 |= 0x08U;
+
+    /* Wait 250 ns */
+    for (w_count = 0U; w_count < KEY_WAITTIME; w_count++)
+    {   
+        NOP();
+    }
+}
+
+/***********************************************************************************************************************
+* Function Name: R_KEY_Start
+* Description  : This function clears INTKR interrupt flag and enables interrupt.
+* Arguments    : None
+* Return Value : None
+***********************************************************************************************************************/
+void R_KEY_Start(void)
+{
+    KRIF = 0U;  /* clear INTKR interrupt flag */
+    KRMK = 0U;  /* enable INTKR operation */
+}
+
+/***********************************************************************************************************************
+* Function Name: R_KEY_Stop
+* Description  : This function disables INTKR interrupt and clears interrupt flag.
+* Arguments    : None
+* Return Value : None
+***********************************************************************************************************************/
+void R_KEY_Stop(void)
+{
+    KRMK = 1U;  /* disable INTKR operation */
+    KRIF = 0U;  /* clear INTKR interrupt flag */
 }
 
 /* Start user code for adding. Do not edit comment generated here */
-uint16_t analogRead(int pin){
-	//TODO: Make this pin variant.
-	_adc_f=1;
-	R_ADC_Set_OperationOn();
-	R_ADC_Start();
-	while(_adc_f);
-	return adcValue;
-}
 /* End user code. Do not edit comment generated here */

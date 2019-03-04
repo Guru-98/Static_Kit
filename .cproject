@@ -7,6 +7,7 @@
 				<extensions>
 					<extension id="org.eclipse.cdt.core.PE" point="org.eclipse.cdt.core.BinaryParser"/>
 					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="org.eclipse.cdt.core.GNU_ELF" point="org.eclipse.cdt.core.BinaryParser"/>
 					<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="com.renesas.cdt.managedbuild.renesas.core.RenesasCompilerAssemblerErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="com.renesas.cdt.managedbuild.core.buildRunnerErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
@@ -17,10 +18,10 @@
 				<option id="toolchain.version" value="v1.08.00"/>
 			</storageModule>
 			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
-				<configuration artifactExtension="hex" artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug" description="Debug on hardware" id="com.renesas.cdt.managedbuild.renesas.ccrl.hardwaredebug.configuration.1326784577" name="HardwareDebug" parent="com.renesas.cdt.managedbuild.renesas.ccrl.hardwaredebug.configuration">
+				<configuration artifactExtension="hex" artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug" description="Debug on hardware" errorParsers="org.eclipse.cdt.core.GmakeErrorParser;com.renesas.cdt.managedbuild.renesas.core.RenesasCompilerAssemblerErrorParser;com.renesas.cdt.managedbuild.core.buildRunnerErrorParser" id="com.renesas.cdt.managedbuild.renesas.ccrl.hardwaredebug.configuration.1326784577" name="HardwareDebug" parent="com.renesas.cdt.managedbuild.renesas.ccrl.hardwaredebug.configuration">
 					<folderInfo id="com.renesas.cdt.managedbuild.renesas.ccrl.hardwaredebug.configuration.1326784577." name="/" resourcePath="">
 						<toolChain id="com.renesas.cdt.managedbuild.renesas.ccrl.hardwaredebug.toolChain.2023336925" name="Renesas CCRL Toolchain" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.hardwaredebug.toolChain">
-							<targetPlatform archList="all" id="com.renesas.cdt.managedbuild.renesas.ccrl.base.targetPlatform.389198060" isAbstract="false" name="targetPlatform" osList="win32" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.base.targetPlatform"/>
+							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF;org.eclipse.cdt.core.PE;org.eclipse.cdt.core.GNU_ELF" id="com.renesas.cdt.managedbuild.renesas.ccrl.base.targetPlatform.389198060" isAbstract="false" name="targetPlatform" osList="win32" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.base.targetPlatform"/>
 							<builder buildPath="${workspace_loc:/LCD}/HardwareDebug" id="com.renesas.cdt.managedbuild.renesas.ccrl.base.builder.1453075033" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="builder" parallelBuildOn="true" parallelizationNumber="optimal" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.base.builder"/>
 							<tool id="com.renesas.cdt.managedbuild.renesas.ccrl.base.dsp.409798654" name="DSP Assembler" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.base.dsp">
 								<option id="com.renesas.cdt.managedbuild.renesas.ccrl.dsp.option.noDebugInfo.426147001" name="Output debug information" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.dsp.option.noDebugInfo" useByScannerDiscovery="false" value="true" valueType="boolean"/>
@@ -175,6 +176,9 @@
 		</cconfiguration>
 		<cconfiguration id="com.renesas.cdt.managedbuild.renesas.ccrl.debug.configuration.492233231">
 			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="com.renesas.cdt.managedbuild.renesas.ccrl.debug.configuration.492233231" moduleId="org.eclipse.cdt.core.settings" name="Debug">
+				<macros>
+					<stringMacro name="USERNAME" type="VALUE_TEXT" value="Guru Prasath"/>
+				</macros>
 				<externalSettings/>
 				<extensions>
 					<extension id="org.eclipse.cdt.core.PE" point="org.eclipse.cdt.core.BinaryParser"/>
@@ -278,11 +282,12 @@
 			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="com.renesas.cdt.managedbuild.renesas.ccrl.release.configuration.500881053" moduleId="org.eclipse.cdt.core.settings" name="Release">
 				<externalSettings/>
 				<extensions>
-					<extension id="org.eclipse.cdt.core.PE" point="org.eclipse.cdt.core.BinaryParser"/>
 					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
 					<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
-					<extension id="com.renesas.cdt.managedbuild.renesas.core.RenesasCompilerAssemblerErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
-					<extension id="com.renesas.cdt.managedbuild.core.buildRunnerErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.CWDLocator" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
 				</extensions>
 			</storageModule>
 			<storageModule moduleId="com.renesas.cdt.managedbuild.core.toolchainInfo">
@@ -292,85 +297,57 @@
 			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
 				<configuration artifactExtension="hex" artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug" description="Release - No Debug" id="com.renesas.cdt.managedbuild.renesas.ccrl.release.configuration.500881053" name="Release" parent="com.renesas.cdt.managedbuild.renesas.ccrl.release.configuration">
 					<folderInfo id="com.renesas.cdt.managedbuild.renesas.ccrl.release.configuration.500881053." name="/" resourcePath="">
-						<toolChain id="com.renesas.cdt.managedbuild.renesas.ccrl.release.toolChain.859887254" name="Renesas CCRL Toolchain" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.release.toolChain">
-							<targetPlatform archList="all" id="com.renesas.cdt.managedbuild.renesas.ccrl.base.targetPlatform.1348120014" isAbstract="false" name="targetPlatform" osList="win32" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.base.targetPlatform"/>
-							<builder buildPath="${workspace_loc:/LCD}/Release" id="com.renesas.cdt.managedbuild.renesas.ccrl.base.builder.1451414625" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="builder" parallelBuildOn="true" parallelizationNumber="optimal" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.base.builder"/>
-							<tool id="com.renesas.cdt.managedbuild.renesas.ccrl.base.dsp.743496208" name="DSP Assembler" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.base.dsp"/>
-							<tool id="com.renesas.cdt.managedbuild.renesas.ccrl.base.common.451176989" name="Common" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.base.common">
-								<option id="com.renesas.cdt.managedbuild.renesas.ccrl.common.option.deviceCommand.1749434831" name="Device Command" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.common.option.deviceCommand" useByScannerDiscovery="false" value="R5F10BGG" valueType="string"/>
-								<option id="com.renesas.cdt.managedbuild.renesas.ccrl.common.option.cpu.1785338872" name="Type of CPU core" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.common.option.cpu" useByScannerDiscovery="false" value="com.renesas.cdt.managedbuild.renesas.ccrl.common.option.cpu.s3" valueType="enumerated"/>
-								<option id="com.renesas.cdt.managedbuild.renesas.ccrl.common.option.deviceName.904667713" name="Device name" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.common.option.deviceName" useByScannerDiscovery="false" value="R5F10BGG" valueType="string"/>
-								<option id="com.renesas.cdt.managedbuild.renesas.ccrl.common.option.deviceFamily.1928732973" name="Device Family" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.common.option.deviceFamily" useByScannerDiscovery="false" value="RL78 - F13" valueType="string"/>
-								<option id="com.renesas.cdt.managedbuild.renesas.ccrl.common.option.hasDsp.1835147405" name="Has DSP" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.common.option.hasDsp" useByScannerDiscovery="false" value="false" valueType="string"/>
-								<option id="com.renesas.cdt.managedbuild.renesas.ccrl.common.option.mirrorRegion.276655296" name="Address range of the mirror destination area" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.common.option.mirrorRegion" useByScannerDiscovery="false" value="F2000,FDEFF" valueType="string"/>
-							</tool>
-							<tool id="com.renesas.cdt.managedbuild.renesas.ccrl.base.compiler.1690930895" name="Compiler" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.base.compiler">
-								<option id="com.renesas.cdt.managedbuild.renesas.ccrl.compiler.option.g.1824084692" name="Add debug information" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.compiler.option.g" useByScannerDiscovery="false" value="false" valueType="boolean"/>
-								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.renesas.cdt.managedbuild.renesas.ccrl.compiler.option.I.1110952530" name="Include file directories" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.compiler.option.I" useByScannerDiscovery="false" valueType="includePath">
+						<toolChain id="com.renesas.cdt.managedbuild.gcc.rl78.toolchain.Id.1715863507" name="GCC for Renesas RL78" superClass="com.renesas.cdt.managedbuild.gcc.rl78.toolchain.Id">
+							<option id="com.renesas.cdt.managedbuild.gcc.core.option.cpu.cpuTyperl78.1540154871" name="CPU Type" superClass="com.renesas.cdt.managedbuild.gcc.core.option.cpu.cpuTyperl78"/>
+							<option id="com.renesas.cdt.managedbuild.gcc.core.option.cpu.cpuTyperl78.applicability.167301643" name="CPU Type Applicability" superClass="com.renesas.cdt.managedbuild.gcc.core.option.cpu.cpuTyperl78.applicability"/>
+							<option id="com.renesas.cdt.managedbuild.gcc.core.option.cpu.mmul.971451996" name="Multiplication code generation" superClass="com.renesas.cdt.managedbuild.gcc.core.option.cpu.mmul"/>
+							<option id="com.renesas.cdt.managedbuild.gcc.rl78.sectionanchors.469827708" name="Section anchors (-fsection-anchors)" superClass="com.renesas.cdt.managedbuild.gcc.rl78.sectionanchors"/>
+							<option id="com.renesas.cdt.managedbuild.gcc.core.option.optimization.optimizationLevel.1059186938" name="Optimization Level" superClass="com.renesas.cdt.managedbuild.gcc.core.option.optimization.optimizationLevel"/>
+							<option id="com.renesas.cdt.managedbuild.gcc.core.option.optimization.fdatasections.247854071" name="Data sections (-fdata-sections)" superClass="com.renesas.cdt.managedbuild.gcc.core.option.optimization.fdatasections" value="true" valueType="boolean"/>
+							<option id="com.renesas.cdt.managedbuild.gcc.core.option.debug.debugFormat.1695691656" name="Debug format" superClass="com.renesas.cdt.managedbuild.gcc.core.option.debug.debugFormat" value="com.renesas.cdt.managedbuild.gcc.core.option.debug.debugFormat.Default" valueType="enumerated"/>
+							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="com.renesas.cdt.managedbuild.gcc.core.targetPlatform.812237552" isAbstract="false" osList="all" superClass="com.renesas.cdt.managedbuild.gcc.core.targetPlatform"/>
+							<builder buildPath="${workspace_loc:/Static_Kit}/Release" id="com.renesas.cdt.managedbuild.gcc.core.builder.348716061" keepEnvironmentInBuildfile="false" name="GCC for Renesas Builder" parallelBuildOn="true" parallelizationNumber="optimal" superClass="com.renesas.cdt.managedbuild.gcc.core.builder"/>
+							<tool id="com.renesas.cdt.managedbuild.gcc.rl78.tool.libgen.325162253" name="Library Generator" superClass="com.renesas.cdt.managedbuild.gcc.rl78.tool.libgen"/>
+							<tool id="com.renesas.cdt.managedbuild.gcc.rl78.tool.Compiler.529656465" name="Compiler" superClass="com.renesas.cdt.managedbuild.gcc.rl78.tool.Compiler">
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.renesas.cdt.managedbuild.gcc.core.option.compiler.includes.includeFileDir.147853360" name="Include file directories" superClass="com.renesas.cdt.managedbuild.gcc.core.option.compiler.includes.includeFileDir" useByScannerDiscovery="false" valueType="includePath">
 									<listOptionValue builtIn="false" value="${TCINSTALL}/inc"/>
 									<listOptionValue builtIn="false" value="${ProjDirPath}/generate"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/generate&quot;"/>
 								</option>
-								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.renesas.cdt.managedbuild.renesas.ccrl.compiler.option.userBefore.517960501" name="User-defined options (added before all specified options)" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.compiler.option.userBefore" useByScannerDiscovery="false" valueType="stringList">
-									<listOptionValue builtIn="false" value=""/>
-								</option>
-								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.renesas.cdt.managedbuild.renesas.ccrl.compiler.option.userAfter.685461739" name="User-defined options (added after all specified options)" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.compiler.option.userAfter" useByScannerDiscovery="false" valueType="stringList">
-									<listOptionValue builtIn="false" value=""/>
-								</option>
-								<inputType id="Base.Compiler.ccrl.C.inputType.1406599540" name="Compiler InputType" superClass="Base.Compiler.ccrl.C.inputType"/>
+								<inputType id="com.renesas.cdt.managedbuild.gcc.core.inputType.compiler.c.811655673" superClass="com.renesas.cdt.managedbuild.gcc.core.inputType.compiler.c"/>
 							</tool>
-							<tool id="com.renesas.cdt.managedbuild.renesas.ccrl.base.assembler.921524055" name="Assembler" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.base.assembler">
-								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.renesas.cdt.managedbuild.renesas.ccrl.assembler.option.userBefore.72633595" name="User-defined options (added before all specified options)" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.assembler.option.userBefore" useByScannerDiscovery="false" valueType="stringList">
-									<listOptionValue builtIn="false" value=""/>
-								</option>
-								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.renesas.cdt.managedbuild.renesas.ccrl.assembler.option.userAfter.80878128" name="User-defined options (added after all specified options)" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.assembler.option.userAfter" useByScannerDiscovery="false" valueType="stringList">
-									<listOptionValue builtIn="false" value=""/>
-								</option>
-								<inputType id="Base.Assembler.ccrl.inputType.650567071" name="Assembler InputType" superClass="Base.Assembler.ccrl.inputType"/>
+							<tool id="com.renesas.cdt.managedbuild.gcc.rl78.tool.cpp.compiler.609438156" name="Compiler CPP" superClass="com.renesas.cdt.managedbuild.gcc.rl78.tool.cpp.compiler"/>
+							<tool id="com.renesas.cdt.managedbuild.gcc.rl78.tool.Assembler.200842301" name="Assembler" superClass="com.renesas.cdt.managedbuild.gcc.rl78.tool.Assembler">
+								<option id="com.renesas.cdt.managedbuild.gcc.core.option.assembler.source.usepreprocessor.769247306" name="Use preprocessor" superClass="com.renesas.cdt.managedbuild.gcc.core.option.assembler.source.usepreprocessor" useByScannerDiscovery="false"/>
+								<inputType id="com.renesas.cdt.managedbuild.gcc.core.inputType.assembler.1100410716" superClass="com.renesas.cdt.managedbuild.gcc.core.inputType.assembler"/>
 							</tool>
-							<tool id="com.renesas.cdt.managedbuild.renesas.ccrl.base.linker.1053742978" name="Linker" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.base.linker">
-								<option id="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.debugInfo.1139318602" name="Output debug information" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.debugInfo" useByScannerDiscovery="false" value="false" valueType="boolean"/>
-								<option id="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.entry.889517603" name="Specify execution start address" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.entry" useByScannerDiscovery="false" value="false" valueType="boolean"/>
-								<option id="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.entryValue.337339096" name="Execution start address" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.entryValue" useByScannerDiscovery="false" value="" valueType="string"/>
-								<option id="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.debugMonitorValue.1188766656" name="Memory area" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.debugMonitorValue" useByScannerDiscovery="false" value="" valueType="string"/>
-								<option id="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.userOptByteValue.1366293640" name="User option byte value" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.userOptByteValue" useByScannerDiscovery="false" value="E9FFF8" valueType="string"/>
-								<option id="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.ocdbgValue.267568200" name="On-chip debug control value" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.ocdbgValue" useByScannerDiscovery="false" value="04" valueType="string"/>
-								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.vectn.1455429347" name="Address setting for specified area of vector table" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.vectn" useByScannerDiscovery="false" valueType="stringList">
-									<listOptionValue builtIn="false" value=""/>
+							<tool id="com.renesas.cdt.managedbuild.gcc.rl78.tool.Linker.1563566494" name="Linker" superClass="com.renesas.cdt.managedbuild.gcc.rl78.tool.Linker">
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.renesas.cdt.managedbuild.gcc.core.option.linker.source.linkOrderList.1880144426" name="Linkage Order List" superClass="com.renesas.cdt.managedbuild.gcc.core.option.linker.source.linkOrderList" useByScannerDiscovery="false" valueType="stringList">
+									<listOptionValue builtIn="false" value="&quot;.\src\display.o&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;.\src\lcd.o&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;.\src\r_cg_adc.o&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;.\src\r_cg_adc_user.o&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;.\src\r_cg_cgc.o&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;.\src\r_cg_cgc_user.o&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;.\src\r_cg_port.o&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;.\src\r_cg_port_user.o&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;.\src\r_cg_timer.o&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;.\src\r_cg_timer_user.o&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;.\src\r_main.o&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;.\src\r_systeminit.o&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;.\src\test.o&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;.\generate\cstart.o&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;.\generate\stkinit.o&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;.\libStatic_Kit.a&quot;"/>
 								</option>
-								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.userBefore.806962936" name="User-defined options (added before all specified options)" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.userBefore" useByScannerDiscovery="false" valueType="stringList">
-									<listOptionValue builtIn="false" value=""/>
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.renesas.cdt.managedbuild.gcc.core.option.linker.archives.archiveLibraryFiles.1819549851" name="Standard archive (library) files" superClass="com.renesas.cdt.managedbuild.gcc.core.option.linker.archives.archiveLibraryFiles" useByScannerDiscovery="false" valueType="stringList">
+									<listOptionValue builtIn="false" value="${BuildArtifactFileBaseName}"/>
+									<listOptionValue builtIn="false" value="gcc"/>
 								</option>
-								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.userAfter.1700200851" name="User-defined options (added after all specified options)" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.userAfter" useByScannerDiscovery="false" valueType="stringList">
-									<listOptionValue builtIn="false" value=""/>
-									<listOptionValue builtIn="false" value="-nologo"/>
-								</option>
-								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.noneLinkageOrderList.781252684" name="None(Linkage order list)" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.noneLinkageOrderList" useByScannerDiscovery="false" valueType="stringList">
-									<listOptionValue builtIn="false" value="&quot;.\generate\cstart.obj&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;.\generate\hdwinit.obj&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;.\generate\stkinit.obj&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;.\src\LCD.obj&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;C:\Program Files (x86)\Renesas\RL78\1_8_0\lib\rl78em4s.lib&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;C:\Program Files (x86)\Renesas\RL78\1_8_0\lib\rl78em4r.lib&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;C:\Program Files (x86)\Renesas\RL78\1_8_0\lib\malloc_n.lib&quot;"/>
-								</option>
-								<option id="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.debugMonitor.960321059" name="Secure memory area of OCD monitor" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.debugMonitor" useByScannerDiscovery="false" value="false" valueType="boolean"/>
-								<option id="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.securityID.1855377757" name="Security ID value" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.securityID" value="00000000000000000000" valueType="string"/>
-								<option id="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.ocdbg.2130304978" name="Set enable/disable on-chip debug by link option" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.ocdbg" value="true" valueType="boolean"/>
-								<option id="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.userOptByte.1492008819" name="Set user option byte" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.userOptByte" value="true" valueType="boolean"/>
-								<inputType id="Base.Linker.ccrl.inputType.910918881" name="Linker InputType" superClass="Base.Linker.ccrl.inputType"/>
 							</tool>
-							<tool id="com.renesas.cdt.managedbuild.renesas.ccrl.base.converter.1391664768" name="Converter" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.base.converter">
-								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.renesas.cdt.managedbuild.renesas.ccrl.converter.option.userBefore.2098515710" name="User-defined options (added before all specified options)" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.converter.option.userBefore" useByScannerDiscovery="false" valueType="stringList">
-									<listOptionValue builtIn="false" value=""/>
-								</option>
-								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.renesas.cdt.managedbuild.renesas.ccrl.converter.option.userAfter.858617716" name="User-defined options (added after all specified options)" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.converter.option.userAfter" useByScannerDiscovery="false" valueType="stringList">
-									<listOptionValue builtIn="false" value=""/>
-									<listOptionValue builtIn="false" value="-nologo"/>
-								</option>
-								<option id="com.renesas.cdt.managedbuild.renesas.ccrl.converter.option.outputHexFile.1934071015" name="Output hex file" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.converter.option.outputHexFile" useByScannerDiscovery="false" value="true" valueType="boolean"/>
-								<option id="com.renesas.cdt.managedbuild.renesas.ccrl.converter.option.form.1361459380" name="Output file format" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.converter.option.form" useByScannerDiscovery="false" value="com.renesas.cdt.managedbuild.renesas.ccrl.converter.option.form.hex" valueType="enumerated"/>
-								<option id="com.renesas.cdt.managedbuild.renesas.ccrl.converter.option.outputFilePath.809618943" name="Output file directory" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.converter.option.outputFilePath" useByScannerDiscovery="false" value="${workspace_loc:/${ProjName}/${ConfigName}/${ArtifactName}}.hex" valueType="string"/>
-							</tool>
+							<tool id="com.renesas.cdt.managedbuild.gcc.rl78.tool.cpp.linker.579166355" name="Linker CPP" superClass="com.renesas.cdt.managedbuild.gcc.rl78.tool.cpp.linker"/>
+							<tool id="com.renesas.cdt.managedbuild.gcc.rl78.tool.Objcopy.100954130" name="Objcopy" superClass="com.renesas.cdt.managedbuild.gcc.rl78.tool.Objcopy"/>
+							<tool id="com.renesas.cdt.managedbuild.gcc.rl78.tool.archiver.431843285" name="Archiver" superClass="com.renesas.cdt.managedbuild.gcc.rl78.tool.archiver"/>
 						</toolChain>
 					</folderInfo>
 					<sourceEntries>

@@ -23,7 +23,7 @@
 * Device(s)    : R5F10BGG
 * Tool-Chain   : CCRL
 * Description  : This file implements system initializing function.
-* Creation Date: 19/2/2019
+* Creation Date: 4/3/2019
 ***********************************************************************************************************************/
 
 /***********************************************************************************************************************
@@ -32,6 +32,7 @@ Includes
 #include "r_cg_macrodriver.h"
 #include "r_cg_cgc.h"
 #include "r_cg_port.h"
+#include "r_cg_intc.h"
 #include "r_cg_adc.h"
 #include "r_cg_timer.h"
 /* Start user code for include. Do not edit comment generated here */
@@ -68,7 +69,8 @@ void R_Systeminit(void)
     R_CGC_Create();
     R_PORT_Create();
     R_ADC_Create();
-    R_TAU1_Create();
+    R_TAU0_Create();
+    R_KEY_Create();
 
     /* Set invalid memory access detection control */
     IAWCTL = 0x00U;

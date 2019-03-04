@@ -23,7 +23,7 @@
 * Device(s)    : R5F10BGG
 * Tool-Chain   : CCRL
 * Description  : This file implements device driver for TAU module.
-* Creation Date: 19/2/2019
+* Creation Date: 4/3/2019
 ***********************************************************************************************************************/
 
 /***********************************************************************************************************************
@@ -38,8 +38,8 @@ Includes
 /***********************************************************************************************************************
 Pragma directive
 ***********************************************************************************************************************/
-#pragma interrupt r_tau1_channel0_interrupt(vect=INTTM10)
-#pragma interrupt r_tau1_channel2_interrupt(vect=INTTM12)
+#pragma interrupt r_tau0_channel0_interrupt(vect=INTTM00)
+#pragma interrupt r_tau0_channel1_interrupt(vect=INTTM01)
 /* Start user code for pragma. Do not edit comment generated here */
 /* End user code. Do not edit comment generated here */
 
@@ -52,65 +52,71 @@ volatile char _msdelay_f = 0;
 /* End user code. Do not edit comment generated here */
 
 /***********************************************************************************************************************
-* Function Name: r_tau1_channel0_interrupt
-* Description  : This function is INTTM10 interrupt service routine.
+* Function Name: r_tau0_channel0_interrupt
+* Description  : This function is INTTM00 interrupt service routine.
 * Arguments    : None
 * Return Value : None
 ***********************************************************************************************************************/
-static void __near r_tau1_channel0_interrupt(void)
+static void __near r_tau0_channel0_interrupt(void)
 {
     /* Start user code. Do not edit comment generated here */
-	R_TAU1_Channel0_Stop();
+	DI();
+	R_TAU0_Channel0_Stop();
 	_msdelay_f = 1;
+	EI();
 	/* End user code. Do not edit comment generated here */
 }
 
 /***********************************************************************************************************************
-* Function Name: r_tau1_channel2_interrupt
-* Description  : This function is INTTM12 interrupt service routine.
+* Function Name: r_tau0_channel1_interrupt
+* Description  : This function is INTTM01 interrupt service routine.
 * Arguments    : None
 * Return Value : None
 ***********************************************************************************************************************/
-static void __near r_tau1_channel2_interrupt(void)
+static void __near r_tau0_channel1_interrupt(void)
 {
     /* Start user code. Do not edit comment generated here */
-	R_TAU1_Channel2_Stop();
-	_usdelay_f = 1;
+	DI();
+	R_TAU0_Channel0_Stop();
+	_msdelay_f = 1;
+	EI();
 	/* End user code. Do not edit comment generated here */
 }
 
 /* Start user code for adding. Do not edit comment generated here */
 void delay_us(uint16_t usec) {
-	while (usec){
+	while (usec) {
 		_delay_1us();
 		usec--;
 	}
 }
 
 #if 0
-void delay(uint16_t msec){
-	while (msec){
+void delay(uint16_t msec) {
+	//TODO: RT delay
+	while (msec) {
 		_delay_1ms();
 		msec--;
 	}
 }
 #else
-void delay(uint16_t msec){
+void delay(uint16_t msec) {
 	while (msec--);
 }
 #endif
 
 void _delay_1us(void) {
 	_usdelay_f = 0;
-	R_TAU1_Channel2_Start();
-	while(_usdelay_f == 1);
+	R_TAU0_Channel1_Start();
+	while (_usdelay_f == 1)
+		;
 }
 
 void _delay_1ms(void) {
 	_msdelay_f = 0;
-	R_TAU1_Channel0_Start();
-	while(_msdelay_f == 1);
+	R_TAU0_Channel0_Start();
+	while (_msdelay_f == 1)
+		;
 }
-
 
 /* End user code. Do not edit comment generated here */

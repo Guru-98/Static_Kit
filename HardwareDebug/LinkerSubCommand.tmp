@@ -6,6 +6,8 @@
 -input=".\src\r_cg_adc_user.obj"
 -input=".\src\r_cg_cgc.obj"
 -input=".\src\r_cg_cgc_user.obj"
+-input=".\src\r_cg_intc.obj"
+-input=".\src\r_cg_intc_user.obj"
 -input=".\src\r_cg_port.obj"
 -input=".\src\r_cg_port_user.obj"
 -input=".\src\r_cg_timer.obj"

@@ -23,7 +23,7 @@
 * Device(s)    : R5F10BGG
 * Tool-Chain   : CCRL
 * Description  : This file implements device driver for TAU module.
-* Creation Date: 19/2/2019
+* Creation Date: 4/3/2019
 ***********************************************************************************************************************/
 
 #ifndef TAU_H
@@ -1006,14 +1006,14 @@ Macro definitions (Register bit)
 /***********************************************************************************************************************
 Macro definitions
 ***********************************************************************************************************************/
-/* 16-bit timer data register 10 (TDR10) */
-#define _001F_TAU_TDR10_VALUE                   (0x001FU)
-/* Clock divisor for TAU1 channel 0 */
-#define _0001_TAU1_CHANNEL0_DIVISOR             (0x0001U)
-/* 16-bit timer data register 12 (TDR12) */
-#define _7CFF_TAU_TDR12_VALUE                   (0x7CFFU)
-/* Clock divisor for TAU1 channel 2 */
-#define _0001_TAU1_CHANNEL2_DIVISOR             (0x0001U)
+/* 16-bit timer data register 00 (TDR00) */
+#define _7CFF_TAU_TDR00_VALUE                   (0x7CFFU)
+/* Clock divisor for TAU0 channel 0 */
+#define _0001_TAU0_CHANNEL0_DIVISOR             (0x0001U)
+/* 16-bit timer data register 01 (TDR01) */
+#define _001F_TAU_TDR01_VALUE                   (0x001FU)
+/* Clock divisor for TAU0 channel 1 */
+#define _0001_TAU0_CHANNEL1_DIVISOR             (0x0001U)
 
 /***********************************************************************************************************************
 Typedef definitions
@@ -1030,11 +1030,11 @@ typedef enum
 /***********************************************************************************************************************
 Global functions
 ***********************************************************************************************************************/
-void R_TAU1_Create(void);
-void R_TAU1_Channel0_Start(void);
-void R_TAU1_Channel0_Stop(void);
-void R_TAU1_Channel2_Start(void);
-void R_TAU1_Channel2_Stop(void);
+void R_TAU0_Create(void);
+void R_TAU0_Channel0_Start(void);
+void R_TAU0_Channel0_Stop(void);
+void R_TAU0_Channel1_Start(void);
+void R_TAU0_Channel1_Stop(void);
 
 /* Start user code for function. Do not edit comment generated here */
 #include "r_cg_macrodriver.h"

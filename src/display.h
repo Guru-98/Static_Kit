@@ -13,11 +13,13 @@ extern int noTests;
 extern int failedTest;
 extern char OK[];
 extern char Fail[];
+extern char
 
 void displayInit(void);
 void testScreen(void);
 void splashScreen(void);
 void resultScreen(char result);
+void memoryScreen(void);
 void loadDoubleLines(void);
 void drawBorders(void);
 void animTest(int testNo);
