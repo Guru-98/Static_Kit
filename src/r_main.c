@@ -23,7 +23,7 @@
 * Device(s)    : R5F10BGG
 * Tool-Chain   : CCRL
 * Description  : This file implements main function.
-* Creation Date: 4/3/2019
+* Creation Date: 5/3/2019
 ***********************************************************************************************************************/
 
 /***********************************************************************************************************************
@@ -66,9 +66,6 @@ void main(void)
     R_MAIN_UserInit();
     /* Start user code. Do not edit comment generated here */
 	while (1U) {
-		while(_mem_key_f == 1) {
-			memoryScreen();
-		}
 		runTests();
 	}
 	/* End user code. Do not edit comment generated here */
@@ -112,8 +109,6 @@ void R_MAIN_UserInit(void)
 	 GRN_LED = 0;
 	 RED_LED = 0;
 	 */
-
-//	while(1){trigger();}
 	R_KEY_Start();
 	displayInit();
 

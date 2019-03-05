@@ -21,8 +21,9 @@ char TestsFull[][19] = { "     No  Load     ", " Reverse Voltage ",
 int noTests = sizeof(Tests) / sizeof(Tests[0]);
 char resTests[8] = { 9, 9, 9, 9, 9, 9, 9, 9 };
 int failedTest = -1;
+char result = 99;
 
-#define TESTTIME 800
+#define TESTTIME 5000
 
 // TODO: make test cases rigid
 #define TEST0COND (4.166 <= DUT_Out_Volt && DUT_Out_Volt <= 4.833)
@@ -37,12 +38,15 @@ int failedTest = -1;
 float DUT_Out_Volt = 0;
 float DUT_Out_Curr = 0;
 
-int i; //TODO: Remove after RT delay
-
 void runTests(void) {
 	int i;
 	//	noTests = 2;
 	failedTest = -1;
+	result = 99;
+	for(i =0; i <sizeof(resTests)/sizeof(resTests[0]);i++){
+		resTests[i] = 9;
+	}
+
 	testScreen();
 	for (i = 0; i < noTests; i++) {
 		//TODO: Make test() and anim() async.
@@ -53,18 +57,20 @@ void runTests(void) {
 		animTest(i);
 	}
 
-	for (i = 0; i < 100; i++) {
-		delay(0xffff);
-	}
+	delay(3000);
 
 	if (failedTest != -1) {
+		result = 0;
+
 		RED_LED=1;
-		resultScreen(0);
+		resultScreen();
 		RED_LED=0;
 		splashScreen();
 	} else {
+		result = 1;
+
 		GRN_LED=1;
-		resultScreen(1);
+		resultScreen();
 		GRN_LED=0;
 	}
 
@@ -79,9 +85,7 @@ int test(int testNo) {
 		LOAD = 0;
 		SMPS_24V = 1;
 
-		for (i = 0; i < TESTTIME; i++) {
-			delay(0xffff);
-		}
+		delay(TESTTIME);
 
 		DUT_Out_Volt = (float) analogRead(DUT_O_V) / 1023.00 * 5.00;
 
@@ -102,9 +106,7 @@ int test(int testNo) {
 		DUT_IP_REV = 1;
 		SMPS_24V = 1;
 
-		for (i = 0; i < TESTTIME; i++) {
-			delay(0xffff);
-		}
+		delay(TESTTIME);
 
 		DUT_Out_Volt = (float) analogRead(DUT_O_V) / 1023.00 * 5.00;
 
@@ -126,9 +128,7 @@ int test(int testNo) {
 		SHORT = 1;
 		SMPS_24V = 1;
 
-		for (i = 0; i < TESTTIME; i++) {
-			delay(0xffff);
-		}
+		delay(TESTTIME);
 
 		DUT_Out_Volt = (float) analogRead(DUT_O_V) / 1023.00 * 5.00;
 
@@ -150,9 +150,7 @@ int test(int testNo) {
 			EXTRA_LOAD = 1;
 			SMPS_24V = 1;
 
-			for (i = 0; i < TESTTIME; i++) {
-				delay(0xffff);
-			}
+			delay(TESTTIME);
 
 			DUT_Out_Volt = (float) analogRead(DUT_O_V) / 1023.00 * 5.00;
 
@@ -174,9 +172,7 @@ int test(int testNo) {
 			SMPS_16V = 1;
 			SMPS_24V = 1;
 
-			for (i = 0; i < TESTTIME; i++) {
-				delay(0xffff);
-			}
+			delay(TESTTIME);
 
 			DUT_Out_Volt = (float) analogRead(DUT_O_V) / 1023.00 * 5.00;
 
@@ -197,9 +193,7 @@ int test(int testNo) {
 			LOAD = 1;
 			SMPS_16V = 1;
 
-			for (i = 0; i < TESTTIME; i++) {
-				delay(0xffff);
-			}
+			delay(TESTTIME);
 
 			DUT_Out_Volt = (float) analogRead(DUT_O_V) / 1023.00 * 5.00;
 
@@ -219,9 +213,7 @@ int test(int testNo) {
 			LOAD = 1;
 			SMPS_24V = 1;
 
-			for (i = 0; i < TESTTIME; i++) {
-				delay(0xffff);
-			}
+			delay(TESTTIME);
 
 			DUT_Out_Volt = (float) analogRead(DUT_O_V) / 1023.00 * 5.00;
 
@@ -241,9 +233,7 @@ int test(int testNo) {
 			LOAD = 1;
 			SMPS_32V = 1;
 
-			for (i = 0; i < TESTTIME; i++) {
-				delay(0xffff);
-			}
+			delay(TESTTIME);
 
 			DUT_Out_Volt = (float) analogRead(DUT_O_V) / 1023.00 * 5.00;
 

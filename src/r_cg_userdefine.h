@@ -23,7 +23,7 @@
 * Device(s)    : R5F10BGG
 * Tool-Chain   : CCRL
 * Description  : This file includes user definition.
-* Creation Date: 4/3/2019
+* Creation Date: 5/3/2019
 ***********************************************************************************************************************/
 
 #ifndef _USER_DEF_H
@@ -44,10 +44,10 @@ User definitions
 #define MC_in04 (P7_bit.no3)
 #define MC_in05 (P7_bit.no2)
 #define MC_in06 (P14_bit.no0)
-#define MC_in07 (P12_bit.no4) //NOTE: no pullups
-#define MC_in08 (P12_bit.no3) //NOTE: no pullups
-#define MC_in09 (P12_bit.no2) //NOTE: no pullups
-#define MC_in10 (P12_bit.no1) //NOTE: no pullups
+#define MC_in07 (P12_bit.no4)
+#define MC_in08 (P12_bit.no3)
+#define MC_in09 (P12_bit.no2)
+#define MC_in10 (P12_bit.no1)
 #define MC_in11 (P6_bit.no3)
 #define MC_in12 (P6_bit.no0)
 
@@ -102,7 +102,7 @@ User definitions
 /* Buttons */
 #define START_BTN MC_in01
 #define RESET_BTN MC_in02
-#define MEMORY_BTN MC_in03
+#define MEMORY_BTN MC_in04
 
 /* LEDS */
 #define GRN_LED MC_out08

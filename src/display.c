@@ -45,6 +45,7 @@ char BRC[] = { 0b00101, 0b00101, 0b00101, 0b00101, 0b00101, 0b11101, 0b00001,
 char OK[] = "-OK  ";
 char Fail[] = "-Fail";
 char Empty[] = "-    ";
+char screenState = 99;
 
 void displayInit(void) {
 	lcdInit();
@@ -63,7 +64,7 @@ void animTest(int testNo) {
 	for (i = 0; i < 4; i++) {
 		sendData('.');
 		for (j = 0; j < 30; j++) {
-			delay(0xffff);
+			delay1(0xffff);
 		}
 	}
 
@@ -84,6 +85,7 @@ void animTest(int testNo) {
 void testScreen(void) {
 	int i;
 
+	screenState = 1;
 	lcdInit();
 	createChar(0, LLS);
 	createChar(1, RLS);
@@ -92,18 +94,31 @@ void testScreen(void) {
 		if (i < 4) {
 			setCursor(0, i);
 			printLcd(Tests[i]);
-			printLcd(Empty);
+			if (resTests[i] == 1) {
+				printLcd(OK);
+			} else if (resTests[i] == 0) {
+				printLcd(Fail);
+			} else if (resTests[i] == 9) {
+				printLcd(Empty);
+			}
 			sendData(0);
 		} else {
 			setCursor(10, i - 4);
 			sendData(1);
 			printLcd(Tests[i]);
-			printLcd(Empty);
+			if (resTests[i] == 1) {
+				printLcd(OK);
+			} else if (resTests[i] == 0) {
+				printLcd(Fail);
+			} else if (resTests[i] == 9) {
+				printLcd(Empty);
+			}
 		}
 	}
 }
 
 void splashScreen(void) {
+	screenState = 0;
 	lcdInit();
 //	loadDoubleLines();
 //  drawBorders();
@@ -111,10 +126,12 @@ void splashScreen(void) {
 	printLcd(" D135  STATIC KIT ");
 	setCursor(1, 3);
 	printLcd(" Press Start Btn. ");
-	while (START_BTN == 0);
+	while (START_BTN == 0)
+		;
 }
 
-void resultScreen(char result) {
+void resultScreen(void) {
+	screenState = 3;
 	lcdInit();
 //	loadDoubleLines();
 //	drawBorders();
@@ -123,7 +140,8 @@ void resultScreen(char result) {
 		printLcd("       PASS       ");
 		setCursor(1, 3);
 		printLcd(" Press Start Btn. ");
-		while (START_BTN == 0);
+		while (START_BTN == 0)
+			;
 	} else {
 		setCursor(1, 0);
 		printLcd("       FAIL       ");
@@ -131,18 +149,32 @@ void resultScreen(char result) {
 		printLcd(TestsFull[failedTest]);
 		setCursor(1, 3);
 		printLcd(" Press Reset Btn. ");
-		while (RESET_BTN == 0);
+		while (RESET_BTN == 0)
+			;
 	}
 }
 
-void memoryScreen(void){
+void memoryScreen(void) {
 	lcdInit();
-	setCursor(0,0);
+	setCursor(0, 0);
 	printLcd("Total DUTs tested: ");
-	setCursor(0,1);
+	setCursor(0, 1);
 	printLcd("DUTs passed: ");
-	setCursor(0,2);
+	setCursor(0, 2);
 	printLcd("DUTs failed: ");
+}
+
+void revertScreenState(void) {
+	switch (screenState) {
+	case 0:
+		splashScreen();
+		break;
+	case 1:
+		testScreen();
+		break;
+	case 3:
+		resultScreen();
+	}
 }
 
 void drawBorders(void) {

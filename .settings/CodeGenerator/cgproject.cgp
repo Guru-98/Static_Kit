@@ -631,7 +631,7 @@
       <TAU>
         <TAU0>
           <Channel0>
-            <INTTM00 InUse="1" ISR="r_tau0_channel0_interrupt" />
+            <INTTM00 InUse="0" ISR="r_tau0_channel0_interrupt" />
           </Channel0>
           <Channel1>
             <INTTM01 InUse="1" ISR="r_tau0_channel1_interrupt" />
@@ -1084,8 +1084,8 @@
             <R_TAU0_Create UserName="" LibName="R_TAU_Create" InUse="1" Init="1" InitMode="" />
             <R_TAU0_Set_PowerOff UserName="" LibName="R_TAU_Set_PowerOff" InUse="0" />
             <Channel0 InUse="">
-              <R_TAU0_Channel0_Start UserName="" LibName="R_TAU_Channeln_Start" InUse="1" />
-              <R_TAU0_Channel0_Stop UserName="" LibName="R_TAU_Channeln_Stop" InUse="1" />
+              <R_TAU0_Channel0_Start UserName="" LibName="R_TAU_Channeln_Start" InUse="0" />
+              <R_TAU0_Channel0_Stop UserName="" LibName="R_TAU_Channeln_Stop" InUse="0" />
               <R_TAU0_Channel0_Get_PulseWidth Chip="RL78F13_48pin,RL78F13_64pin" PIOR00="0" UserName="" LibName="R_TAU_Channeln_Get_PulseWidth" InUse="0" />
               <R_TAU0_Channel0_Set_SoftwareTriggerOn UserName="" LibName="R_TAU_Channeln_Set_SoftwareTriggerOn" InUse="0" />
             </Channel0>
@@ -1201,14 +1201,14 @@
           <TAU0>
             <R_TAU0_Create_UserInit UserName="" LibName="R_TAU_Create_UserInit" InUse="0" />
             <Channel0 InUse="">
-              <r_tau0_channel0_interrupt UserName="r_tau0_channel0_interrupt" INTHandle="" LibName="r_tau_channeln_interrupt" InUse="1" />
+              <r_tau0_channel0_interrupt UserName="r_tau0_channel0_interrupt" INTHandle="" LibName="r_tau_channeln_interrupt" InUse="0" />
             </Channel0>
             <Channel1 InUse="">
               <r_tau0_channel1_interrupt UserName="r_tau0_channel1_interrupt" INTHandle="" LibName="r_tau_channeln_interrupt" InUse="1" />
               <r_tau0_channel1_higher8bits_interrupt UserName="" INTHandle="" LibName="r_tau_channeln_higher8bits_interrupt" InUse="0" />
             </Channel1>
             <Channel2 InUse="">
-              <r_tau0_channel2_interrupt UserName="" INTHandle="" LibName="r_tau_channeln_interrupt" InUse="0" />
+              <r_tau0_channel2_interrupt UserName="r_tau0_channel2_interrupt" INTHandle="" LibName="r_tau_channeln_interrupt" InUse="0" />
             </Channel2>
             <Channel3 InUse="">
               <r_tau0_channel3_interrupt UserName="" INTHandle="" LibName="r_tau_channeln_interrupt" InUse="0" />
@@ -2172,7 +2172,7 @@
       </INTP9>
     </INTP>
     <KEY>
-      <setting name="Interrupt_priority" value="0" />
+      <setting name="Interrupt_priority" value="3" />
       <setting name="KR0" value="unused" />
       <setting name="KR1" value="unused" />
       <setting name="KR2" value="unused" />
@@ -2184,13 +2184,13 @@
     </KEY>
     <TAU0>
       <Channel0>
-        <setting name="ChannelFunction" value="1" />
+        <setting name="ChannelFunction" value="0" />
         <setting name="Pinselection" value="-1" />
         <TAUInterval0>
           <setting name="OperationMode" value="16bits" />
           <setting name="Count_clock" value="MCK clock" />
           <setting name="Sub_clock_mode" value="-1" />
-          <setting name="Interval_value" value="1" />
+          <setting name="Interval_value" value="1000" />
           <setting name="Value_scale" value="0" />
           <setting name="Intervalvalue_High8bits" value="100" />
           <setting name="Intervalvalue_High8bits_scale" value="-1" />
@@ -2198,7 +2198,7 @@
           <setting name="Intervalvalue_Low8bits_Scale" value="-1" />
           <setting name="Generate_interrupt_when_couting_started" value="no" />
           <setting name="Interrupt" value="used" />
-          <setting name="Interrupt_priority" value="0" />
+          <setting name="Interrupt_priority" value="3" />
           <setting name="InterruptH_priority" value="3" />
           <setting name="InterruptH8" value="unused" />
         </TAUInterval0>
@@ -2210,15 +2210,15 @@
           <setting name="OperationMode" value="16bits" />
           <setting name="Count_clock" value="MCK clock" />
           <setting name="Sub_clock_mode" value="-1" />
-          <setting name="Interval_value" value="1" />
-          <setting name="Value_scale" value="1" />
+          <setting name="Interval_value" value="10" />
+          <setting name="Value_scale" value="0" />
           <setting name="Intervalvalue_High8bits" value="100" />
           <setting name="Intervalvalue_High8bits_scale" value="1" />
           <setting name="Intervalvalue_Low8bits" value="100" />
           <setting name="Intervalvalue_Low8bits_Scale" value="1" />
           <setting name="Generate_interrupt_when_couting_started" value="no" />
           <setting name="Interrupt" value="used" />
-          <setting name="Interrupt_priority" value="0" />
+          <setting name="Interrupt_priority" value="3" />
           <setting name="InterruptH_priority" value="3" />
           <setting name="InterruptH8" value="used" />
         </TAUInterval1>

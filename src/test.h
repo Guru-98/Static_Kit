@@ -13,6 +13,7 @@ extern char TestsFull[][19];
 extern int noTests;
 extern char resTests[8];
 extern int failedTest;
+extern char result;
 
 int test(int testNo);
 void runTests(void);
