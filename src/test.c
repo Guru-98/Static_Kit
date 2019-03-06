@@ -7,6 +7,7 @@
 
 #include "test.h"
 #include "display.h"
+#include "eeprom.h"
 
 #include "r_cg_userdefine.h"
 #include "r_cg_timer.h"
@@ -23,7 +24,11 @@ char resTests[8] = { 9, 9, 9, 9, 9, 9, 9, 9 };
 int failedTest = -1;
 char result = 99;
 
-#define TESTTIME 5000
+char tested = 0;
+char passed = 0;
+char failed = 0;
+
+#define TESTTIME 1000
 
 // TODO: make test cases rigid
 #define TEST0COND (4.166 <= DUT_Out_Volt && DUT_Out_Volt <= 4.833)
@@ -43,7 +48,8 @@ void runTests(void) {
 	//	noTests = 2;
 	failedTest = -1;
 	result = 99;
-	for(i =0; i <sizeof(resTests)/sizeof(resTests[0]);i++){
+	tested++;
+	for (i = 0; i < sizeof(resTests) / sizeof(resTests[0]); i++) {
 		resTests[i] = 9;
 	}
 
@@ -61,17 +67,21 @@ void runTests(void) {
 
 	if (failedTest != -1) {
 		result = 0;
+		failed++;
+		counterWrite();
 
-		RED_LED=1;
+		RED_LED = 1;
 		resultScreen();
-		RED_LED=0;
+		RED_LED = 0;
 		splashScreen();
 	} else {
 		result = 1;
+		passed++;
+		counterWrite();
 
-		GRN_LED=1;
+		GRN_LED = 1;
 		resultScreen();
-		GRN_LED=0;
+		GRN_LED = 0;
 	}
 
 }
@@ -145,109 +155,109 @@ int test(int testNo) {
 
 		break;
 	case 3:
-			// Over Load
-			LOAD = 1;
-			EXTRA_LOAD = 1;
-			SMPS_24V = 1;
+		// Over Load
+		LOAD = 1;
+		EXTRA_LOAD = 1;
+		SMPS_24V = 1;
 
-			delay(TESTTIME);
+		delay(TESTTIME);
 
-			DUT_Out_Volt = (float) analogRead(DUT_O_V) / 1023.00 * 5.00;
+		DUT_Out_Volt = (float) analogRead(DUT_O_V) / 1023.00 * 5.00;
 
-			LOAD = 0;
-			EXTRA_LOAD = 0;
-			SMPS_24V = 0;
+		LOAD = 0;
+		EXTRA_LOAD = 0;
+		SMPS_24V = 0;
 
-			if (TEST3COND) {
-				res = 1;
-			} else {
-				res = 0;
-				failedTest = testNo;
-			}
+		if (TEST3COND) {
+			res = 1;
+		} else {
+			res = 0;
+			failedTest = testNo;
+		}
 
-			break;
+		break;
 	case 4:
-			// Over Voltage
-			LOAD = 1;
-			SMPS_16V = 1;
-			SMPS_24V = 1;
+		// Over Voltage
+		LOAD = 1;
+		SMPS_16V = 1;
+		SMPS_24V = 1;
 
-			delay(TESTTIME);
+		delay(TESTTIME);
 
-			DUT_Out_Volt = (float) analogRead(DUT_O_V) / 1023.00 * 5.00;
+		DUT_Out_Volt = (float) analogRead(DUT_O_V) / 1023.00 * 5.00;
 
-			LOAD = 0;
-			SMPS_16V = 0;
-			SMPS_24V = 0;
+		LOAD = 0;
+		SMPS_16V = 0;
+		SMPS_24V = 0;
 
-			if (TEST4COND) {
-				res = 1;
-			} else {
-				res = 0;
-				failedTest = testNo;
-			}
+		if (TEST4COND) {
+			res = 1;
+		} else {
+			res = 0;
+			failedTest = testNo;
+		}
 
-			break;
+		break;
 	case 5:
-			// 16 V
-			LOAD = 1;
-			SMPS_16V = 1;
+		// 16 V
+		LOAD = 1;
+		SMPS_16V = 1;
 
-			delay(TESTTIME);
+		delay(TESTTIME);
 
-			DUT_Out_Volt = (float) analogRead(DUT_O_V) / 1023.00 * 5.00;
+		DUT_Out_Volt = (float) analogRead(DUT_O_V) / 1023.00 * 5.00;
 
-			LOAD = 0;
-			SMPS_16V = 0;
+		LOAD = 0;
+		SMPS_16V = 0;
 
-			if (TEST5COND) {
-				res = 1;
-			} else {
-				res = 0;
-				failedTest = testNo;
-			}
+		if (TEST5COND) {
+			res = 1;
+		} else {
+			res = 0;
+			failedTest = testNo;
+		}
 
-			break;
+		break;
 	case 6:
-			// 24 V
-			LOAD = 1;
-			SMPS_24V = 1;
+		// 24 V
+		LOAD = 1;
+		SMPS_24V = 1;
 
-			delay(TESTTIME);
+		delay(TESTTIME);
 
-			DUT_Out_Volt = (float) analogRead(DUT_O_V) / 1023.00 * 5.00;
+		DUT_Out_Volt = (float) analogRead(DUT_O_V) / 1023.00 * 5.00;
 
-			LOAD = 0;
-			SMPS_24V = 0;
+		LOAD = 0;
+		SMPS_24V = 0;
 
-			if (TEST6COND) {
-				res = 1;
-			} else {
-				res = 0;
-				failedTest = testNo;
-			}
+		if (TEST6COND) {
+			res = 1;
+		} else {
+			res = 0;
+			failedTest = testNo;
+		}
 
-			break;
+		break;
 	case 7:
-			// Short Circuit
-			LOAD = 1;
-			SMPS_32V = 1;
+		// Short Circuit
+		LOAD = 1;
+		SMPS_32V = 1;
 
-			delay(TESTTIME);
+		delay(TESTTIME);
 
-			DUT_Out_Volt = (float) analogRead(DUT_O_V) / 1023.00 * 5.00;
+		DUT_Out_Volt = (float) analogRead(DUT_O_V) / 1023.00 * 5.00;
 
-			LOAD = 0;
-			SMPS_32V = 0;
+		LOAD = 0;
+		SMPS_32V = 0;
 
-			if (TEST7COND) {
-				res = 1;
-			} else {
-				res = 0;
-				failedTest = testNo;
-			}
+		if (TEST7COND) {
+			res = 1;
+		} else {
+			res = 0;
+			failedTest = testNo;
+		}
 
-			break;
+		break;
 	default:
 		res = 9;
 	}

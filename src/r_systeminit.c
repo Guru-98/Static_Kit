@@ -59,6 +59,8 @@ Global variables and functions
 ***********************************************************************************************************************/
 void R_Systeminit(void)
 {
+    volatile uint32_t w_count;
+    
     /* Set periperal I/O redirection */
     PIOR0 = 0x00U;
     PIOR1 = 0x00U;
@@ -74,6 +76,13 @@ void R_Systeminit(void)
 
     /* Set invalid memory access detection control */
     IAWCTL = 0x00U;
+    /* Start data flash control */
+    DFLEN = 1U;
+    for (w_count = 0U; w_count < 13U; w_count++)
+    {
+        NOP();
+    }
+    /* End data flash control */
 }
 
 

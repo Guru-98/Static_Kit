@@ -19,5 +19,7 @@ src/r_main.obj\ src/r_main.d: ../src/test.h
 ../src/test.h:
 src/r_main.obj\ src/r_main.d: ../src/lcd.h
 ../src/lcd.h:
+src/r_main.obj\ src/r_main.d: ../src/eeprom.h
+../src/eeprom.h:
 src/r_main.obj\ src/r_main.d: ../src/r_cg_userdefine.h
 ../src/r_cg_userdefine.h:

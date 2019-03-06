@@ -84,7 +84,9 @@ Static_Kit.hex: $(LINKER_OUTPUT_OUTPUTS)
 	@echo.
 
 
-Static_Kit.abs: $(OBJS)  $(ALL_ASMS)
+Static_Kit.abs: $(OBJS)  $(ALL_ASMS)  \
+C:\Users\500022\Documents\Intern\RL78\workspace\EEL\FDL\lib\fdl.lib  \
+C:\Users\500022\Documents\Intern\RL78\workspace\EEL\EEL\lib\eel.lib
 	@echo 'Invoking: Linker'
 	@echo LinkerStatic_Kit.tmp=
 	@sed -e "s/^/    /" "LinkerStatic_Kit.tmp"
@@ -104,5 +106,5 @@ clean:
 	@echo
 	@echo 'Clean complete.'
 
-.PHONY: all clean $(LINKER_OUTPUT_OUTPUTS)  
+.PHONY: all clean 
 -include ../makefile.targets

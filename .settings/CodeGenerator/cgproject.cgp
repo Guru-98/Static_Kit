@@ -1472,10 +1472,12 @@
         <pior_value1 Name="pior_value1" Value="00" />
         <pior_value7 Name="pior_value7" Value="00" />
         <cg_security7 Name="cg_security7" Value="00" />
+        <dataflash_use Name="dataflash_use" Value="" />
         <ocdstart Name="ocdstart" Value="1FE00" />
         <cg_security2 Name="cg_security2" Value="00" />
         <clock_option Name="clock_option" Value="F8" />
         <cg_onchip Name="cg_onchip" Value="" />
+        <df_waittime Name="df_waittime" Value="13" />
       </GlobleUserTag>
     </TAG>
   </DIR>
@@ -1592,7 +1594,7 @@
       <setting name="STACK_POINTER_OVERFLOW_DATA" value="0xFFFE" />
       <setting name="RAM_ECC_INTERRUPT_USED" value="false" />
       <setting name="RAM_ECC_INTERRUPT_PRIORITY" value="3" />
-      <setting name="DataFlash" value="unused" />
+      <setting name="DataFlash" value="used" />
       <setting name="ProgramFlash" value="unused" />
       <setting name="Monitor" value="unused" />
       <setting name="StartStop" value="unused" />

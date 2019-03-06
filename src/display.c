@@ -4,6 +4,8 @@
  *  Created on: Feb 14, 2019
  *      Author: 500022
  */
+#include <stdio.h>
+
 #include "r_cg_timer.h"
 #include "r_cg_adc.h"
 #include "r_cg_userdefine.h"
@@ -11,6 +13,7 @@
 #include "display.h"
 #include "lcd.h"
 #include "test.h"
+#include "eeprom.h"
 
 char LLS[] = { 0b00001, 0b00001, 0b00001, 0b00001, 0b00001, 0b00001, 0b00001,
 		0b00001 };
@@ -118,7 +121,7 @@ void testScreen(void) {
 }
 
 void splashScreen(void) {
-	screenState = 0;
+	splash_start: screenState = 0;
 	lcdInit();
 //	loadDoubleLines();
 //  drawBorders();
@@ -126,12 +129,22 @@ void splashScreen(void) {
 	printLcd(" D135  STATIC KIT ");
 	setCursor(1, 3);
 	printLcd(" Press Start Btn. ");
-	while (START_BTN == 0)
-		;
+	while (1) {
+		if (START_BTN == 1) {
+			break;
+		}
+		if (MEMORY_BTN == 1) {
+			delay(2000);
+			if (MEMORY_BTN == 1) {
+				memoryScreen();
+				goto splash_start;
+			}
+		}
+	}
 }
 
 void resultScreen(void) {
-	screenState = 3;
+	res_start: screenState = 3;
 	lcdInit();
 //	loadDoubleLines();
 //	drawBorders();
@@ -140,8 +153,18 @@ void resultScreen(void) {
 		printLcd("       PASS       ");
 		setCursor(1, 3);
 		printLcd(" Press Start Btn. ");
-		while (START_BTN == 0)
-			;
+		while (1) {
+			if (START_BTN == 1) {
+				break;
+			}
+			if (MEMORY_BTN == 1) {
+				delay(2000);
+				if (MEMORY_BTN == 1) {
+					memoryScreen();
+					goto res_start;
+				}
+			}
+		}
 	} else {
 		setCursor(1, 0);
 		printLcd("       FAIL       ");
@@ -149,19 +172,61 @@ void resultScreen(void) {
 		printLcd(TestsFull[failedTest]);
 		setCursor(1, 3);
 		printLcd(" Press Reset Btn. ");
-		while (RESET_BTN == 0)
-			;
+		while (1) {
+			if (RESET_BTN == 1) {
+				break;
+			}
+			if (MEMORY_BTN == 1) {
+				delay(2000);
+				if (MEMORY_BTN == 1) {
+					memoryScreen();
+					goto res_start;
+				}
+			}
+		}
 	}
 }
 
 void memoryScreen(void) {
-	lcdInit();
+	char str[21];
+	char _mem_c=0;
+	counterRead();
+	mem_start: lcdInit();
 	setCursor(0, 0);
-	printLcd("Total DUTs tested: ");
+	printLcd("Total");
 	setCursor(0, 1);
-	printLcd("DUTs passed: ");
+	sprintf(str, "    DUTs tested: %00d", tested);
+	printLcd(str);
 	setCursor(0, 2);
-	printLcd("DUTs failed: ");
+	sprintf(str, "    DUTs passed: %00d", passed);
+	printLcd(str);
+	setCursor(0, 3);
+	sprintf(str, "    DUTs failed: %00d", failed);
+	printLcd(str);
+	while (1) {
+		if (MEMORY_BTN == 0) {
+			delay(100);
+			if (MEMORY_BTN == 1) {
+				delay(300);
+				break;
+			}
+		}
+		if (RESET_BTN == 1) {
+			delay(3000);
+			if (RESET_BTN == 1) {
+				tested = 0;
+				passed = 0;
+				failed = 0;
+				counterWrite();
+				_mem_c=1;
+				break;
+			}
+		}
+	}
+	if(_mem_c==1){
+		_mem_c=0;
+		goto mem_start;
+	}
 }
 
 void revertScreenState(void) {

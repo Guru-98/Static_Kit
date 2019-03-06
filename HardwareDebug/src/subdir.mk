@@ -5,6 +5,9 @@
 # Add inputs and outputs from these tool invocations to the build variables
 C_SRCS += \
 ../src/display.c \
+../src/eel_descriptor.c \
+../src/eeprom.c \
+../src/fdl_descriptor.c \
 ../src/lcd.c \
 ../src/r_cg_adc.c \
 ../src/r_cg_adc_user.c \
@@ -22,6 +25,9 @@ C_SRCS += \
 
 COMPILER_OBJS += \
 src/display.obj \
+src/eel_descriptor.obj \
+src/eeprom.obj \
+src/fdl_descriptor.obj \
 src/lcd.obj \
 src/r_cg_adc.obj \
 src/r_cg_adc_user.obj \
@@ -39,6 +45,9 @@ src/test.obj
 
 C_DEPS += \
 src/display.d \
+src/eel_descriptor.d \
+src/eeprom.d \
+src/fdl_descriptor.d \
 src/lcd.d \
 src/r_cg_adc.d \
 src/r_cg_adc_user.d \
@@ -55,7 +64,7 @@ src/r_systeminit.d \
 src/test.d 
 
 # Each subdirectory must supply rules for building sources it contributes
-src/%.obj: ../src/%.c src/Compiler.sub
+src/%.obj: ../src/%.c 
 	@echo 'Scanning and building file: $<'
 	@echo 'Invoking: Scanner and Compiler'
 	@echo src\cDepSubCommand.tmp=
