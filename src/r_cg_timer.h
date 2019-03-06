@@ -23,7 +23,7 @@
 * Device(s)    : R5F10BGG
 * Tool-Chain   : CCRL
 * Description  : This file implements device driver for TAU module.
-* Creation Date: 5/3/2019
+* Creation Date: 6/3/2019
 ***********************************************************************************************************************/
 
 #ifndef TAU_H
@@ -1007,9 +1007,13 @@ Macro definitions (Register bit)
 Macro definitions
 ***********************************************************************************************************************/
 /* 16-bit timer data register 01 (TDR01) */
-#define _9C3F_TAU_TDR01_VALUE                   (0x9C3FU)
+#define _7CFF_TAU_TDR01_VALUE                   (0x7CFFU)
 /* Clock divisor for TAU0 channel 1 */
-#define _0008_TAU0_CHANNEL1_DIVISOR             (0x0008U)
+#define _0001_TAU0_CHANNEL1_DIVISOR             (0x0001U)
+/* 16-bit timer data register 03 (TDR03) */
+#define _001F_TAU_TDR03_VALUE                   (0x001FU)
+/* Clock divisor for TAU0 channel 3 */
+#define _0001_TAU0_CHANNEL3_DIVISOR             (0x0001U)
 
 /***********************************************************************************************************************
 Typedef definitions
@@ -1029,6 +1033,8 @@ Global functions
 void R_TAU0_Create(void);
 void R_TAU0_Channel1_Start(void);
 void R_TAU0_Channel1_Stop(void);
+void R_TAU0_Channel3_Start(void);
+void R_TAU0_Channel3_Stop(void);
 
 /* Start user code for function. Do not edit comment generated here */
 #include "r_cg_macrodriver.h"
@@ -1037,6 +1043,6 @@ void delay(uint16_t msec);
 void delay1(uint16_t msec);
 void delay_us(uint16_t usec);
 void _delay_1us(void);
-void _delay_10ms(void);
+void _delay_1ms(void);
 /* End user code. Do not edit comment generated here */
 #endif

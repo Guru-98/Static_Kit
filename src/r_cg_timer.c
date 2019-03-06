@@ -23,7 +23,7 @@
 * Device(s)    : R5F10BGG
 * Tool-Chain   : CCRL
 * Description  : This file implements device driver for TAU module.
-* Creation Date: 5/3/2019
+* Creation Date: 6/3/2019
 ***********************************************************************************************************************/
 
 /***********************************************************************************************************************
@@ -56,7 +56,7 @@ Global variables and functions
 void R_TAU0_Create(void)
 {
     TAU0EN = 1U;    /* supplies input clock */
-    TPS0 = _0003_TAU_CKM0_FCLK_3 | _0000_TAU_CKM1_FCLK_0 | _0000_TAU_CKM2_FCLK_0 | _0000_TAU_CKM3_FCLK_0;
+    TPS0 = _0000_TAU_CKM0_FCLK_0 | _0000_TAU_CKM1_FCLK_0 | _0000_TAU_CKM2_FCLK_0 | _0000_TAU_CKM3_FCLK_0;
     /* Stop all channels */
     TT0 = _0001_TAU_CH0_STOP_TRG_ON | _0002_TAU_CH1_STOP_TRG_ON | _0004_TAU_CH2_STOP_TRG_ON |
           _0008_TAU_CH3_STOP_TRG_ON | _0010_TAU_CH4_STOP_TRG_ON | _0020_TAU_CH5_STOP_TRG_ON |
@@ -93,17 +93,28 @@ void R_TAU0_Create(void)
     /* Mask channel 7 interrupt */
     TMMK07 = 1U;    /* disable INTTM07 interrupt */
     TMIF07 = 0U;    /* clear INTTM07 interrupt flag */
-    /* Set INTTM01 low priority */
-    TMPR101 = 1U;
-    TMPR001 = 1U;
+    /* Set INTTM01 high priority */
+    TMPR101 = 0U;
+    TMPR001 = 0U;
+    /* Set INTTM03 high priority */
+    TMPR103 = 0U;
+    TMPR003 = 0U;
     /* Channel 1 used as interval timer */
     TMR01 = _0000_TAU_CLOCK_SELECT_CKM0 | _0000_TAU_CLOCK_MODE_CKS | _0000_TAU_16BITS_MODE |
             _0000_TAU_TRIGGER_SOFTWARE | _0000_TAU_MODE_INTERVAL_TIMER | _0000_TAU_START_INT_UNUSED;
-    TDR01 = _9C3F_TAU_TDR01_VALUE;
+    TDR01 = _7CFF_TAU_TDR01_VALUE;
     TOM0 &= ~_0002_TAU_CH1_OUTPUT_COMBIN;
     TOL0 &= ~_0002_TAU_CH1_OUTPUT_LEVEL_L;
     TO0 &= ~_0002_TAU_CH1_OUTPUT_VALUE_1;
     TOE0 &= ~_0002_TAU_CH1_OUTPUT_ENABLE;
+    /* Channel 3 used as interval timer */
+    TMR03 = _0000_TAU_CLOCK_SELECT_CKM0 | _0000_TAU_CLOCK_MODE_CKS | _0000_TAU_16BITS_MODE |
+            _0000_TAU_TRIGGER_SOFTWARE | _0000_TAU_MODE_INTERVAL_TIMER | _0000_TAU_START_INT_UNUSED;
+    TDR03 = _001F_TAU_TDR03_VALUE;
+    TOM0 &= ~_0008_TAU_CH3_OUTPUT_COMBIN;
+    TOL0 &= ~_0008_TAU_CH3_OUTPUT_LEVEL_L;
+    TO0 &= ~_0008_TAU_CH3_OUTPUT_VALUE_1;
+    TOE0 &= ~_0008_TAU_CH3_OUTPUT_ENABLE;
 }
 
 /***********************************************************************************************************************
@@ -131,6 +142,33 @@ void R_TAU0_Channel1_Stop(void)
     /* Mask channel 1 interrupt */
     TMMK01 = 1U;    /* disable INTTM01 interrupt */
     TMIF01 = 0U;    /* clear INTTM01 interrupt flag */
+}
+
+/***********************************************************************************************************************
+* Function Name: R_TAU0_Channel3_Start
+* Description  : This function starts TAU0 channel 3 counter.
+* Arguments    : None
+* Return Value : None
+***********************************************************************************************************************/
+void R_TAU0_Channel3_Start(void)
+{
+    TMIF03 = 0U;    /* clear INTTM03 interrupt flag */
+    TMMK03 = 0U;    /* enable INTTM03 interrupt */
+    TS0 |= _0008_TAU_CH3_START_TRG_ON;
+}
+
+/***********************************************************************************************************************
+* Function Name: R_TAU0_Channel3_Stop
+* Description  : This function stops TAU0 channel 3 counter.
+* Arguments    : None
+* Return Value : None
+***********************************************************************************************************************/
+void R_TAU0_Channel3_Stop(void)
+{
+    TT0 |= _0008_TAU_CH3_STOP_TRG_ON;
+    /* Mask channel 3 interrupt */
+    TMMK03 = 1U;    /* disable INTTM03 interrupt */
+    TMIF03 = 0U;    /* clear INTTM03 interrupt flag */
 }
 
 /* Start user code for adding. Do not edit comment generated here */

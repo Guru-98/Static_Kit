@@ -104,5 +104,5 @@ clean:
 	@echo
 	@echo 'Clean complete.'
 
-.PHONY: all clean 
+.PHONY: all clean $(LINKER_OUTPUT_OUTPUTS)  
 -include ../makefile.targets

@@ -23,7 +23,7 @@
 * Device(s)    : R5F10BGG
 * Tool-Chain   : CCRL
 * Description  : This file implements device driver for TAU module.
-* Creation Date: 5/3/2019
+* Creation Date: 6/3/2019
 ***********************************************************************************************************************/
 
 /***********************************************************************************************************************
@@ -39,6 +39,7 @@ Includes
 Pragma directive
 ***********************************************************************************************************************/
 #pragma interrupt r_tau0_channel1_interrupt(vect=INTTM01)
+#pragma interrupt r_tau0_channel3_interrupt(vect=INTTM03)
 /* Start user code for pragma. Do not edit comment generated here */
 /* End user code. Do not edit comment generated here */
 
@@ -66,6 +67,22 @@ static void __near r_tau0_channel1_interrupt(void)
 	/* End user code. Do not edit comment generated here */
 }
 
+/***********************************************************************************************************************
+* Function Name: r_tau0_channel3_interrupt
+* Description  : This function is INTTM03 interrupt service routine.
+* Arguments    : None
+* Return Value : None
+***********************************************************************************************************************/
+static void __near r_tau0_channel3_interrupt(void)
+{
+    /* Start user code. Do not edit comment generated here */
+	DI();
+	_usdelay_f = 1;
+	R_TAU0_Channel3_Stop();
+	EI();
+	/* End user code. Do not edit comment generated here */
+}
+
 /* Start user code for adding. Do not edit comment generated here */
 void delay_us(uint16_t usec) {
 	while (usec) {
@@ -75,27 +92,30 @@ void delay_us(uint16_t usec) {
 }
 
 void delay(uint16_t msec) {
-	msec /= 10;
 	while (msec) {
-		_delay_10ms();
+		_delay_1ms();
 		msec--;
 	}
 }
 
 void delay1(uint16_t msec) {
-	while (msec--);
+	while (msec--){
+		NOP();
+	}
 }
 
 void _delay_1us(void) {
-	// TODO: RT delay in lower res.
+	// TODO: 45us @ DSO ???!!!
 	_usdelay_f = 0;
-//	R_TAU0_Channel1_Start();
+	EI();
+	R_TAU0_Channel3_Start();
 	while (_usdelay_f == 0)
 		;
 }
 
-void _delay_10ms(void) {
+void _delay_1ms(void) {
 	_msdelay_f = 0;
+	EI();
 	R_TAU0_Channel1_Start();
 	while (_msdelay_f == 0)
 		;

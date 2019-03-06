@@ -23,7 +23,7 @@
 * Device(s)    : R5F10BGG
 * Tool-Chain   : CCRL
 * Description  : This file implements device driver for INTC module.
-* Creation Date: 5/3/2019
+* Creation Date: 6/3/2019
 ***********************************************************************************************************************/
 
 /***********************************************************************************************************************
@@ -59,9 +59,9 @@ void R_KEY_Create(void)
 
     KRMK = 1U;  /* disable INTKR operation */
     KRIF = 0U;  /* clear INTKR interrupt flag */
-    /* Set INTKR low priority */
-    KRPR1 = 1U;
-    KRPR0 = 1U;
+    /* Set INTKR high priority */
+    KRPR1 = 0U;
+    KRPR0 = 0U;
     KRM = _00_KR0_SIGNAL_DETECT_OFF | _00_KR1_SIGNAL_DETECT_OFF | _00_KR2_SIGNAL_DETECT_OFF | _08_KR3_SIGNAL_DETECT_ON;
     /* Set KR3 pin */
     PIM7 &= 0xF7U;

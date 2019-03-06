@@ -89,12 +89,15 @@
 									<listOptionValue builtIn="false" value="&quot;.\src\r_cg_adc_user.obj&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;.\src\r_cg_cgc.obj&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;.\src\r_cg_cgc_user.obj&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;.\src\r_cg_intc.obj&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;.\src\r_cg_intc_user.obj&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;.\src\r_cg_port.obj&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;.\src\r_cg_port_user.obj&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;.\src\r_cg_timer.obj&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;.\src\r_cg_timer_user.obj&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;.\src\r_main.obj&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;.\src\r_systeminit.obj&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;.\src\test.obj&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;C:\Program Files (x86)\Renesas\RL78\1_8_0\lib\rl78em4s99.lib&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;C:\Program Files (x86)\Renesas\RL78\1_8_0\lib\rl78em4r.lib&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;C:\Program Files (x86)\Renesas\RL78\1_8_0\lib\malloc_n.lib&quot;"/>
@@ -115,6 +118,7 @@
 								<option id="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.c99Library.1491481836" name="Use C99 edition libraries" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.c99Library" useByScannerDiscovery="false" value="true" valueType="boolean"/>
 								<option id="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.checkDevice.1078283542" name="Check specifications of device" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.checkDevice" useByScannerDiscovery="false" value="true" valueType="boolean"/>
 								<option id="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.RAMarea.670963349" name="RAM area without section" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.RAMarea" useByScannerDiscovery="false" value="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.RAMarea.ocdtr" valueType="enumerated"/>
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="true" id="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.inputFile.2123069840" name="Relocatable files, object files and library files" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.inputFile" useByScannerDiscovery="false" valueType="stringList"/>
 								<inputType id="Base.Linker.ccrl.inputType.662457841" name="Linker InputType" superClass="Base.Linker.ccrl.inputType"/>
 							</tool>
 							<tool id="com.renesas.cdt.managedbuild.renesas.ccrl.base.converter.1529332906" name="Converter" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.base.converter">
