@@ -26,5 +26,6 @@ void revertScreenState(void);
 
 void loadDoubleLines(void);
 void drawBorders(void);
-void animTest(int testNo);
+void animTest(int testNo,int testtime);
+void resTest(int testNo);
 #endif /* DISPLAY_H_ */

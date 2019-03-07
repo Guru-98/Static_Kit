@@ -84,8 +84,13 @@ User definitions
 #define DUT_I_V 0
 #define DUT_I_C 0
 
+#if 0
 #define DUT_O_V Buf_out_3
-#define DUT_O_C Buf_out_4
+#define DUT_O_C Dif_out_2
+#else
+#define DUT_O_V 3
+#define DUT_O_C 6
+#endif
 
 #define DUT_IP_REV MC_out04
 

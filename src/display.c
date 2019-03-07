@@ -56,8 +56,8 @@ void displayInit(void) {
 //	testScreen();
 }
 
-void animTest(int testNo) {
-	int i = testNo, j;
+void animTest(int testNo,int testtime) {
+	int i = testNo;
 	if (i < 4) {
 		setCursor(5, i);
 	} else {
@@ -66,12 +66,12 @@ void animTest(int testNo) {
 
 	for (i = 0; i < 4; i++) {
 		sendData('.');
-		for (j = 0; j < 30; j++) {
-			delay1(0xffff);
-		}
+		delay(testtime/4);
 	}
+}
 
-	i = testNo;
+void resTest(int testNo){
+	int i = testNo;
 	if (i < 4) {
 		setCursor(4, i);
 	} else {
