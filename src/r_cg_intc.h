@@ -23,7 +23,7 @@
 * Device(s)    : R5F10BGG
 * Tool-Chain   : CCRL
 * Description  : This file implements device driver for INTC module.
-* Creation Date: 6/3/2019
+* Creation Date: 11/3/2019
 ***********************************************************************************************************************/
 
 #ifndef INTC_H
@@ -141,5 +141,6 @@ void R_KEY_Stop(void);
 
 /* Start user code for function. Do not edit comment generated here */
 extern volatile char _mem_key_f;
+extern volatile char changes;
 /* End user code. Do not edit comment generated here */
 #endif

@@ -23,7 +23,7 @@
 * Device(s)    : R5F10BGG
 * Tool-Chain   : CCRL
 * Description  : This file includes user definition.
-* Creation Date: 6/3/2019
+* Creation Date: 11/3/2019
 ***********************************************************************************************************************/
 
 #ifndef _USER_DEF_H
@@ -92,26 +92,26 @@ User definitions
 #define DUT_O_C 6
 #endif
 
-#define DUT_IP_REV MC_out04
-
 /* SMPS DEF */
-#define SMPS_16V MC_out01
-#define SMPS_24V MC_out02
-#define SMPS_32V MC_out03
+#define SMPS_16V MC_out03
+#define SMPS_24V MC_out01
+#define SMPS_N24V MC_out05
+#define SMPS_32V MC_out04
+#define SMPS_42V MC_out02
 
 /* Load DEF */
-#define LOAD MC_out05
+#define LOAD MC_out07
 #define SHORT MC_out06
-#define EXTRA_LOAD MC_out09
+#define EXTRA_LOAD MC_out08
 
 /* Buttons */
 #define START_BTN MC_in01
 #define RESET_BTN MC_in02
-#define MEMORY_BTN MC_in04
+#define MEMORY_BTN MC_in05
 
 /* LEDS */
-#define GRN_LED MC_out08
-#define RED_LED MC_out07
+#define GRN_LED MC_out10
+#define RED_LED MC_out09
 
 /* End user code. Do not edit comment generated here */
 #endif
