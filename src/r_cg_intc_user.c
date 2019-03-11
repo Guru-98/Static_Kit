@@ -23,7 +23,7 @@
 * Device(s)    : R5F10BGG
 * Tool-Chain   : CCRL
 * Description  : This file implements device driver for INTC module.
-* Creation Date: 6/3/2019
+* Creation Date: 11/3/2019
 ***********************************************************************************************************************/
 
 /***********************************************************************************************************************
@@ -50,6 +50,8 @@ Global variables and functions
 /* Start user code for global. Do not edit comment generated here */
 volatile char _mem_key_f = 0;
 volatile char _mem_key_t = 0;
+
+volatile char changes = 0;
 /* End user code. Do not edit comment generated here */
 
 /***********************************************************************************************************************
@@ -61,52 +63,7 @@ volatile char _mem_key_t = 0;
 static void __near r_key_interrupt(void)
 {
     /* Start user code. Do not edit comment generated here */
-#if 1
-	//TODO: Note to self... try smt else.
-	DI();
-	if (_mem_key_f == 0) {
-		_mem_key_t++;
-		delay(300);
-		if (_mem_key_t == 3) {
-			_mem_key_f ^= 1;
-			_mem_key_t = 0;
-		}
-	}
-	else{
-		_mem_key_f = 0;
-	}
-	EI();
-#else
-	DI();
-	if(_mem_key_f==0 && START_BTN == 1) {
-		_mem_key_f = 1;
-	}
-	else {
-		_mem_key_f = 0;
-	}
-	EI();
-#endif
-
-#if 1
-	if (_mem_key_f == 1) {
-		memoryScreen();
-		while (MEMORY_BTN == 0)
-			;
-		revertScreenState();
-	}
-#else
-	if (screenState != 1) {
-		if (_mem_key_f == 1) {
-			memoryScreen();
-			while (MEMORY_BTN == 0)
-			;
-			revertScreenState();
-		}
-	} else {
-		_mem_key_f = 0;
-	}
-#endif
-	_mem_key_t=0;
+	changes++;
 	/* End user code. Do not edit comment generated here */
 }
 

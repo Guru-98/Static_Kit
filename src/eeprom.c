@@ -59,6 +59,8 @@ void counterRead(void) {
 		EEL_Handler();
 	} while (eepromRequest.status_enu == EEL_BUSY);
 
+	//..................................................//
+
 	eepromRequest.address_pu08 = (eel_u08 *) &passed;
 	eepromRequest.identifier_u08 = 2;
 	eepromRequest.command_enu = EEL_CMD_READ;
@@ -74,6 +76,8 @@ void counterRead(void) {
 	do {
 		EEL_Handler();
 	} while (eepromRequest.status_enu == EEL_BUSY);
+
+	//..................................................//
 
 	eepromRequest.address_pu08 = (eel_u08 *) &failed;
 	eepromRequest.identifier_u08 = 3;
@@ -121,7 +125,8 @@ void counterWrite(void) {
 	eepromStatus = EEL_Init();
 	EEL_Open();
 
-	///////////////////////////////////////////////////////
+	//////////////////////////////////////////////////////
+
 	eepromRequest.address_pu08 = 0;
 	eepromRequest.identifier_u08 = 0;
 	eepromRequest.command_enu = EEL_CMD_FORMAT;
@@ -138,7 +143,8 @@ void counterWrite(void) {
 		EEL_Handler();
 	} while (eepromRequest.status_enu == EEL_BUSY);
 
-	///////////////////////////////////////////////////////
+	//////////////////////////////////////////////////////
+
 	eepromRequest.address_pu08 = 0;
 	eepromRequest.identifier_u08 = 0;
 	eepromRequest.command_enu = EEL_CMD_STARTUP;
@@ -173,6 +179,8 @@ void counterWrite(void) {
 		EEL_Handler();
 	} while (eepromRequest.status_enu == EEL_BUSY);
 
+	//..................................................//
+
 	eepromRequest.address_pu08 = (eel_u08 *) &passed;
 	eepromRequest.identifier_u08 = 2;
 	eepromRequest.command_enu = EEL_CMD_WRITE;
@@ -188,6 +196,8 @@ void counterWrite(void) {
 	do {
 		EEL_Handler();
 	} while (eepromRequest.status_enu == EEL_BUSY);
+
+	//..................................................//
 
 	eepromRequest.address_pu08 = (eel_u08 *) &failed;
 	eepromRequest.identifier_u08 = 3;

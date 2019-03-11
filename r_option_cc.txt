@@ -1,4 +1,4 @@
 /* Linker option for on-chip debug option byte and user option byte*/
--SECURITY_ID=00000000000000000000
--OCDBG=84
+-SECURITY_ID=C00010FFDEADFACED00D
+-OCDBG=04
 -USER_OPT_BYTE=E9FFF8

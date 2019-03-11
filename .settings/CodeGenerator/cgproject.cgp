@@ -76,12 +76,12 @@
     <ADPCForPort8 Name="ADPCForPort8" Value="8" Comment="ADPCForPort8" />
     <ADPCForPort9 Name="ADPCForPort9" Value="11" Comment="ADPCForPort9" />
     <ADPCForKey Name="ADPCForKey" Value="255" Comment="ADPCForKey" />
-    <OnChipDebugTraceDTC Name="GTraceRam" Text="1" Trigger="ocdtraceram">
+    <OnChipDebugTraceDTC Name="GTraceRam" Text="2" Trigger="ocdtraceram">
       <Effect>
         <DTC />
       </Effect>
     </OnChipDebugTraceDTC>
-    <OnChipDebugTrace Name="GTrace" Text="1" />
+    <OnChipDebugTrace Name="GTrace" Text="2" />
     <OnChipDebugHotPlugDTC Name="GHotPlugRam" Text="2" Trigger="ocdhotplugram">
       <Effect>
         <DTC />
@@ -224,10 +224,10 @@
     <MCUType Name="MCUType" Fixed="" Text="RL78" />
     <Compiler Name="Compiler" Text="CCRL" />
     <UseSecurityId Name="GI" Text="0" />
-    <SecurityId Name="GIValue" Text="00000000000000000000" />
+    <SecurityId Name="GIValue" Text="C00010FFDEADFACED00D" />
     <LinkDirectiveFile Name="D0" Text="lk.dr" />
     <OnChipDebugOptionBytes Name="GO" Text="1" />
-    <OnChipDebugOptionBytesValue Name="GOValue" Text="84" />
+    <OnChipDebugOptionBytesValue Name="GOValue" Text="04" />
     <StartAddressOfOnChipDebugOptionBytes Name="GOStart" Text="1FE00" />
     <SizeOfOnChipDebugOptionBytesArea Name="GOSizeValue" Text="512" />
     <UserOptionBytes Name="GB" Text="1" />
@@ -267,11 +267,11 @@
     <fCLKSource Name="fCLKSource" Text="fIH" />
     <UseFDL Name="UseFDL" Text="no" />
     <DataFlash Name="DataFlash" Text="0" />
-    <OCDROM Name="OCDROM" Text="Used" />
+    <OCDROM Name="OCDROM" Text="Unused" />
     <OCDROM_Address Name="OCDROM_Address" Text="0001FE00" />
     <OCDROM_Length Name="OCDROM_Length" Text="512" />
-    <HasRRMRam Name="HasRRMRam" Text="1FE00" />
-    <HasTraceRam Name="HasTraceRam" Text="FE300" />
+    <HasRRMRam Name="HasRRMRam" Text="" />
+    <HasTraceRam Name="HasTraceRam" Text="" />
     <HasHotRam Name="HasHotRam" Text="" />
     <PrjVersion Name="PrjVersion" Text="1.2.0.1" />
     <LinkFileName Name="LinkFileName" Text="" />
@@ -292,6 +292,59 @@
     <TRDIOD1_PWM Name="TRDIOD1_PWM" Text="false" />
     <INPT0USE1 Name="INPT0USE1" Text="false" />
     <TRDINTP0LINK1 Name="TRDINTP0LINK1" Text="false" />
+    <dtc_vectortable Name="dtc_vectortable" Value="0" />
+    <NO_CHAIN_0 Name="NO_CHAIN_0" Text="" />
+    <CHAIN_HEAD_0 Name="CHAIN_HEAD_0" Text="" />
+    <NO_CHAIN_1 Name="NO_CHAIN_1" Text="" />
+    <CHAIN_HEAD_1 Name="CHAIN_HEAD_1" Text="" />
+    <NO_CHAIN_2 Name="NO_CHAIN_2" Text="" />
+    <CHAIN_HEAD_2 Name="CHAIN_HEAD_2" Text="" />
+    <NO_CHAIN_3 Name="NO_CHAIN_3" Text="" />
+    <CHAIN_HEAD_3 Name="CHAIN_HEAD_3" Text="" />
+    <NO_CHAIN_4 Name="NO_CHAIN_4" Text="" />
+    <CHAIN_HEAD_4 Name="CHAIN_HEAD_4" Text="" />
+    <NO_CHAIN_5 Name="NO_CHAIN_5" Text="" />
+    <CHAIN_HEAD_5 Name="CHAIN_HEAD_5" Text="" />
+    <NO_CHAIN_6 Name="NO_CHAIN_6" Text="" />
+    <CHAIN_HEAD_6 Name="CHAIN_HEAD_6" Text="" />
+    <NO_CHAIN_7 Name="NO_CHAIN_7" Text="" />
+    <CHAIN_HEAD_7 Name="CHAIN_HEAD_7" Text="" />
+    <NO_CHAIN_8 Name="NO_CHAIN_8" Text="" />
+    <CHAIN_HEAD_8 Name="CHAIN_HEAD_8" Text="" />
+    <NO_CHAIN_9 Name="NO_CHAIN_9" Text="" />
+    <CHAIN_HEAD_9 Name="CHAIN_HEAD_9" Text="" />
+    <NO_CHAIN_10 Name="NO_CHAIN_10" Text="" />
+    <CHAIN_HEAD_10 Name="CHAIN_HEAD_10" Text="" />
+    <NO_CHAIN_11 Name="NO_CHAIN_11" Text="" />
+    <CHAIN_HEAD_11 Name="CHAIN_HEAD_11" Text="" />
+    <NO_CHAIN_12 Name="NO_CHAIN_12" Text="" />
+    <CHAIN_HEAD_12 Name="CHAIN_HEAD_12" Text="" />
+    <NO_CHAIN_13 Name="NO_CHAIN_13" Text="" />
+    <CHAIN_HEAD_13 Name="CHAIN_HEAD_13" Text="" />
+    <NO_CHAIN_14 Name="NO_CHAIN_14" Text="" />
+    <CHAIN_HEAD_14 Name="CHAIN_HEAD_14" Text="" />
+    <NO_CHAIN_15 Name="NO_CHAIN_15" Text="" />
+    <CHAIN_HEAD_15 Name="CHAIN_HEAD_15" Text="" />
+    <NO_CHAIN_16 Name="NO_CHAIN_16" Text="" />
+    <CHAIN_HEAD_16 Name="CHAIN_HEAD_16" Text="" />
+    <NO_CHAIN_17 Name="NO_CHAIN_17" Text="" />
+    <CHAIN_HEAD_17 Name="CHAIN_HEAD_17" Text="" />
+    <NO_CHAIN_18 Name="NO_CHAIN_18" Text="" />
+    <CHAIN_HEAD_18 Name="CHAIN_HEAD_18" Text="" />
+    <NO_CHAIN_19 Name="NO_CHAIN_19" Text="" />
+    <CHAIN_HEAD_19 Name="CHAIN_HEAD_19" Text="" />
+    <NO_CHAIN_20 Name="NO_CHAIN_20" Text="" />
+    <CHAIN_HEAD_20 Name="CHAIN_HEAD_20" Text="" />
+    <NO_CHAIN_21 Name="NO_CHAIN_21" Text="" />
+    <CHAIN_HEAD_21 Name="CHAIN_HEAD_21" Text="" />
+    <NO_CHAIN_22 Name="NO_CHAIN_22" Text="" />
+    <CHAIN_HEAD_22 Name="CHAIN_HEAD_22" Text="" />
+    <NO_CHAIN_23 Name="NO_CHAIN_23" Text="" />
+    <CHAIN_HEAD_23 Name="CHAIN_HEAD_23" Text="" />
+    <NO_CHAIN_H0 Name="NO_CHAIN_H0" Text="" />
+    <CHAIN_HEAD_H0 Name="CHAIN_HEAD_H0" Text="" />
+    <NO_CHAIN_H1 Name="NO_CHAIN_H1" Text="" />
+    <CHAIN_HEAD_H1 Name="CHAIN_HEAD_H1" Text="" />
   </VAR>
   <DIR>
     <PIN>
@@ -327,7 +380,7 @@
           <P34 Name="P34/AVREFM/ANI01" AltFunc="ANALOG_1" Point="I/O" />
         </Port3>
         <Port4 Chip="RL78F13_30pin,RL78F13_32pin,RL78F13_48pin" Pullup="true">
-          <P40 Name="P40/TOOL0" AltFunc="TOOL0" Point="I/O" />
+          <P40 Name="P40/TOOL0" AltFunc="" Point="I/O" />
           <P41 Name="P41/TI10/TO10/TRJIO0/VCOUT0/SNZOUT2" AltFunc="P41" Point="I/O" />
         </Port4>
         <Port6 Chip="RL78F13_32pin,RL78F13_48pin,RL78F13_64pin" Pullup="true">
@@ -782,11 +835,11 @@
       <PORT>
         <r_cg_port.c UserName="r_cg_port.c" LibName=".c" InUse="1">
           <Type R_PORT_Create="void R_PORT_Create(void)" />
-          <R_PORT_Create UserName="" LibName="R_PORT_Create" Init="1" InitMode="" InUse="1" />
+          <R_PORT_Create UserName="R_PORT_Create" LibName="R_PORT_Create" Init="1" InitMode="" InUse="1" />
         </r_cg_port.c>
         <r_cg_port_user.c UserName="r_cg_port_user.c" LibName="_user.c" InUse="1">
           <Type R_PORT_Create_UserInit="void R_PORT_Create_UserInit(void)" />
-          <R_PORT_Create_UserInit UserName="" LibName="R_PORT_Create_UserInit" InUse="0" />
+          <R_PORT_Create_UserInit UserName="R_PORT_Create_UserInit" LibName="R_PORT_Create_UserInit" InUse="0" />
         </r_cg_port_user.c>
         <r_cg_port.h UserName="r_cg_port.h" LibName=".h" InUse="1" />
       </PORT>
@@ -1301,120 +1354,120 @@
         <r_cg_rtc.h UserName="" LibName=".h" InUse="0" />
       </RTC>
       <DTC InUse="">
-        <r_cg_dtc.c UserName="r_cg_dtc.c" LibName=".c" InUse="">
+        <r_cg_dtc.c UserName="r_cg_dtc.c" LibName=".c" InUse="0">
           <Type R_DTC_Create="void R_DTC_Create(void)" R_DTCDn_Start="void R_DTCDn_Start(void)" R_DTCDn_Stop="void R_DTCDn_Stop(void)" R_DTC_Set_PowerOff="void R_DTC_Set_PowerOff(void)" />
-          <R_DTC_Create UserName="" LibName="R_DTC_Create" InUse="" Init="2" InitMode="" />
+          <R_DTC_Create UserName="" LibName="R_DTC_Create" InUse="0" Init="2" InitMode="" />
           <DTCD0>
-            <R_DTCD0_Start LibName="R_DTCDn_Start" InUse="" Visible="False" />
-            <R_DTCD0_Stop LibName="R_DTCDn_Stop" InUse="" Visible="False" />
+            <R_DTCD0_Start LibName="R_DTCDn_Start" InUse="0" Visible="False" />
+            <R_DTCD0_Stop LibName="R_DTCDn_Stop" InUse="0" Visible="False" />
           </DTCD0>
           <DTCD1>
-            <R_DTCD1_Start LibName="R_DTCDn_Start" InUse="" Visible="false" />
-            <R_DTCD1_Stop LibName="R_DTCDn_Stop" InUse="" Visible="false" />
+            <R_DTCD1_Start LibName="R_DTCDn_Start" InUse="0" Visible="false" />
+            <R_DTCD1_Stop LibName="R_DTCDn_Stop" InUse="0" Visible="false" />
           </DTCD1>
           <DTCD2>
-            <R_DTCD2_Start LibName="R_DTCDn_Start" InUse="" Visible="false" />
-            <R_DTCD2_Stop LibName="R_DTCDn_Stop" InUse="" Visible="false" />
+            <R_DTCD2_Start LibName="R_DTCDn_Start" InUse="0" Visible="false" />
+            <R_DTCD2_Stop LibName="R_DTCDn_Stop" InUse="0" Visible="false" />
           </DTCD2>
           <DTCD3>
-            <R_DTCD3_Start LibName="R_DTCDn_Start" InUse="" Visible="false" />
-            <R_DTCD3_Stop LibName="R_DTCDn_Stop" InUse="" Visible="false" />
+            <R_DTCD3_Start LibName="R_DTCDn_Start" InUse="0" Visible="false" />
+            <R_DTCD3_Stop LibName="R_DTCDn_Stop" InUse="0" Visible="false" />
           </DTCD3>
           <DTCD4>
-            <R_DTCD4_Start LibName="R_DTCDn_Start" InUse="" Visible="false" />
-            <R_DTCD4_Stop LibName="R_DTCDn_Stop" InUse="" Visible="false" />
+            <R_DTCD4_Start LibName="R_DTCDn_Start" InUse="0" Visible="false" />
+            <R_DTCD4_Stop LibName="R_DTCDn_Stop" InUse="0" Visible="false" />
           </DTCD4>
           <DTCD5>
-            <R_DTCD5_Start LibName="R_DTCDn_Start" InUse="" Visible="false" />
-            <R_DTCD5_Stop LibName="R_DTCDn_Stop" InUse="" Visible="false" />
+            <R_DTCD5_Start LibName="R_DTCDn_Start" InUse="0" Visible="false" />
+            <R_DTCD5_Stop LibName="R_DTCDn_Stop" InUse="0" Visible="false" />
           </DTCD5>
           <DTCD6>
-            <R_DTCD6_Start LibName="R_DTCDn_Start" InUse="" Visible="false" />
-            <R_DTCD6_Stop LibName="R_DTCDn_Stop" InUse="" Visible="false" />
+            <R_DTCD6_Start LibName="R_DTCDn_Start" InUse="0" Visible="false" />
+            <R_DTCD6_Stop LibName="R_DTCDn_Stop" InUse="0" Visible="false" />
           </DTCD6>
           <DTCD7>
-            <R_DTCD7_Start LibName="R_DTCDn_Start" InUse="" Visible="false" />
-            <R_DTCD7_Stop LibName="R_DTCDn_Stop" InUse="" Visible="false" />
+            <R_DTCD7_Start LibName="R_DTCDn_Start" InUse="0" Visible="false" />
+            <R_DTCD7_Stop LibName="R_DTCDn_Stop" InUse="0" Visible="false" />
           </DTCD7>
           <DTCD8>
-            <R_DTCD8_Start LibName="R_DTCDn_Start" InUse="" Visible="false" />
-            <R_DTCD8_Stop LibName="R_DTCDn_Stop" InUse="" Visible="false" />
+            <R_DTCD8_Start LibName="R_DTCDn_Start" InUse="0" Visible="false" />
+            <R_DTCD8_Stop LibName="R_DTCDn_Stop" InUse="0" Visible="false" />
           </DTCD8>
           <DTCD9>
-            <R_DTCD9_Start LibName="R_DTCDn_Start" InUse="" Visible="false" />
-            <R_DTCD9_Stop LibName="R_DTCDn_Stop" InUse="" Visible="false" />
+            <R_DTCD9_Start LibName="R_DTCDn_Start" InUse="0" Visible="false" />
+            <R_DTCD9_Stop LibName="R_DTCDn_Stop" InUse="0" Visible="false" />
           </DTCD9>
           <DTCD10>
-            <R_DTCD10_Start LibName="R_DTCDn_Start" InUse="" Visible="false" />
-            <R_DTCD10_Stop LibName="R_DTCDn_Stop" InUse="" Visible="false" />
+            <R_DTCD10_Start LibName="R_DTCDn_Start" InUse="0" Visible="false" />
+            <R_DTCD10_Stop LibName="R_DTCDn_Stop" InUse="0" Visible="false" />
           </DTCD10>
           <DTCD11>
-            <R_DTCD11_Start LibName="R_DTCDn_Start" InUse="" Visible="false" />
-            <R_DTCD11_Stop LibName="R_DTCDn_Stop" InUse="" Visible="false" />
+            <R_DTCD11_Start LibName="R_DTCDn_Start" InUse="0" Visible="false" />
+            <R_DTCD11_Stop LibName="R_DTCDn_Stop" InUse="0" Visible="false" />
           </DTCD11>
           <DTCD12>
-            <R_DTCD12_Start LibName="R_DTCDn_Start" InUse="" Visible="false" />
-            <R_DTCD12_Stop LibName="R_DTCDn_Stop" InUse="" Visible="false" />
+            <R_DTCD12_Start LibName="R_DTCDn_Start" InUse="0" Visible="false" />
+            <R_DTCD12_Stop LibName="R_DTCDn_Stop" InUse="0" Visible="false" />
           </DTCD12>
           <DTCD13>
-            <R_DTCD13_Start LibName="R_DTCDn_Start" InUse="" Visible="false" />
-            <R_DTCD13_Stop LibName="R_DTCDn_Stop" InUse="" Visible="false" />
+            <R_DTCD13_Start LibName="R_DTCDn_Start" InUse="0" Visible="false" />
+            <R_DTCD13_Stop LibName="R_DTCDn_Stop" InUse="0" Visible="false" />
           </DTCD13>
           <DTCD14>
-            <R_DTCD14_Start LibName="R_DTCDn_Start" InUse="" Visible="false" />
-            <R_DTCD14_Stop LibName="R_DTCDn_Stop" InUse="" Visible="false" />
+            <R_DTCD14_Start LibName="R_DTCDn_Start" InUse="0" Visible="false" />
+            <R_DTCD14_Stop LibName="R_DTCDn_Stop" InUse="0" Visible="false" />
           </DTCD14>
           <DTCD15>
-            <R_DTCD15_Start LibName="R_DTCDn_Start" InUse="" Visible="false" />
-            <R_DTCD15_Stop LibName="R_DTCDn_Stop" InUse="" Visible="false" />
+            <R_DTCD15_Start LibName="R_DTCDn_Start" InUse="0" Visible="false" />
+            <R_DTCD15_Stop LibName="R_DTCDn_Stop" InUse="0" Visible="false" />
           </DTCD15>
           <DTCD16>
-            <R_DTCD16_Start LibName="R_DTCDn_Start" InUse="" Visible="false" />
-            <R_DTCD16_Stop LibName="R_DTCDn_Stop" InUse="" Visible="false" />
+            <R_DTCD16_Start LibName="R_DTCDn_Start" InUse="0" Visible="false" />
+            <R_DTCD16_Stop LibName="R_DTCDn_Stop" InUse="0" Visible="false" />
           </DTCD16>
           <DTCD17>
-            <R_DTCD17_Start LibName="R_DTCDn_Start" InUse="" Visible="false" />
-            <R_DTCD17_Stop LibName="R_DTCDn_Stop" InUse="" Visible="false" />
+            <R_DTCD17_Start LibName="R_DTCDn_Start" InUse="0" Visible="false" />
+            <R_DTCD17_Stop LibName="R_DTCDn_Stop" InUse="0" Visible="false" />
           </DTCD17>
           <DTCD18>
-            <R_DTCD18_Start LibName="R_DTCDn_Start" InUse="" Visible="false" />
-            <R_DTCD18_Stop LibName="R_DTCDn_Stop" InUse="" Visible="false" />
+            <R_DTCD18_Start LibName="R_DTCDn_Start" InUse="0" Visible="false" />
+            <R_DTCD18_Stop LibName="R_DTCDn_Stop" InUse="0" Visible="false" />
           </DTCD18>
           <DTCD19>
-            <R_DTCD19_Start LibName="R_DTCDn_Start" InUse="" Visible="false" />
-            <R_DTCD19_Stop LibName="R_DTCDn_Stop" InUse="" Visible="false" />
+            <R_DTCD19_Start LibName="R_DTCDn_Start" InUse="0" Visible="false" />
+            <R_DTCD19_Stop LibName="R_DTCDn_Stop" InUse="0" Visible="false" />
           </DTCD19>
           <DTCD20>
-            <R_DTCD20_Start LibName="R_DTCDn_Start" InUse="" Visible="false" />
-            <R_DTCD20_Stop LibName="R_DTCDn_Stop" InUse="" Visible="false" />
+            <R_DTCD20_Start LibName="R_DTCDn_Start" InUse="0" Visible="false" />
+            <R_DTCD20_Stop LibName="R_DTCDn_Stop" InUse="0" Visible="false" />
           </DTCD20>
           <DTCD21>
-            <R_DTCD21_Start LibName="R_DTCDn_Start" InUse="" Visible="false" />
-            <R_DTCD21_Stop LibName="R_DTCDn_Stop" InUse="" Visible="false" />
+            <R_DTCD21_Start LibName="R_DTCDn_Start" InUse="0" Visible="false" />
+            <R_DTCD21_Stop LibName="R_DTCDn_Stop" InUse="0" Visible="false" />
           </DTCD21>
           <DTCD22>
-            <R_DTCD22_Start LibName="R_DTCDn_Start" InUse="" Visible="false" />
-            <R_DTCD22_Stop LibName="R_DTCDn_Stop" InUse="" Visible="false" />
+            <R_DTCD22_Start LibName="R_DTCDn_Start" InUse="0" Visible="false" />
+            <R_DTCD22_Stop LibName="R_DTCDn_Stop" InUse="0" Visible="false" />
           </DTCD22>
           <DTCD23>
-            <R_DTCD23_Start LibName="R_DTCDn_Start" InUse="" Visible="false" />
-            <R_DTCD23_Stop LibName="R_DTCDn_Stop" InUse="" Visible="false" />
+            <R_DTCD23_Start LibName="R_DTCDn_Start" InUse="0" Visible="false" />
+            <R_DTCD23_Stop LibName="R_DTCDn_Stop" InUse="0" Visible="false" />
           </DTCD23>
           <DTCH0>
-            <R_DTCH0_Start LibName="R_DTCHn_Start" InUse="" Visible="false" />
-            <R_DTCH0_Stop LibName="R_DTCHn_Stop" InUse="" Visible="false" />
+            <R_DTCH0_Start LibName="R_DTCHn_Start" InUse="0" Visible="false" />
+            <R_DTCH0_Stop LibName="R_DTCHn_Stop" InUse="0" Visible="false" />
           </DTCH0>
           <DTCH1>
-            <R_DTCH1_Start LibName="R_DTCHn_Start" InUse="" Visible="false" />
-            <R_DTCH1_Stop LibName="R_DTCHn_Stop" InUse="" Visible="false" />
+            <R_DTCH1_Start LibName="R_DTCHn_Start" InUse="0" Visible="false" />
+            <R_DTCH1_Stop LibName="R_DTCHn_Stop" InUse="0" Visible="false" />
           </DTCH1>
-          <R_DTC_Set_PowerOff UserName="" LibName="R_DTC_Set_PowerOff" InUse="" />
+          <R_DTC_Set_PowerOff UserName="" LibName="R_DTC_Set_PowerOff" InUse="0" />
         </r_cg_dtc.c>
-        <r_cg_dtc_user.c UserName="r_cg_dtc_user.c" LibName="_user.c" InUse="">
+        <r_cg_dtc_user.c UserName="r_cg_dtc_user.c" LibName="_user.c" InUse="0">
           <Type R_DTC_Create_UserInit="void R_DTC_Create_UserInit(void)" />
-          <R_DTC_Create_UserInit UserName="" LibName="R_DTC_Create_UserInit" InUse="" />
+          <R_DTC_Create_UserInit UserName="" LibName="R_DTC_Create_UserInit" InUse="0" />
         </r_cg_dtc_user.c>
-        <r_cg_dtc.h UserName="r_cg_dtc.h" LibName=".h" InUse="" />
+        <r_cg_dtc.h UserName="r_cg_dtc.h" LibName=".h" InUse="0" />
       </DTC>
       <PCLBUZ Chip="RL78F13_48pin,RL78F13_64pin,RL78F13_80pin">
         <r_cg_pclbuz.c UserName="" LibName=".c" InUse="">
@@ -1449,34 +1502,29 @@
     </FUNC>
     <TAG>
       <GlobleUserTag>
-        <rrm Name="rrm" Value="1FE00" />
-        <cg_ocd_trace_size Name="cg_ocd_trace_size" Value="512" />
         <cg_security8 Name="cg_security8" Value="00" />
-        <cg_security4 Name="cg_security4" Value="00" />
+        <cg_security4 Name="cg_security4" Value="AD" />
         <wdt_option Name="wdt_option" Value="E9" />
         <cg_crc_area Name="cg_crc_area" Value="00" />
-        <cg_security3 Name="cg_security3" Value="00" />
+        <cg_security3 Name="cg_security3" Value="FA" />
         <cg_iawctl_value Name="cg_iawctl_value" Value="00" />
-        <cg_security0 Name="cg_security0" Value="00" />
-        <cg_security9 Name="cg_security9" Value="00" />
-        <cg_option Name="cg_option" Value="84" />
-        <cg_security5 Name="cg_security5" Value="00" />
+        <cg_security0 Name="cg_security0" Value="0D" />
+        <cg_security9 Name="cg_security9" Value="C0" />
+        <cg_option Name="cg_option" Value="04" />
+        <cg_security5 Name="cg_security5" Value="DE" />
         <lvi_option Name="lvi_option" Value="FF" />
-        <cg_ocd_ram_size Name="cg_ocd_ram_size" Value="512" />
         <pior_value4 Name="pior_value4" Value="00" />
-        <cg_ocd_trace Name="cg_ocd_trace" Value="FE300" />
         <pior_value5 Name="pior_value5" Value="00" />
-        <cg_security6 Name="cg_security6" Value="00" />
-        <cg_security1 Name="cg_security1" Value="00" />
+        <cg_security6 Name="cg_security6" Value="FF" />
+        <cg_security1 Name="cg_security1" Value="D0" />
         <pior_value0 Name="pior_value0" Value="00" />
         <pior_value1 Name="pior_value1" Value="00" />
         <pior_value7 Name="pior_value7" Value="00" />
-        <cg_security7 Name="cg_security7" Value="00" />
+        <cg_security7 Name="cg_security7" Value="10" />
         <dataflash_use Name="dataflash_use" Value="" />
         <ocdstart Name="ocdstart" Value="1FE00" />
-        <cg_security2 Name="cg_security2" Value="00" />
+        <cg_security2 Name="cg_security2" Value="CE" />
         <clock_option Name="clock_option" Value="F8" />
-        <cg_onchip Name="cg_onchip" Value="" />
         <df_waittime Name="df_waittime" Value="13" />
       </GlobleUserTag>
     </TAG>
@@ -1519,8 +1567,8 @@
     <RTC SetFlag="False" HelpID="rtc" NeedRefresh="False">
       <RTC MacroName="RTC" SetFlag="False" />
     </RTC>
-    <DTC HelpID="dtc" SetFlag="" NeedRefresh="False">
-      <DTC SetFlag="" />
+    <DTC HelpID="dtc" SetFlag="False" NeedRefresh="False">
+      <DTC SetFlag="False" />
     </DTC>
     <PCLBUZ Chip="RL78F13_48pin,RL78F13_64pin,RL78F13_80pin" SetFlag="" HelpID="PCLBUZ" NeedRefresh="False">
       <PCLBUZ0 MacroName="PCLBUZ" Channel="0" />
@@ -1556,8 +1604,8 @@
       <setting name="TRD_FREQUENCY_VALUE" value="0" />
       <setting name="FSL_FREQUENCY_VALUE" value="0" />
       <setting name="RTC_IT_CLOCK" value="0" />
-      <setting name="OCD_UNUSED" value="false" />
-      <setting name="OCD_USED" value="true" />
+      <setting name="OCD_UNUSED" value="true" />
+      <setting name="OCD_USED" value="false" />
       <setting name="RRM_UNUSED" value="false" />
       <setting name="RRM_USED" value="true" />
       <setting name="TRACE_UNUSED" value="false" />
@@ -1567,7 +1615,7 @@
       <setting name="SECURITY_ID_AUTHENTICATION_ERASE" value="true" />
       <setting name="SECURITY_ID_AUTHENTICATION_NOT_ERASE" value="false" />
       <setting name="SECURITY_ID_SELECT" value="true" />
-      <setting name="SECURITY_ID_VALUE" value="0x00000000000000000000" />
+      <setting name="SECURITY_ID_VALUE" value="0xC00010FFDEADFACED00D" />
       <setting name="RESET_SOURCE_FUNCTION_OUTPUT" value="true" />
       <setting name="RESOUT_UNUSED" value="true" />
       <setting name="RESOUT_USED" value="false" />
@@ -2467,5 +2515,140 @@
       <setting name="MODULE_UNUSE" value="true" />
       <setting name="SINGLE_MASTER_USED" value="false" />
     </IICA0>
+    <DTC>
+      <DTCBA>
+        <setting name="BaseAddress" value="0xffd00" />
+      </DTCBA>
+      <DTCH0>
+        <setting name="ACTIVATION_SOURCE" value="0" />
+        <setting name="CHAIN_TRANSFER_USED" value="false" />
+        <setting name="DTC_CHANNEL_USED" value="false" />
+      </DTCH0>
+      <DTCD0>
+        <setting name="DTCChannel" value="false" />
+        <setting name="ChainTransfer" value="false" />
+        <setting name="Source" value="0" />
+      </DTCD0>
+      <DTCH1>
+        <setting name="ACTIVATION_SOURCE" value="0" />
+        <setting name="CHAIN_TRANSFER_USED" value="false" />
+        <setting name="DTC_CHANNEL_USED" value="false" />
+      </DTCH1>
+      <DTCD1>
+        <setting name="DTCChannel" value="false" />
+        <setting name="ChainTransfer" value="false" />
+        <setting name="Source" value="0" />
+      </DTCD1>
+      <DTCD2>
+        <setting name="DTCChannel" value="false" />
+        <setting name="ChainTransfer" value="false" />
+        <setting name="Source" value="0" />
+      </DTCD2>
+      <DTCD3>
+        <setting name="DTCChannel" value="false" />
+        <setting name="ChainTransfer" value="false" />
+        <setting name="Source" value="0" />
+      </DTCD3>
+      <DTCD4>
+        <setting name="DTCChannel" value="false" />
+        <setting name="ChainTransfer" value="false" />
+        <setting name="Source" value="0" />
+      </DTCD4>
+      <DTCD5>
+        <setting name="DTCChannel" value="false" />
+        <setting name="ChainTransfer" value="false" />
+        <setting name="Source" value="0" />
+      </DTCD5>
+      <DTCD6>
+        <setting name="DTCChannel" value="false" />
+        <setting name="ChainTransfer" value="false" />
+        <setting name="Source" value="0" />
+      </DTCD6>
+      <DTCD7>
+        <setting name="DTCChannel" value="false" />
+        <setting name="ChainTransfer" value="false" />
+        <setting name="Source" value="0" />
+      </DTCD7>
+      <DTCD8>
+        <setting name="DTCChannel" value="false" />
+        <setting name="ChainTransfer" value="false" />
+        <setting name="Source" value="0" />
+      </DTCD8>
+      <DTCD9>
+        <setting name="DTCChannel" value="false" />
+        <setting name="ChainTransfer" value="false" />
+        <setting name="Source" value="0" />
+      </DTCD9>
+      <DTCD10>
+        <setting name="DTCChannel" value="false" />
+        <setting name="ChainTransfer" value="false" />
+        <setting name="Source" value="0" />
+      </DTCD10>
+      <DTCD11>
+        <setting name="DTCChannel" value="false" />
+        <setting name="ChainTransfer" value="false" />
+        <setting name="Source" value="0" />
+      </DTCD11>
+      <DTCD12>
+        <setting name="DTCChannel" value="false" />
+        <setting name="ChainTransfer" value="false" />
+        <setting name="Source" value="0" />
+      </DTCD12>
+      <DTCD13>
+        <setting name="DTCChannel" value="false" />
+        <setting name="ChainTransfer" value="false" />
+        <setting name="Source" value="0" />
+      </DTCD13>
+      <DTCD14>
+        <setting name="DTCChannel" value="false" />
+        <setting name="ChainTransfer" value="false" />
+        <setting name="Source" value="0" />
+      </DTCD14>
+      <DTCD15>
+        <setting name="DTCChannel" value="false" />
+        <setting name="ChainTransfer" value="false" />
+        <setting name="Source" value="0" />
+      </DTCD15>
+      <DTCD16>
+        <setting name="DTCChannel" value="false" />
+        <setting name="ChainTransfer" value="false" />
+        <setting name="Source" value="0" />
+      </DTCD16>
+      <DTCD17>
+        <setting name="DTCChannel" value="false" />
+        <setting name="ChainTransfer" value="false" />
+        <setting name="Source" value="0" />
+      </DTCD17>
+      <DTCD18>
+        <setting name="DTCChannel" value="false" />
+        <setting name="ChainTransfer" value="false" />
+        <setting name="Source" value="0" />
+      </DTCD18>
+      <DTCD19>
+        <setting name="DTCChannel" value="false" />
+        <setting name="ChainTransfer" value="false" />
+        <setting name="Source" value="0" />
+      </DTCD19>
+      <DTCD20>
+        <setting name="DTCChannel" value="false" />
+        <setting name="ChainTransfer" value="false" />
+        <setting name="Source" value="0" />
+      </DTCD20>
+      <DTCD21>
+        <setting name="DTCChannel" value="false" />
+        <setting name="ChainTransfer" value="false" />
+        <setting name="Source" value="0" />
+      </DTCD21>
+      <DTCD22>
+        <setting name="DTCChannel" value="false" />
+        <setting name="ChainTransfer" value="false" />
+        <setting name="Source" value="0" />
+      </DTCD22>
+      <DTCD23>
+        <setting name="DTCChannel" value="false" />
+        <setting name="ChainTransfer" value="false" />
+        <setting name="Source" value="0" />
+      </DTCD23>
+    </DTC>
   </SETTING>
 </RL78F13>

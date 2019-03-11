@@ -54,6 +54,9 @@
 								<option id="com.renesas.cdt.managedbuild.renesas.ccrl.compiler.option.ouputPreprocessed.line.612916042" name="Output line number information to the preprocessed file." superClass="com.renesas.cdt.managedbuild.renesas.ccrl.compiler.option.ouputPreprocessed.line" useByScannerDiscovery="false" value="false" valueType="boolean"/>
 								<option id="com.renesas.cdt.managedbuild.renesas.ccrl.compiler.option.passSource.1515256018" name="Output comment to assemble source file" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.compiler.option.passSource" useByScannerDiscovery="false" value="false" valueType="boolean"/>
 								<option id="com.renesas.cdt.managedbuild.renesas.ccrl.compiler.option.langFileC.1970486846" name="Standard of C language" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.compiler.option.langFileC" useByScannerDiscovery="false" value="com.renesas.cdt.managedbuild.renesas.ccrl.compiler.option.langFileC.c99" valueType="enumerated"/>
+								<option id="com.renesas.cdt.managedbuild.renesas.ccrl.compiler.option.checkSourceByMisraC.163209745" name="Check the source code by MISRA-C" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.compiler.option.checkSourceByMisraC" useByScannerDiscovery="false" value="com.renesas.cdt.managedbuild.renesas.ccrl.compiler.option.checkSourceByMisraC.no" valueType="enumerated"/>
+								<option id="com.renesas.cdt.managedbuild.renesas.ccrl.compiler.option.saveFileMisraC.1129975069" name="Save to file" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.compiler.option.saveFileMisraC" useByScannerDiscovery="false" value="com.renesas.cdt.managedbuild.renesas.ccrl.compiler.option.saveFileMisraC.no" valueType="enumerated"/>
+								<option id="com.renesas.cdt.managedbuild.renesas.ccrl.compiler.option.outputDirMisraC.952689089" name="Output directory" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.compiler.option.outputDirMisraC" useByScannerDiscovery="false" value="${CONFIGDIR}" valueType="string"/>
 								<inputType id="Base.Compiler.ccrl.C.inputType.575378690" name="Compiler InputType" superClass="Base.Compiler.ccrl.C.inputType"/>
 							</tool>
 							<tool id="com.renesas.cdt.managedbuild.renesas.ccrl.base.assembler.1952512993" name="Assembler" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.base.assembler">
@@ -68,9 +71,9 @@
 								<inputType id="Base.Assembler.ccrl.inputType.363637606" name="Assembler InputType" superClass="Base.Assembler.ccrl.inputType"/>
 							</tool>
 							<tool id="com.renesas.cdt.managedbuild.renesas.ccrl.base.linker.1353601983" name="Linker" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.base.linker">
-								<option id="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.debugMonitorValue.770517011" name="Memory area" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.debugMonitorValue" useByScannerDiscovery="false" value="1FE00-1FFFF" valueType="string"/>
-								<option id="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.userOptByteValue.858588718" name="User option byte value" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.userOptByteValue" useByScannerDiscovery="false" value="E9FFF8" valueType="string"/>
-								<option id="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.ocdbgValue.1293974336" name="On-chip debug control value" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.ocdbgValue" useByScannerDiscovery="false" value="84" valueType="string"/>
+								<option id="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.debugMonitorValue.770517011" name="Memory area" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.debugMonitorValue" useByScannerDiscovery="false" value="" valueType="string"/>
+								<option id="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.userOptByteValue.858588718" name="User option byte value" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.userOptByteValue" useByScannerDiscovery="false" value="11a57e" valueType="string"/>
+								<option id="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.ocdbgValue.1293974336" name="On-chip debug control value" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.ocdbgValue" useByScannerDiscovery="false" value="04" valueType="string"/>
 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.vectn.121336969" name="Address setting for specified area of vector table" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.vectn" useByScannerDiscovery="false" valueType="stringList">
 									<listOptionValue builtIn="false" value=""/>
 								</option>
@@ -81,11 +84,14 @@
 									<listOptionValue builtIn="false" value=""/>
 									<listOptionValue builtIn="false" value="-nologo"/>
 								</option>
-								<option id="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.debugMonitor.701694330" name="Secure memory area of OCD monitor" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.debugMonitor" useByScannerDiscovery="false" value="true" valueType="boolean"/>
+								<option id="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.debugMonitor.701694330" name="Secure memory area of OCD monitor" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.debugMonitor" useByScannerDiscovery="false" value="false" valueType="boolean"/>
 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.noneLinkageOrderList.173329655" name="None(Linkage order list)" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.noneLinkageOrderList" useByScannerDiscovery="false" valueType="stringList">
 									<listOptionValue builtIn="false" value="&quot;.\generate\cstart.obj&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;.\generate\stkinit.obj&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;.\src\display.obj&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;.\src\eel_descriptor.obj&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;.\src\eeprom.obj&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;.\src\fdl_descriptor.obj&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;.\src\lcd.obj&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;.\src\r_cg_adc.obj&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;.\src\r_cg_adc_user.obj&quot;"/>
@@ -106,7 +112,7 @@
 									<listOptionValue builtIn="false" value="&quot;C:\Users\500022\Documents\Intern\RL78\workspace\EEL\FDL\lib\fdl.lib&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;C:\Users\500022\Documents\Intern\RL78\workspace\EEL\EEL\lib\eel.lib&quot;"/>
 								</option>
-								<option id="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.securityID.1947012967" name="Security ID value" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.securityID" useByScannerDiscovery="false" value="00000000000000000000" valueType="string"/>
+								<option id="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.securityID.1947012967" name="Security ID value" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.securityID" useByScannerDiscovery="false" value="C00010FFDEADFACED00D" valueType="string"/>
 								<option id="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.ocdbg.156755268" name="Set enable/disable on-chip debug by link option" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.ocdbg" useByScannerDiscovery="false" value="true" valueType="boolean"/>
 								<option id="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.userOptByte.854209182" name="Set user option byte" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.userOptByte" useByScannerDiscovery="false" value="true" valueType="boolean"/>
 								<option id="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.show.symbol.915672437" name="Output symbol information" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.show.symbol" useByScannerDiscovery="false" value="true" valueType="boolean"/>
@@ -121,11 +127,13 @@
 								<option id="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.section.1219988644" name="Sections" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.section" useByScannerDiscovery="false" value="" valueType="string"/>
 								<option id="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.c99Library.1491481836" name="Use C99 edition libraries" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.c99Library" useByScannerDiscovery="false" value="true" valueType="boolean"/>
 								<option id="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.checkDevice.1078283542" name="Check specifications of device" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.checkDevice" useByScannerDiscovery="false" value="true" valueType="boolean"/>
-								<option id="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.RAMarea.670963349" name="RAM area without section" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.RAMarea" useByScannerDiscovery="false" value="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.RAMarea.ocdtr" valueType="enumerated"/>
+								<option id="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.RAMarea.670963349" name="RAM area without section" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.RAMarea" useByScannerDiscovery="false" value="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.RAMarea.none" valueType="enumerated"/>
 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.inputFile.2123069840" name="Relocatable files, object files and library files" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.inputFile" useByScannerDiscovery="false" valueType="stringList">
 									<listOptionValue builtIn="false" value="&quot;C:\Users\500022\Documents\Intern\RL78\workspace\EEL\FDL\lib\fdl.lib&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;C:\Users\500022\Documents\Intern\RL78\workspace\EEL\EEL\lib\eel.lib&quot;"/>
 								</option>
+								<option id="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.changeLinkOrder.562112309" name="Change link order" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.changeLinkOrder" useByScannerDiscovery="false" value="false" valueType="boolean"/>
+								<option id="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.optimize.216026263" name="Optimization type" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.optimize" useByScannerDiscovery="false" value="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.optimize.safe" valueType="enumerated"/>
 								<inputType id="Base.Linker.ccrl.inputType.662457841" name="Linker InputType" superClass="Base.Linker.ccrl.inputType"/>
 							</tool>
 							<tool id="com.renesas.cdt.managedbuild.renesas.ccrl.base.converter.1529332906" name="Converter" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.base.converter">

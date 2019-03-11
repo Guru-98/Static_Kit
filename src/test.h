@@ -15,9 +15,9 @@ extern char resTests[8];
 extern int failedTest;
 extern char result;
 
-extern char tested;
-extern char passed;
-extern char failed;
+extern unsigned long int tested;
+extern unsigned long int passed;
+extern unsigned long int failed;
 
 int test(int testNo);
 void runTests(void);

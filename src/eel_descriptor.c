@@ -77,14 +77,14 @@
 __far const eel_u08 eel_descriptor[EEL_VAR_NO+2] =
 {
   (eel_u08)(EEL_VAR_NO),      /* variable count   */  \
-  (eel_u08)(sizeof(type_A)),  /* id=1             */  \
-  (eel_u08)(sizeof(type_B)),  /* id=2             */  \
-  (eel_u08)(sizeof(type_C)),  /* id=3             */  \
-  (eel_u08)(sizeof(type_D)),  /* id=4             */  \
-  (eel_u08)(sizeof(type_E)),  /* id=5             */  \
-  (eel_u08)(sizeof(type_F)),  /* id=6             */  \
-  (eel_u08)(sizeof(type_X)),  /* id=7             */  \
-  (eel_u08)(sizeof(type_Z)),  /* id=8             */  \
+  (eel_u08)(sizeof(eel_u32)),  /* id=1             */  \
+  (eel_u08)(sizeof(eel_u32)),  /* id=2             */  \
+  (eel_u08)(sizeof(eel_u32)),  /* id=3             */  \
+  (eel_u08)(sizeof(eel_u08)),  /* id=4             */  \
+  (eel_u08)(sizeof(eel_u08)),  /* id=5             */  \
+  (eel_u08)(sizeof(eel_u08)),  /* id=6             */  \
+  (eel_u08)(sizeof(eel_u08)),  /* id=7             */  \
+  (eel_u08)(sizeof(eel_u08)),  /* id=8             */  \
   (eel_u08)(0x00),            /* zero terminator  */  \
 };
 
