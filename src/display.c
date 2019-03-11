@@ -53,10 +53,9 @@ char screenState = 99;
 void displayInit(void) {
 	lcdInit();
 	splashScreen();
-//	testScreen();
 }
 
-void animTest(int testNo,int testtime) {
+void animTest(int testNo,int testTime) {
 	int i = testNo;
 	if (i < 4) {
 		setCursor(5, i);
@@ -66,7 +65,7 @@ void animTest(int testNo,int testtime) {
 
 	for (i = 0; i < 4; i++) {
 		sendData('.');
-		delay(testtime/4);
+		delay(testTime/4);
 	}
 }
 
@@ -193,15 +192,13 @@ void memoryScreen(void) {
 	counterRead();
 	mem_start: lcdInit();
 	setCursor(0, 0);
-	printLcd("Total");
-	setCursor(0, 1);
-	sprintf(str, "    DUTs tested: %00d", tested);
+	sprintf(str, "Tested unit: %-7lu", tested);
 	printLcd(str);
 	setCursor(0, 2);
-	sprintf(str, "    DUTs passed: %00d", passed);
+	sprintf(str, "Passed unit: %-7lu", passed);
 	printLcd(str);
 	setCursor(0, 3);
-	sprintf(str, "    DUTs failed: %00d", failed);
+	sprintf(str, "Failed unit: %-7lu", failed);
 	printLcd(str);
 	while (1) {
 		if (MEMORY_BTN == 0) {
