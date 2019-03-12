@@ -23,11 +23,7 @@
 * Device(s)    : R5F10BGG
 * Tool-Chain   : CCRL
 * Description  : This file implements device driver for CGC module.
-<<<<<<< HEAD
 * Creation Date: 12/3/2019
-=======
-* Creation Date: 11/3/2019
->>>>>>> branch 'master' of https://github.com/Guru-98/SMIT_Static_Kit.git
 ***********************************************************************************************************************/
 
 #ifndef CGC_H
