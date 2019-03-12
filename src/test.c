@@ -14,12 +14,20 @@
 #include "r_cg_timer.h"
 #include "r_cg_adc.h"
 
+<<<<<<< HEAD
 char Tests[][5] = { "S.C.", "N.L.", "R.P.", "24V ", "O.L.", "16V ", "O.V.",
+=======
+char Tests[][5] = { "S.C.", "N.L.", "R.P.", "24V ", "O.L.", "20V ", "O.V.",
+>>>>>>> branch 'master' of https://github.com/Guru-98/SMIT_Static_Kit.git
 		"32V " };
 
 char TestsFull[][19] = { "  Short  Circuit  ", "     No  Load     ",
 		" Reverse Voltage ", "  Full Load  24V  ", "    Over  Load    ",
+<<<<<<< HEAD
 		"  Full Load  16V  ", "   Over Voltage   ", "  Full Load  32V  " };
+=======
+		"  Full Load  20V  ", "   Over Voltage   ", "  Full Load  32V  " };
+>>>>>>> branch 'master' of https://github.com/Guru-98/SMIT_Static_Kit.git
 int noTests = sizeof(Tests) / sizeof(Tests[0]);
 char resTests[8] = { 9, 9, 9, 9, 9, 9, 9, 9 };
 int failedTest = -1;
