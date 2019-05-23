@@ -2,7 +2,7 @@
 -MP
 -cpu=S3 
 -dev="C:\Renesas\e2_studio\DebugComp\\RL78\RL78\Common\DR5F10BGG.DVF"
--I "C:\Program Files (x86)\Renesas\RL78\1_8_0\inc","C:\Users\500022\Documents\Intern\RL78\workspace\EEL\EEL\lib","C:\Users\500022\Documents\Intern\RL78\workspace\EEL\FDL\lib","C:\Users\500022\Documents\Intern\RL78\workspace\Static_Kit\generate"
+-I "C:\Program Files (x86)\Renesas\RL78\1_8_0\inc","C:\Users\500022\Documents\Intern\RL78\workspace\EEL\EEL\lib","C:\Users\500022\Documents\Intern\RL78\workspace\EEL\FDL\lib","Z:\EHS\EHS_COMMON\02_05_19 ISG Lab common\Guru\0. Common\RL78\E2 Studio\Static_Kit\generate"
 -lang=c99
 -asmopt=-prn_path="src"
 -asm_path="src/"

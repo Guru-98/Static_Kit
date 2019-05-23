@@ -23,7 +23,7 @@
 * Device(s)    : R5F10BGG
 * Tool-Chain   : CCRL
 * Description  : This file implements main function.
-* Creation Date: 12/3/2019
+* Creation Date: 15/4/2019
 ***********************************************************************************************************************/
 
 /***********************************************************************************************************************
@@ -53,6 +53,7 @@ Pragma directive
 Global variables and functions
 ***********************************************************************************************************************/
 /* Start user code for global. Do not edit comment generated here */
+int x =25;
 /* End user code. Do not edit comment generated here */
 void R_MAIN_UserInit(void);
 
@@ -82,8 +83,6 @@ void R_MAIN_UserInit(void)
 {
     /* Start user code. Do not edit comment generated here */
 	EI();
-	counterRead();
-
 	/*
 	 DUT_IP_REV = 1;
 
@@ -112,8 +111,8 @@ void R_MAIN_UserInit(void)
 	 RED_LED = 0;
 	 */
 
+	counterRead();
 	displayInit();
-
 	/* End user code. Do not edit comment generated here */
 }
 

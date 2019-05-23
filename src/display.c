@@ -45,6 +45,16 @@ char BLC[] = { 0b10100, 0b10100, 0b10100, 0b10100, 0b10100, 0b10111, 0b10000,
 char BRC[] = { 0b00101, 0b00101, 0b00101, 0b00101, 0b00101, 0b11101, 0b00001,
 		0b11111 };
 
+char IVI[] = {   0b01111,
+		  0b00000,
+		  0b01110,
+		  0b00001,
+		  0b01110,
+		  0b00000,
+		  0b01111,
+		  0b00000};
+
+
 char OK[] = "-OK  ";
 char Fail[] = "-Fail";
 char Empty[] = "-    ";
@@ -55,7 +65,7 @@ void displayInit(void) {
 	splashScreen();
 }
 
-void animTest(int testNo,int testTime) {
+void animTest(int testNo, int testTime) {
 	int i = testNo;
 	if (i < 4) {
 		setCursor(5, i);
@@ -65,11 +75,14 @@ void animTest(int testNo,int testTime) {
 
 	for (i = 0; i < 4; i++) {
 		sendData('.');
-		delay(testTime/4);
+		delay(testTime / 4);
 	}
 }
 
-void resTest(int testNo){
+void resTest(int testNo) {
+	if (testNo == 8) {
+		testNo--;
+	}
 	int i = testNo;
 	if (i < 4) {
 		setCursor(4, i);
@@ -152,13 +165,16 @@ void resultScreen(void) {
 		printLcd("       PASS       ");
 		setCursor(1, 3);
 		printLcd(" Press Start Btn. ");
+		GRN_LED =1;
 		while (1) {
 			if (START_BTN == 1) {
+				GRN_LED=0;
 				break;
 			}
 			if (MEMORY_BTN == 1) {
 				delay(2000);
 				if (MEMORY_BTN == 1) {
+					GRN_LED=0;
 					memoryScreen();
 					goto res_start;
 				}
@@ -171,13 +187,16 @@ void resultScreen(void) {
 		printLcd(TestsFull[failedTest]);
 		setCursor(1, 3);
 		printLcd(" Press Reset Btn. ");
+		RED_LED=1;
 		while (1) {
 			if (RESET_BTN == 1) {
+				RED_LED=0;
 				break;
 			}
 			if (MEMORY_BTN == 1) {
 				delay(2000);
 				if (MEMORY_BTN == 1) {
+					RED_LED=0;
 					memoryScreen();
 					goto res_start;
 				}
@@ -188,18 +207,21 @@ void resultScreen(void) {
 
 void memoryScreen(void) {
 	char str[21];
-	char _mem_c=0;
-	counterRead();
+	char _mem_c = 0;
+//	counterRead();
 	mem_start: lcdInit();
 	setCursor(0, 0);
-	sprintf(str, "Tested unit: %-7lu", tested);
+	sprintf(str, "Tested unit: %-7ld", tested);
+	printLcd(str);
+	setCursor(0, 1);
+	sprintf(str, "Passed unit: %-7ld", passed);
 	printLcd(str);
 	setCursor(0, 2);
-	sprintf(str, "Passed unit: %-7lu", passed);
+	sprintf(str, "Failed unit: %-7ld", failed);
 	printLcd(str);
-	setCursor(0, 3);
-	sprintf(str, "Failed unit: %-7lu", failed);
-	printLcd(str);
+	createChar(0, IVI);
+	setCursor(19, 3);
+	sendData(0);
 	while (1) {
 		if (MEMORY_BTN == 0) {
 			delay(100);
@@ -214,14 +236,14 @@ void memoryScreen(void) {
 				tested = 0;
 				passed = 0;
 				failed = 0;
-				counterWrite();
-				_mem_c=1;
+//				counterWrite();
+				_mem_c = 1;
 				break;
 			}
 		}
 	}
-	if(_mem_c==1){
-		_mem_c=0;
+	if (_mem_c == 1) {
+		_mem_c = 0;
 		goto mem_start;
 	}
 }

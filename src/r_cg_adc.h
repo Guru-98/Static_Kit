@@ -23,7 +23,7 @@
 * Device(s)    : R5F10BGG
 * Tool-Chain   : CCRL
 * Description  : This file implements device driver for ADC module.
-* Creation Date: 12/3/2019
+* Creation Date: 15/4/2019
 ***********************************************************************************************************************/
 
 #ifndef ADC_H

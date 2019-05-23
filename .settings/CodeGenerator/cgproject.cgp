@@ -227,7 +227,7 @@
     <SecurityId Name="GIValue" Text="" />
     <LinkDirectiveFile Name="D0" Text="lk.dr" />
     <OnChipDebugOptionBytes Name="GO" Text="1" />
-    <OnChipDebugOptionBytesValue Name="GOValue" Text="84" />
+    <OnChipDebugOptionBytesValue Name="GOValue" Text="85" />
     <StartAddressOfOnChipDebugOptionBytes Name="GOStart" Text="1FE00" />
     <SizeOfOnChipDebugOptionBytesArea Name="GOSizeValue" Text="512" />
     <UserOptionBytes Name="GB" Text="1" />
@@ -258,6 +258,7 @@
     <RTC1HZ_Used Name="RTC1HZ_Used" Value="0" />
     <TRDCLKTag Name="TRDCLKTag" Value="-1" />
     <TRDCLKUSE0 Name="TRDCLKUSE0" Value="0" />
+    <dtc_vectortable Name="dtc_vectortable" Value="0" />
     <GroupName Name="GroupName" Text="groupc2" />
     <CodePath Name="CodePath" Text=".\" />
     <ReportType Name="ReportType" Text="Html" />
@@ -292,7 +293,6 @@
     <TRDIOD1_PWM Name="TRDIOD1_PWM" Text="false" />
     <INPT0USE1 Name="INPT0USE1" Text="false" />
     <TRDINTP0LINK1 Name="TRDINTP0LINK1" Text="false" />
-    <dtc_vectortable Name="dtc_vectortable" Value="0" />
     <NO_CHAIN_0 Name="NO_CHAIN_0" Text="" />
     <CHAIN_HEAD_0 Name="CHAIN_HEAD_0" Text="" />
     <NO_CHAIN_1 Name="NO_CHAIN_1" Text="" />
@@ -803,34 +803,34 @@
       <CGC>
         <r_cg_cgc.c UserName="r_cg_cgc.c" LibName=".c" InUse="1">
           <Type R_CGC_Create="void R_CGC_Create(void)" R_CGC_Set_ClockMode="MD_STATUS R_CGC_Set_ClockMode(enum ClockMode mode)" R_CGC_ClockMonitor_Start="void R_CGC_ClockMonitor_Start(void)" R_CGC_ClockMonitor_Stop="void R_CGC_ClockMonitor_Stop(void)" R_CGC_StackPointer_Start="void R_CGC_StackPointer_Start(void)" R_CGC_StackPointer_Stop="void R_CGC_StackPointer_Stop(void)" R_CGC_RAMECC_Start="void R_CGC_RAMECC_Start(void)" R_CGC_RAMECC_Stop="void R_CGC_RAMECC_Stop(void)" />
-          <R_CGC_Create UserName="" LibName="R_CGC_Create" InUse="1" Init="1" InitMode="" />
-          <R_CGC_Set_ClockMode UserName="" LibName="R_CGC_Set_ClockMode" InUse="0" />
-          <R_CGC_ClockMonitor_Start UserName="" LibName="R_CGC_ClockMonitor_Start" InUse="0" />
-          <R_CGC_ClockMonitor_Stop UserName="" LibName="R_CGC_ClockMonitor_Stop" InUse="0" />
-          <R_CGC_StackPointer_Start UserName="" LibName="R_CGC_StackPointer_Start" InUse="0" />
-          <R_CGC_StackPointer_Stop UserName="" LibName="R_CGC_StackPointer_Stop" InUse="0" />
-          <R_CGC_RAMECC_Start UserName="" LibName="R_CGC_RAMECC_Start" InUse="0" />
-          <R_CGC_RAMECC_Stop UserName="" LibName="R_CGC_RAMECC_Stop" InUse="0" />
+          <R_CGC_Create UserName="R_CGC_Create" LibName="R_CGC_Create" InUse="1" Init="1" InitMode="" />
+          <R_CGC_Set_ClockMode UserName="R_CGC_Set_ClockMode" LibName="R_CGC_Set_ClockMode" InUse="0" />
+          <R_CGC_ClockMonitor_Start UserName="R_CGC_ClockMonitor_Start" LibName="R_CGC_ClockMonitor_Start" InUse="0" />
+          <R_CGC_ClockMonitor_Stop UserName="R_CGC_ClockMonitor_Stop" LibName="R_CGC_ClockMonitor_Stop" InUse="0" />
+          <R_CGC_StackPointer_Start UserName="R_CGC_StackPointer_Start" LibName="R_CGC_StackPointer_Start" InUse="0" />
+          <R_CGC_StackPointer_Stop UserName="R_CGC_StackPointer_Stop" LibName="R_CGC_StackPointer_Stop" InUse="0" />
+          <R_CGC_RAMECC_Start UserName="R_CGC_RAMECC_Start" LibName="R_CGC_RAMECC_Start" InUse="0" />
+          <R_CGC_RAMECC_Stop UserName="R_CGC_RAMECC_Stop" LibName="R_CGC_RAMECC_Stop" InUse="0" />
         </r_cg_cgc.c>
         <r_cg_cgc_user.c UserName="r_cg_cgc_user.c" LibName="_user.c" InUse="1">
           <Type R_CGC_Get_ResetSource="void R_CGC_Get_ResetSource(void)" R_CGC_Create_UserInit="void R_CGC_Create_UserInit(void)" r_cgc_clockmonitor_interrupt="__interrupt static void r_cgc_clockmonitor_interrupt(void)" r_cgc_stackpointer_interrupt="__interrupt static void r_cgc_stackpointer_interrupt(void)" r_cgc_ram_ecc_interrupt="__interrupt static void r_cgc_ram_ecc_interrupt(void)" />
-          <R_CGC_Create_UserInit UserName="" LibName="R_CGC_Create_UserInit" InUse="0" />
-          <R_CGC_Get_ResetSource UserName="" LibName="R_CGC_Get_ResetSource" Init="0" InUse="1" />
-          <r_cgc_clockmonitor_interrupt UserName="" INTHandle="" LibName="r_cgc_clockmonitor_interrupt" InUse="0" />
-          <r_cgc_stackpointer_interrupt UserName="" INTHandle="" LibName="r_cgc_stackpointer_interrupt" InUse="0" />
-          <r_cgc_ram_ecc_interrupt UserName="" INTHandle="" LibName="r_cgc_ram_ecc_interrupt" InUse="0" />
+          <R_CGC_Create_UserInit UserName="R_CGC_Create_UserInit" LibName="R_CGC_Create_UserInit" InUse="0" />
+          <R_CGC_Get_ResetSource UserName="R_CGC_Get_ResetSource" LibName="R_CGC_Get_ResetSource" Init="0" InUse="1" />
+          <r_cgc_clockmonitor_interrupt UserName="r_cgc_clockmonitor_interrupt" INTHandle="" LibName="r_cgc_clockmonitor_interrupt" InUse="0" />
+          <r_cgc_stackpointer_interrupt UserName="r_cgc_stackpointer_interrupt" INTHandle="" LibName="r_cgc_stackpointer_interrupt" InUse="0" />
+          <r_cgc_ram_ecc_interrupt UserName="r_cgc_ram_ecc_interrupt" INTHandle="" LibName="r_cgc_ram_ecc_interrupt" InUse="0" />
         </r_cg_cgc_user.c>
         <r_cg_cgc.h UserName="r_cg_cgc.h" LibName=".h" InUse="1" />
         <r_cg_pfdl.c UserName="r_cg_pfdl.c" LibName="_pfdl.c" InUse="1">
           <Type R_FDL_Create="void R_FDL_Create(void)" R_FDL_Write="pfdl_status_t R_FDL_Write(pfdl_u16 index, __near pfdl_u08* buffer, pfdl_u16 bytecount)" R_FDL_Read="pfdl_status_t R_FDL_Read(pfdl_u16 index, __near pfdl_u08* buffer, pfdl_u16 bytecount)" R_FDL_Erase="pfdl_status_t R_FDL_Erase(pfdl_u16 blockno)" R_FDL_Open="void R_FDL_Open(void)" R_FDL_Close="void PFDL_Close(void)" />
-          <R_FDL_Create UserName="" LibName="R_FDL_Create" InUse="0" Init="1" InitMode="" />
-          <R_FDL_Write UserName="" LibName="R_FDL_Write" InUse="0" />
-          <R_FDL_Read UserName="" LibName="R_FDL_Read" InUse="0" />
-          <R_FDL_Erase UserName="" LibName="R_FDL_Erase" InUse="0" />
-          <R_FDL_Open UserName="" LibName="R_FDL_Open" InUse="0" />
-          <R_FDL_Close UserName="" LibName="R_FDL_Close" InUse="0" />
+          <R_FDL_Create UserName="R_FDL_Create" LibName="R_FDL_Create" InUse="0" Init="1" InitMode="" />
+          <R_FDL_Write UserName="R_FDL_Write" LibName="R_FDL_Write" InUse="0" />
+          <R_FDL_Read UserName="R_FDL_Read" LibName="R_FDL_Read" InUse="0" />
+          <R_FDL_Erase UserName="R_FDL_Erase" LibName="R_FDL_Erase" InUse="0" />
+          <R_FDL_Open UserName="R_FDL_Open" LibName="R_FDL_Open" InUse="0" />
+          <R_FDL_Close UserName="R_FDL_Close" LibName="R_FDL_Close" InUse="0" />
         </r_cg_pfdl.c>
-        <r_cg_pfdl.h UserName="" LibName="_pfdl.h" InUse="0" />
+        <r_cg_pfdl.h UserName="r_cg_pfdl.h" LibName="_pfdl.h" InUse="0" />
       </CGC>
       <PORT>
         <r_cg_port.c UserName="r_cg_port.c" LibName=".c" InUse="1">
@@ -1512,7 +1512,7 @@
         <cg_iawctl_value Name="cg_iawctl_value" Value="00" />
         <cg_security0 Name="cg_security0" Value="00" />
         <cg_security9 Name="cg_security9" Value="00" />
-        <cg_option Name="cg_option" Value="84" />
+        <cg_option Name="cg_option" Value="85" />
         <cg_security5 Name="cg_security5" Value="00" />
         <lvi_option Name="lvi_option" Value="FF" />
         <cg_ocd_ram_size Name="cg_ocd_ram_size" Value="512" />
@@ -1525,7 +1525,6 @@
         <pior_value1 Name="pior_value1" Value="00" />
         <pior_value7 Name="pior_value7" Value="00" />
         <cg_security7 Name="cg_security7" Value="00" />
-        <dataflash_use Name="dataflash_use" Value="" />
         <ocdstart Name="ocdstart" Value="1FE00" />
         <cg_security2 Name="cg_security2" Value="00" />
         <clock_option Name="clock_option" Value="F8" />
@@ -1617,8 +1616,8 @@
       <setting name="TRACE_USED" value="true" />
       <setting name="HOTPLUG_UNUSED" value="true" />
       <setting name="HOTPLUG_USED" value="false" />
-      <setting name="SECURITY_ID_AUTHENTICATION_ERASE" value="true" />
-      <setting name="SECURITY_ID_AUTHENTICATION_NOT_ERASE" value="false" />
+      <setting name="SECURITY_ID_AUTHENTICATION_ERASE" value="false" />
+      <setting name="SECURITY_ID_AUTHENTICATION_NOT_ERASE" value="true" />
       <setting name="SECURITY_ID_SELECT" value="false" />
       <setting name="SECURITY_ID_VALUE" value="0x00000000000000000000" />
       <setting name="RESET_SOURCE_FUNCTION_OUTPUT" value="true" />
@@ -1647,7 +1646,7 @@
       <setting name="STACK_POINTER_OVERFLOW_DATA" value="0xFFFE" />
       <setting name="RAM_ECC_INTERRUPT_USED" value="false" />
       <setting name="RAM_ECC_INTERRUPT_PRIORITY" value="3" />
-      <setting name="DataFlash" value="used" />
+      <setting name="DataFlash" value="unused" />
       <setting name="ProgramFlash" value="unused" />
       <setting name="Monitor" value="unused" />
       <setting name="StartStop" value="unused" />

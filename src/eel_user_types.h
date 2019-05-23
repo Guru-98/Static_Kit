@@ -41,7 +41,7 @@
 
 /* type definitions     */
 /* ----------------     */
-typedef   eel_u08   counter;
+typedef   eel_u32   counter;
 
 
 #endif

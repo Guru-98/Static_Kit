@@ -19,6 +19,8 @@ C_SRCS += \
 ../src/r_cg_port_user.c \
 ../src/r_cg_timer.c \
 ../src/r_cg_timer_user.c \
+../src/r_cg_wdt.c \
+../src/r_cg_wdt_user.c \
 ../src/r_main.c \
 ../src/r_systeminit.c \
 ../src/test.c 
@@ -39,6 +41,8 @@ src/r_cg_port.obj \
 src/r_cg_port_user.obj \
 src/r_cg_timer.obj \
 src/r_cg_timer_user.obj \
+src/r_cg_wdt.obj \
+src/r_cg_wdt_user.obj \
 src/r_main.obj \
 src/r_systeminit.obj \
 src/test.obj 
@@ -59,6 +63,8 @@ src/r_cg_port.d \
 src/r_cg_port_user.d \
 src/r_cg_timer.d \
 src/r_cg_timer_user.d \
+src/r_cg_wdt.d \
+src/r_cg_wdt_user.d \
 src/r_main.d \
 src/r_systeminit.d \
 src/test.d 

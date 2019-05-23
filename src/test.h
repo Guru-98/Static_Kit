@@ -11,7 +11,7 @@
 extern char Tests[][5];
 extern char TestsFull[][19];
 extern int noTests;
-extern char resTests[8];
+extern char resTests[9];
 extern int failedTest;
 extern char result;
 
