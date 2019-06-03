@@ -1,17 +1,3 @@
-                                                                        
-                                                                           
-                                                                           
-                                                                           
-                                                                           
-                                                                           
-                                                                           
-                                                                           
-                                                                           
-                                                                           
-                                                                           
-                                                                           
-                                                                           
-                                                                          
 ; Copyright (C) 2014 Renesas Electronics Corporation
 ; RENESAS ELECTRONICS CONFIDENTIAL AND PROPRIETARY.
 ; This program must be used solely for the purpose for which

@@ -95,6 +95,9 @@ void resTest(int testNo) {
 	} else if (resTests[i] == 0) {
 		printLcd(Fail);
 	}
+	else if (resTests[i] == 9) {
+		printLcd(Empty);
+	}
 }
 
 void testScreen(void) {

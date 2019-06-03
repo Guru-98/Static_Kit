@@ -11,11 +11,11 @@ void lcdInit(void) {
 
 	/*  Wakeup call for 4 bit mode*/
 //	sendcmd(0x30);
-//	delay(30);
+//	delay1(30);
 //	sendcmd(0x30);
-//	delay(30);
+//	delay1(30);
 //	sendcmd(0x30);
-//	delay(30);
+//	delay1(30);
 	sendCmd(LCD_FUNCTIONSET | LCD_8BITMODE | LCD_2LINE | LCD_5x8DOTS); //0x38
 	delay1(4000);
 

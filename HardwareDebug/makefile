@@ -85,8 +85,8 @@ Static_Kit.hex: $(LINKER_OUTPUT_OUTPUTS)
 
 
 Static_Kit.abs: $(OBJS)  $(ALL_ASMS)  \
-C:\Users\500022\Documents\Intern\RL78\workspace\EEL\FDL\lib\fdl.lib  \
-C:\Users\500022\Documents\Intern\RL78\workspace\EEL\EEL\lib\eel.lib
+C:\Users\500022\Documents\Intern\RL78\E2\ Studio\EEL\FDL\lib\fdl.lib  \
+C:\Users\500022\Documents\Intern\RL78\E2\ Studio\EEL\EEL\lib\eel.lib
 	@echo 'Invoking: Linker'
 	@echo LinkerStatic_Kit.tmp=
 	@sed -e "s/^/    /" "LinkerStatic_Kit.tmp"
